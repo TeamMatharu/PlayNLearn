@@ -74,7 +74,7 @@
                         android:id="@+id/textView1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="level:2"
+                        android:text="level: "
                         android:textSize="20sp"
                         android:layout_marginTop="15dp" />
 
@@ -140,6 +140,13 @@
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
      android:text="Submit" />
+
+ <Button
+     android:id="@+id/btnquit"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_gravity="right"
+     android:text="Quit" />
 
         </LinearLayout>
     </ScrollView>

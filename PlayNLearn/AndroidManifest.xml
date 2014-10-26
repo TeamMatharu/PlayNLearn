@@ -21,19 +21,20 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            
         </activity>
         <activity
             android:name=".NewProfileActivity"
             android:label="@string/title_activity_new_profile" >
         </activity>
-        <activity
-            android:name=".ProfilequestionActivity"
-           >
+        <activity android:name=".ProfilequestionActivity" >
         </activity>
         <activity
             android:name=".Progressbar2Activity"
             android:label="@string/title_activity_progressbar2" >
+        </activity>
+        <activity
+            android:name=".ResultCardActivity"
+            android:label="@string/title_activity_result_card" >
         </activity>
     </application>
 

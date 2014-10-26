@@ -8,5 +8,6 @@
     <string name="title_activity_progressbar2">Loading Please Wait..</string>
     <string name="crtusr">Create one now!</string>
     <string name="title_activity_new_profile">NewProfileActivity</string>
+    <string name="title_activity_result_card">ResultCardActivity</string>
 
 </resources>

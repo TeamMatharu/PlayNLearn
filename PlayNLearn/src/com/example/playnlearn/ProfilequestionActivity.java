@@ -1,30 +1,43 @@
 package com.example.playnlearn;
 
+
+
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ProfilequestionActivity extends Activity {
-
+int lev=1;
 	RadioGroup rgans;
-	Button btnsub;
+	Button btnsub,btnquit;
 	ProgressBar progprofile;
 	RatingBar rbar1;
+	TextView tv;
+	String str;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_profilequestion);
 		rgans = (RadioGroup) findViewById(R.id.rgOptions);
+		tv=(TextView)findViewById(R.id.textView1);
 		btnsub = (Button) findViewById(R.id.btnchk);
+		btnquit=(Button)findViewById(R.id.btnquit);
 		progprofile = (ProgressBar) findViewById(R.id.progressBar1);
 		rbar1=(RatingBar)findViewById(R.id.ratingBar1);
+		str=tv.getText().toString();
+		tv.setText(str +lev);
 		addListnerOnButton();
 	}
 
@@ -71,12 +84,58 @@ public class ProfilequestionActivity extends Activity {
 						{
 							rtng=0;
 							rbar1.setRating(rtng);
+							lev++;
+							tv.setText(str +lev);
 							Toast.makeText(getApplicationContext(), "Level Up", Toast.LENGTH_SHORT).show();
 						}
 					}
 				}
 			}
 		});
+		btnquit.setOnClickListener(new OnClickListener() {
+			
+		@Override
+		public void onClick(View v) {
+			openAlertDialoug(v);
+			
+		}
 
-	}
+		private void openAlertDialoug(View v) {
+			AlertDialog.Builder adb=new AlertDialog.Builder(ProfilequestionActivity.this);
+			adb.setTitle("Confirmation!");
+			adb.setMessage("Are you Sure want to Quit this game?");
+			adb.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub
+					
+					Intent ino=new Intent(getApplicationContext(),ResultCardActivity.class);
+					ino.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			        ino.putExtra("EXIT", true);
+					startActivity(ino);
+					
+					
+				}
+			});
+			adb.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					/*Intent ino=new Intent(getApplicationContext(),ProfilequestionActivity.class);
+					startActivity(ino);*/
+					
+					
+				}
+			});
+			AlertDialog adbox=adb.create();
+			adbox.show();
+			
+		}
+	});
+	   
+	  
+		
+	   
+}
 }
