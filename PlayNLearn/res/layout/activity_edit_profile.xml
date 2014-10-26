@@ -6,9 +6,8 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.playnlearn.NewProfileActivity" >
-
+    android:paddingTop="@dimen/activity_vertical_margin">
+    
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="match_parent"
@@ -83,5 +82,7 @@
 
         </LinearLayout>
     </ScrollView>
+
+    
 
 </RelativeLayout>
