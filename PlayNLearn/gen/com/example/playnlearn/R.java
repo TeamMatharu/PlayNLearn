@@ -29,20 +29,17 @@ public final class R {
         public static final int profile=0x7f020004;
     }
     public static final class id {
-        public static final int action_settings=0x7f08002c;
-        public static final int btnPlayAgain=0x7f08002b;
+        public static final int action_settings=0x7f080025;
         public static final int btnSave=0x7f080014;
-        public static final int btnStartGame=0x7f080026;
         public static final int btnchk=0x7f080018;
         public static final int dpResult=0x7f080013;
         public static final int editText1=0x7f080010;
         public static final int editText2=0x7f080012;
         public static final int imageView1=0x7f080019;
-        public static final int imgProfile=0x7f080023;
         public static final int imgProfileImage=0x7f080021;
         public static final int imgbtngst=0x7f08001b;
         public static final int imgbtnprof=0x7f08001c;
-        public static final int lvProfileList=0x7f080028;
+        public static final int lvProfileList=0x7f080024;
         public static final int progressBar1=0x7f080008;
         public static final int ratingBar1=0x7f080007;
         public static final int rb1=0x7f08000b;
@@ -57,19 +54,15 @@ public final class R {
         public static final int textView1=0x7f080017;
         public static final int trProfileList=0x7f080020;
         public static final int tvBy=0x7f080005;
-        public static final int tvCongrats=0x7f080029;
-        public static final int tvCorrect=0x7f080024;
         public static final int tvGameName=0x7f08001a;
         public static final int tvGuest=0x7f080002;
         public static final int tvName=0x7f080022;
         public static final int tvOnQuestion=0x7f080004;
         public static final int tvProfileName=0x7f080015;
-        public static final int tvProfiles=0x7f080027;
+        public static final int tvProfiles=0x7f080023;
         public static final int tvQ=0x7f080009;
-        public static final int tvScore=0x7f08002a;
         public static final int tvTimer=0x7f080003;
         public static final int tvTotalQuestions=0x7f080006;
-        public static final int tvWrong=0x7f080025;
         public static final int tvdob=0x7f080011;
         public static final int tvusrnm=0x7f08000f;
         public static final int txtCreateAccount=0x7f08001d;
@@ -86,9 +79,7 @@ public final class R {
         public static final int gradient=0x7f030007;
         public static final int grdient=0x7f030008;
         public static final int listlayout=0x7f030009;
-        public static final int profiledetails=0x7f03000a;
-        public static final int profilelist=0x7f03000b;
-        public static final int resultpage=0x7f03000c;
+        public static final int profilelist=0x7f03000a;
     }
     public static final class menu {
         public static final int new_profile=0x7f070000;
