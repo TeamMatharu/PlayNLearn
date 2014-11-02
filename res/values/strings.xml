@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PlayNLearn</string>
+    <string name="title_activity_selection">Selection of Profile</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_progressbar2">Loading Please Wait..</string>
+    <string name="crtusr">Create one now!</string>
+    <string name="title_activity_new_profile">NewProfileActivity</string>
+
+    <string name="title_activity_result_card">ResultCardActivity</string>
+
+    <string name="title_activity_main">MainActivity</string>
+    <color name="Red">#ff0000</color>
+
+
+</resources>
