@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
@@ -17,19 +15,21 @@ public class SelectionActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_selection);
-		ImageButton btnguest,btnprof;
+		ImageButton btnguest, btnprof;
 		TextView tv;
-		
-		btnguest=(ImageButton)findViewById(R.id.imgbtngst);
-		btnprof=(ImageButton)findViewById(R.id.imgbtnprof);
+		if (getIntent().getBooleanExtra("EXIT", false)) {
+			 finish();
+			}
 		tv=(TextView)findViewById(R.id.txtcrtusr);
-		btnguest.setOnClickListener(new OnClickListener() {
+
+		tv.setPaintFlags(tv.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+		tv.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				
-			Intent i=new Intent(SelectionActivity.this,Progressbar2Activity.class);
-			startActivity(i);
+				// TODO Auto-generated method stub
+				Intent i=new Intent(SelectionActivity.this,NewProfileActivity.class);
+				startActivity(i);
 			}
 		});
 		btnprof=(ImageButton)findViewById(R.id.imgbtnprof);
@@ -42,14 +42,17 @@ public class SelectionActivity extends Activity {
 				startActivity(i);
 			}
 		});
-		tv.setPaintFlags(tv.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-		tv.setOnClickListener(new OnClickListener() {
+		
+
+		btnguest=(ImageButton)findViewById(R.id.imgbtnGuest);
+		
+		btnguest.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				Intent i=new Intent(SelectionActivity.this,NewProfileActivity.class);
-				startActivity(i);
+				
+			Intent i=new Intent(SelectionActivity.this,Progressbar2Activity.class);
+			startActivity(i);
 			}
 		});
 	}

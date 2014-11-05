@@ -33,9 +33,12 @@
             android:label="@string/title_activity_progressbar2" >
         </activity>
         <activity
-            android:name=".ResultCardActivity"
-            android:label="@string/title_activity_result_card" >
+            android:name=".ProfileList"
+            android:label="@string/title_activity_main" >
         </activity>
+        <activity 
+            android:name=".ResultCardActivity"
+            android:label="@string/title_result_card"></activity>
     </application>
 
 </manifest>

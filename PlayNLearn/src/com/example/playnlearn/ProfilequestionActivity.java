@@ -1,14 +1,11 @@
 package com.example.playnlearn;
 
-
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -25,20 +22,49 @@ int lev=1;
 	ProgressBar progprofile;
 	RatingBar rbar1;
 	TextView tv;
-	String str;
+	String str,st;
+	float rtng;
+	CountDownTimer t;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_profilequestion);
 		rgans = (RadioGroup) findViewById(R.id.rgOptions);
-		tv=(TextView)findViewById(R.id.textView1);
+		tv=(TextView)findViewById(R.id.tvlvl);
 		btnsub = (Button) findViewById(R.id.btnchk);
 		btnquit=(Button)findViewById(R.id.btnquit);
-		progprofile = (ProgressBar) findViewById(R.id.progressBar1);
+		progprofile = (ProgressBar) findViewById(R.id.progressBar2);
 		rbar1=(RatingBar)findViewById(R.id.ratingBar1);
 		str=tv.getText().toString();
 		tv.setText(str +lev);
 		addListnerOnButton();
+		timermethod();
+		
+		 
+		
+	}
+
+	public void timermethod() {
+		
+	t=new CountDownTimer(30000, 1000) {
+			 TextView mTextField=(TextView) findViewById(R.id.mTextField);
+			 ProgressBar Pb=(ProgressBar) findViewById(R.id.progressBar1);
+			
+		     @Override
+			public void onTick(long millisUntilFinished) {
+		         mTextField.setText(""+ millisUntilFinished / 1000);
+		         
+		         if (mTextField.getText().toString().equals("10")){
+		        	 //mTextField.setBackgroundColor(getResources().getColor(R.color.Red));
+		        	 mTextField.setTextColor(getResources().getColor(R.color.Red));
+		         }
+		     }
+		     @Override
+			public void onFinish() {
+		         mTextField.setText("Time up");
+		     }
+		  }.start();
+
 	}
 
 	public void addListnerOnButton() {
@@ -74,7 +100,7 @@ int lev=1;
 					} else {
 						progprofile.setProgress(0);
 						// level up or rating up
-						float rtng=rbar1.getRating();
+						rtng=rbar1.getRating();
 						if(rtng<5)
 						{
 						rtng=rtng+1;
@@ -85,10 +111,13 @@ int lev=1;
 							rtng=0;
 							rbar1.setRating(rtng);
 							lev++;
-							tv.setText(str +lev);
-							Toast.makeText(getApplicationContext(), "Level Up", Toast.LENGTH_SHORT).show();
+							
+							
 						}
+						tv.setText(str +lev);
 					}
+					t.cancel();
+					timermethod();
 				}
 			}
 		});
@@ -109,10 +138,17 @@ int lev=1;
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					// TODO Auto-generated method stub
+					int pro,lvl,strrtg;
+					//String st;
+					Intent ino=new Intent(ProfilequestionActivity.this,ResultCardActivity.class);
+					pro=progprofile.getProgress();
+					ino.putExtra("pbar",pro);
+					strrtg=(int) rbar1.getRating();
+					st=String.valueOf(rbar1.getRating());
 					
-					Intent ino=new Intent(getApplicationContext(),ResultCardActivity.class);
-					ino.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-			        ino.putExtra("EXIT", true);
+					ino.putExtra("star",rtng);
+					ino.putExtra("lvl", lev);
+					
 					startActivity(ino);
 					
 					
@@ -133,9 +169,43 @@ int lev=1;
 			
 		}
 	});
-	   
-	  
-		
-	   
+	   	
 }
+	@Override
+	public void onBackPressed()
+	{
+		
+         openAlertDialoug();
+        
+	}
+	private void openAlertDialoug() {
+		AlertDialog.Builder adb=new AlertDialog.Builder(ProfilequestionActivity.this);
+		adb.setTitle("Confirmation!");
+		adb.setMessage("Are you Sure want to quit the game??\nYou will Loss your Scores?");
+		adb.setPositiveButton("Exit", new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				
+				Intent intent=new Intent(getApplicationContext(),SelectionActivity.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				//intent.putExtra("EXIT", true);
+				//java.lang.System.exit(1);
+				startActivity(intent);
+				
+				
+			}
+		});
+		adb.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				
+				
+			}
+		});
+		AlertDialog adbox=adb.create();
+		adbox.show();
+		
+	}
 }

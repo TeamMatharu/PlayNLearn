@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -25,7 +23,8 @@ public class Progressbar2Activity extends Activity {
 		tv = (TextView) findViewById(R.id.textView1);
 		  // Start long running operation in a background thread
 		  new Thread(new Runnable() {
-		     public void run() {
+		     @Override
+			public void run() {
 		        while (stat < 100) 
 		        {
 		           stat += 5;
@@ -33,7 +32,8 @@ public class Progressbar2Activity extends Activity {
 		                         //current value in the text view
 		    h.post(new Runnable() 
 		    {
-		    public void run() {
+		    @Override
+			public void run() {
 		       prog.setProgress(stat);
 		       tv.setText("Loading... \n "+stat+"% ");
 		       if(prog.getProgress()==100)

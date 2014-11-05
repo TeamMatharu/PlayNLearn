@@ -48,8 +48,7 @@
                     android:layout_weight="1" >
 
                     <ImageButton
-                        android:id="@+id/imgbtngst"
-                        
+                        android:id="@+id/imgbtnGuest"         
                         android:layout_marginLeft="12dp"
                         android:layout_marginRight="12dp"
                         android:layout_weight="1"
