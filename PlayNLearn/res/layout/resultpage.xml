@@ -68,10 +68,11 @@
 
             <RatingBar
                 android:id="@+id/ratingBar1"
-                style="@style/AppBaseTheme"
+                style="@style/foodRatingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:isIndicator="true"
                 android:minHeight="85dip"
                 android:minWidth="55dip"
                 android:numStars="5"

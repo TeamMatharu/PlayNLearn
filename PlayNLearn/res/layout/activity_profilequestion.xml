@@ -21,12 +21,14 @@
 
             <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
 
                 <TableRow
                     android:id="@+id/tableRow1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" >
+
                     <ImageView
                         android:id="@+id/imageView1"
                         android:layout_width="wrap_content"
@@ -34,28 +36,27 @@
                         android:src="@drawable/ic_launcher" />
 
                     <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                 >
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
 
-                <ProgressBar
-                    android:id="@+id/progressBar1"
-                    style="?android:attr/progressBarStyleLarge"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="90dp"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true" />
+                        <ProgressBar
+                            android:id="@+id/progressBar1"
+                            style="?android:attr/progressBarStyleLarge"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="90dp" />
 
-                <TextView
-                    android:id="@+id/mTextField"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/progressBar1"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="17dp"
-                    android:text="TextView" />
-            </RelativeLayout>
+                        <TextView
+                            android:id="@+id/mTextField"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/progressBar1"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="17dp"
+                            android:text="TextView" />
+                    </RelativeLayout>
 
                     <TextView
                         android:id="@+id/tvOnQuestion"
@@ -64,14 +65,13 @@
                         android:layout_marginLeft="40dp"
                         android:text="50/50"
                         android:textSize="20dp" />
-                    
                 </TableRow>
-
             </TableLayout>
 
             <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="0dp"
+                android:layout_weight="1" >
 
                 <TableRow
                     android:id="@+id/tableRow2"
@@ -79,29 +79,31 @@
                     android:layout_height="35dp" >
 
                     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-
-        <RatingBar
-            android:id="@+id/ratingBar1"
-            style="@style/foodRatingBar"
-            android:layout_width="wrap_content"
-            android:layout_height="23dp"
-            android:numStars="5"
-            android:rating="3.7" />
-
-    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/textView1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         
-                        android:layout_marginLeft="150dp"
-                        android:text="level: "
-                        android:textSize="20sp" />
+                        android:orientation="horizontal" >
 
+                        <RatingBar
+                            android:id="@+id/ratingBar1"
+                            style="@style/foodRatingBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:isIndicator="true"
+                            android:numStars="5"
+                            android:rating="0.0" />
+
+                        <TextView
+                            android:id="@+id/tvlvl"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginLeft="20dp"
+                            android:layout_weight="1"
+                            android:text="level: "
+                            android:textSize="20sp" />
+                    </LinearLayout>
                 </TableRow>
             </TableLayout>
 
@@ -109,70 +111,82 @@
                 android:id="@+id/progressBar2"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
 
             <TextView
                 android:id="@+id/tvQ"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Question?" 
+                android:layout_height="0dp"
                 android:layout_marginTop="10dp"
-                android:textSize="20sp"/>
+                android:layout_weight="1"
+                android:text="Question?"
+                android:textSize="20sp" />
 
- <RadioGroup
-     android:id="@+id/rgOptions"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-     android:layout_marginTop="10dp" >
+            <RadioGroup
+                android:id="@+id/rgOptions"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1" >
 
-     <RadioButton
-         android:id="@+id/rb1"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:checked="true"
-         android:text="RadioButton"
-         android:textSize="20dp"
-         android:layout_marginTop="5dp"  />
+                <RadioButton
+                    android:id="@+id/rb1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:checked="true"
+                    android:text="RadioButton"
+                    android:textSize="20dp" />
 
-     <RadioButton
-         android:id="@+id/rb2"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="RadioButton" 
-         android:textSize="20dp"
-         android:layout_marginTop="5dp"  />
+                <RadioButton
+                    android:id="@+id/rb2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="RadioButton"
+                    android:textSize="20dp" />
 
-     <RadioButton
-         android:id="@+id/rb3"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="RadioButton" 
-         android:textSize="20dp"
-         android:layout_marginTop="5dp"  />
-     
-     <RadioButton
-         android:id="@+id/rb4"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="RadioButton" 
-         android:textSize="20dp"
-         android:layout_marginTop="5dp"  />
- </RadioGroup>
+                <RadioButton
+                    android:id="@+id/rb3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="RadioButton"
+                    android:textSize="20dp" />
 
- <Button
-     android:id="@+id/btnchk"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-     android:text="Submit" />
+                <RadioButton
+                    android:id="@+id/rb4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="RadioButton"
+                    android:textSize="20dp" />
+            </RadioGroup>
 
- <Button
-     android:id="@+id/btnquit"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-     android:layout_gravity="right"
-     android:text="Quit" />
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/btnchk"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Submit" />
+
+                <Button
+                    android:id="@+id/btnquit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Quit" />
+            </TableRow>
 
         </LinearLayout>
+
     </ScrollView>
 
 </RelativeLayout>

@@ -35,6 +35,7 @@ int lev=1;
 		btnquit=(Button)findViewById(R.id.btnquit);
 		progprofile = (ProgressBar) findViewById(R.id.progressBar2);
 		rbar1=(RatingBar)findViewById(R.id.ratingBar1);
+		
 		str=tv.getText().toString();
 		tv.setText(str +lev);
 		addListnerOnButton();

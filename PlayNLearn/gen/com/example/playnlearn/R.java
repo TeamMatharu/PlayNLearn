@@ -30,24 +30,27 @@ public final class R {
         public static final int guest=0x7f020002;
         public static final int ic_launcher=0x7f020003;
         public static final int profile=0x7f020004;
+        public static final int ratingstars=0x7f020005;
+        public static final int str1=0x7f020006;
+        public static final int str2=0x7f020007;
     }
     public static final class id {
         public static final int action_settings=0x7f090031;
-        public static final int btnDeleteProfile=0x7f09002a;
+        public static final int btnDeleteProfile=0x7f09002b;
         public static final int btnPlayAgain=0x7f090030;
         public static final int btnSave=0x7f090007;
-        public static final int btnStartGame=0x7f090029;
-        public static final int btnchk=0x7f09001b;
-        public static final int btnquit=0x7f09001c;
+        public static final int btnStartGame=0x7f09002a;
+        public static final int btnchk=0x7f09001c;
+        public static final int btnquit=0x7f09001d;
         public static final int dpResult=0x7f090006;
         public static final int editText1=0x7f090003;
         public static final int editText2=0x7f090005;
         public static final int imageView1=0x7f090016;
         public static final int imgProfile=0x7f090001;
-        public static final int imgProfileImage=0x7f090024;
-        public static final int imgbtnGuest=0x7f09001e;
-        public static final int imgbtnprof=0x7f09001f;
-        public static final int lvProfileList=0x7f09002c;
+        public static final int imgProfileImage=0x7f090025;
+        public static final int imgbtnGuest=0x7f090020;
+        public static final int imgbtnprof=0x7f090021;
+        public static final int lvProfileList=0x7f09002d;
         public static final int mTextField=0x7f090017;
         public static final int progressBar1=0x7f09000f;
         public static final int progressBar2=0x7f09001a;
@@ -60,28 +63,28 @@ public final class R {
         public static final int scrollView1=0x7f090000;
         public static final int tableRow1=0x7f090008;
         public static final int tableRow2=0x7f090018;
-        public static final int tableRow3=0x7f090021;
-        public static final int textView1=0x7f090019;
-        public static final int trProfileList=0x7f090023;
+        public static final int tableRow3=0x7f09001b;
+        public static final int textView1=0x7f09001e;
+        public static final int trProfileList=0x7f090024;
         public static final int tvBy=0x7f09000c;
-        public static final int tvCongrats=0x7f09002d;
-        public static final int tvCorrect=0x7f090027;
-        public static final int tvGameName=0x7f09001d;
+        public static final int tvCongrats=0x7f09002e;
+        public static final int tvCorrect=0x7f090028;
+        public static final int tvGameName=0x7f09001f;
         public static final int tvGuest=0x7f090009;
-        public static final int tvName=0x7f090025;
+        public static final int tvName=0x7f090026;
         public static final int tvOnQuestion=0x7f09000b;
-        public static final int tvProfileName=0x7f090026;
-        public static final int tvProfiles=0x7f09002b;
+        public static final int tvProfileName=0x7f090027;
+        public static final int tvProfiles=0x7f09002c;
         public static final int tvQ=0x7f090010;
-        public static final int tvScore=0x7f09002e;
+        public static final int tvScore=0x7f09002f;
         public static final int tvTimer=0x7f09000a;
         public static final int tvTotalQuestions=0x7f09000d;
-        public static final int tvWrong=0x7f090028;
+        public static final int tvWrong=0x7f090029;
         public static final int tvdob=0x7f090004;
-        public static final int tvlvl=0x7f09002f;
+        public static final int tvlvl=0x7f090019;
         public static final int tvusrnm=0x7f090002;
-        public static final int txtCreateAccount=0x7f090020;
-        public static final int txtcrtusr=0x7f090022;
+        public static final int txtCreateAccount=0x7f090022;
+        public static final int txtcrtusr=0x7f090023;
     }
     public static final class layout {
         public static final int activity_edit_profile=0x7f030000;
@@ -141,7 +144,7 @@ public final class R {
  API 14 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f070000;
-        public static final int AppTheme=0x7f070002;
-        public static final int foodRatingBar=0x7f070001;
+        public static final int AppTheme=0x7f070001;
+        public static final int foodRatingBar=0x7f070002;
     }
 }
