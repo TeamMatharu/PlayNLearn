@@ -76,7 +76,7 @@ int lev=1;
 
 			@Override
 			public void onClick(View v) {
-				//Toast.makeText(getApplicationContext(), "", Toast.LENGTH_SHORT).cancel();
+				
 				String opt = "c";
 				String ans = "c";// Write your query to retrive right answer
 									// over here.
@@ -97,13 +97,14 @@ int lev=1;
 
 				}
 
-				if (opt.equals(ans)) {
+				if (opt.equals(ans)) 
+				{
 					
 					LayoutInflater inflater = ProfilequestionActivity.this.getLayoutInflater();
 					View layout = inflater.inflate(R.layout.custom_toast,
 							(ViewGroup) findViewById(R.id.custom_toast_layout_id));
 
-					// Create Custom Toast
+					// Create Custom Toast for right answer
 					
 					Toast toast = new Toast(getApplicationContext());
 					toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
@@ -139,6 +140,23 @@ int lev=1;
 					t.cancel();
 					timermethod();
 					
+				}
+				else
+				{
+					
+					LayoutInflater inflater = ProfilequestionActivity.this.getLayoutInflater();
+					View layout = inflater.inflate(R.layout.custom_wrong,
+							(ViewGroup) findViewById(R.id.custom_toast_layout_id));
+					// Create Custom Toast for wrong answer
+					
+					Toast toast = new Toast(getApplicationContext());
+					toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+					toast.setDuration(Toast.LENGTH_SHORT);
+					toast.setView(layout);
+					toast.show();
+					
+					t.cancel();
+					timermethod();
 				}
 			}
 		});
