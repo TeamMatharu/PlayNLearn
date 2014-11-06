@@ -38,7 +38,7 @@ public class Progressbar2Activity extends Activity {
 		       tv.setText("Loading... \n "+stat+"% ");
 		       if(prog.getProgress()==100)
 		       {
-		    	   Intent i=new Intent(getApplicationContext(),ProfilequestionActivity.class);
+		    	   Intent i=new Intent(getApplicationContext(),GuestquestionActivity.class);
 			        startActivity(i);
 		       }
 		    }

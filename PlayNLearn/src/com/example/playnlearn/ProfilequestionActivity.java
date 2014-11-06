@@ -50,7 +50,7 @@ int lev=1;
 
 	public void timermethod() {
 		
-	t=new CountDownTimer(30000, 1000) {
+	t=new CountDownTimer(30000, 1000) { 
 			 TextView mTextField=(TextView) findViewById(R.id.mTextField);
 			 ProgressBar Pb=(ProgressBar) findViewById(R.id.progressBar1);
 			

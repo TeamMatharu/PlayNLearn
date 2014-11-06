@@ -70,8 +70,12 @@
 
             <RatingBar
                 android:id="@+id/ratingBar1"
-                android:layout_width="245dp"
-                android:layout_height="match_parent" />
+                 style="@style/foodRatingBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:isIndicator="true"
+                            android:numStars="5"
+                            android:rating="0.0"/>
 
             <ProgressBar
                 android:id="@+id/progressBar1"
@@ -126,6 +130,27 @@
          android:textSize="20dp"
          android:layout_marginTop="5dp"  />
  </RadioGroup>
+ 
+ <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/btngchk"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Submit" />
+
+                <Button
+                    android:id="@+id/btngquit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Quit" />
+            </TableRow>
 
         </LinearLayout>
     </ScrollView>

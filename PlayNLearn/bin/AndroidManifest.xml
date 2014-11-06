@@ -36,9 +36,14 @@
             android:name=".ProfileList"
             android:label="@string/title_activity_main" >
         </activity>
-        <activity 
+        <activity
             android:name=".ResultCardActivity"
-            android:label="@string/title_result_card"></activity>
+            android:label="@string/title_result_card" >
+        </activity>
+        <activity
+            android:name=".GuestquestionActivity"
+            android:label="@string/title_activity_guestquestion" >
+        </activity>
     </application>
 
 </manifest>
