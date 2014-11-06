@@ -6,7 +6,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -73,6 +76,7 @@ int lev=1;
 
 			@Override
 			public void onClick(View v) {
+				//Toast.makeText(getApplicationContext(), "", Toast.LENGTH_SHORT).cancel();
 				String opt = "c";
 				String ans = "c";// Write your query to retrive right answer
 									// over here.
@@ -94,6 +98,21 @@ int lev=1;
 				}
 
 				if (opt.equals(ans)) {
+					
+					LayoutInflater inflater = ProfilequestionActivity.this.getLayoutInflater();
+					View layout = inflater.inflate(R.layout.custom_toast,
+							(ViewGroup) findViewById(R.id.custom_toast_layout_id));
+
+					// Create Custom Toast
+					
+					Toast toast = new Toast(getApplicationContext());
+					toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+					toast.setDuration(Toast.LENGTH_SHORT);
+					toast.setView(layout);
+					toast.show();
+					
+					
+					
 					int i = progprofile.getProgress();
 					if (i <= 90) {
 						i = i + 10;
@@ -119,6 +138,7 @@ int lev=1;
 					}
 					t.cancel();
 					timermethod();
+					
 				}
 			}
 		});
