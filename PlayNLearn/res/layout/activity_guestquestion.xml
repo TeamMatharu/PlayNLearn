@@ -48,7 +48,7 @@
                             android:layout_height="50dp"
                             android:layout_alignParentTop="true"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginLeft="60dp" />
+                            android:layout_marginLeft="30dp"/>
 
                         <TextView
                             android:id="@+id/mTextField"
@@ -68,7 +68,7 @@
                         android:textColor="#ffffff"
                         android:text="50/50"
                         android:textSize="20dp"
-                        android:layout_marginLeft="55dp" />
+                        android:layout_marginLeft="30dp" />
 
                     
                 </TableRow>

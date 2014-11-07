@@ -25,7 +25,7 @@ public class GuestquestionActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_guestquestion);
-		gpbar=(ProgressBar)findViewById(R.id.progressBar1);
+		gpbar=(ProgressBar)findViewById(R.id.progressBar2);
 		rgst=(RadioGroup)findViewById(R.id.rgOptions);
 		tvonq=(TextView)findViewById(R.id.tvOnQuestion);
 		btngsub=(Button)findViewById(R.id.btngchk);
@@ -70,11 +70,11 @@ public class GuestquestionActivity extends Activity {
 						i=i+2;
 						gpbar.setProgress(i);
 					}
-					tvonq.setText(String.valueOf(question));
+					tvonq.setText(String.valueOf(question)+"/50");
 				}
 				else
 				{
-					tvonq.setText(String.valueOf(question));
+					tvonq.setText(String.valueOf(question)+"/50");
 				}
 				
 				
