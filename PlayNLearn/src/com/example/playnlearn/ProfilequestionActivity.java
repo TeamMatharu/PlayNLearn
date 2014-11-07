@@ -101,7 +101,7 @@ int lev=1;
 				{
 					
 					LayoutInflater inflater = ProfilequestionActivity.this.getLayoutInflater();
-					View layout = inflater.inflate(R.layout.custom_toast,
+					View layout = inflater.inflate(R.drawable.custom_toast,
 							(ViewGroup) findViewById(R.id.custom_toast_layout_id));
 
 					// Create Custom Toast for right answer
@@ -145,7 +145,7 @@ int lev=1;
 				{
 					
 					LayoutInflater inflater = ProfilequestionActivity.this.getLayoutInflater();
-					View layout = inflater.inflate(R.layout.custom_wrong,
+					View layout = inflater.inflate(R.drawable.custom_wrong,
 							(ViewGroup) findViewById(R.id.custom_toast_layout_id));
 					// Create Custom Toast for wrong answer
 					

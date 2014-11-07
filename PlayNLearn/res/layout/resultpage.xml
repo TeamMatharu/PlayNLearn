@@ -1,94 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@layout/buttongradient" >
+    android:background="@drawable/buttongradient" >
 
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="416dp"
-            android:orientation="vertical" >
-
-            <TextView
-                android:id="@+id/tvCongrats"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="85dp"
-                android:text="Congratulations!!!"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="#ffffff"
-                android:textStyle="bold" />
-
-            <QuickContactBadge
-                android:id="@+id/imgProfile"
-                android:layout_width="62dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="135dp"
-                android:layout_marginTop="20dp" />
-
-            <TextView
-                android:id="@+id/tvProfileName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="100dp"
-                android:layout_marginTop="20dp"
-                android:text="User Name"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#ffffff"
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/tvScore"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                
-                android:layout_marginTop="20dp"
-                android:layout_weight="1"
-                android:text=""
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#ffffff"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/tvlvl"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                
-                android:layout_marginTop="20dp"
-                android:text=""
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#ffffff"
-                android:textSize="20sp" />
-
-            <RatingBar
-                android:id="@+id/ratingBar1"
-                style="@style/foodRatingBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:isIndicator="true"
-                android:minHeight="85dip"
-                android:minWidth="55dip"
-                android:numStars="5"
-                android:rating="0" />
-
-            <Button
-                android:id="@+id/btnPlayAgain"
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="85dp"
-                android:background="@layout/buttongradientorange"
-                android:text="Play Again"
-                android:textColor="#ffffff"
-                android:textSize="25dp" />
-        </LinearLayout>
+        android:layout_height="wrap_content" >
 
     </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tvCongrats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Congratulations!!!"
+            android:layout_marginTop="10dp" 
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+
+        <QuickContactBadge
+            android:id="@+id/imgProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/tvProfileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="User Name"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#ffffff"
+            android:textSize="25sp" 
+            android:textStyle="bold"/>
+
+        <RatingBar
+            android:id="@+id/ratingBar1"
+            style="@style/foodRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:rating="0" />
+
+        <TextView
+            android:id="@+id/tvlvl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Level 2"
+            android:layout_gravity="center"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#ffffff"
+            android:textSize="20sp" 
+             android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Score: 70%"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#ffffff"
+            android:textSize="20sp" 
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btnPlayAgain"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="55dp"
+            android:background="@drawable/buttongradientorange"
+            android:text="Play Again"
+            android:textColor="#ffffff"
+            android:textSize="20sp" 
+            android:textStyle="bold"/>
+    </LinearLayout>
     
-</LinearLayout>
+</RelativeLayout>

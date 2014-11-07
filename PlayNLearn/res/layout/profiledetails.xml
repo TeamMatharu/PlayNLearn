@@ -1,95 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@layout/buttongradient"
+    android:background="@drawable/buttongradient"
     android:orientation="vertical" >
 
-    <QuickContactBadge
-        android:id="@+id/imgProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="135dp"
-        android:layout_marginTop="20dp" />
-
-    <TextView
-        android:id="@+id/tvProfileName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="20dp"
-        android:text="User Name"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#ffffff"
-        android:textSize="25sp" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="level:2"
-        android:layout_marginLeft="125dp"
-        android:textColor="#ffffff"
-        android:textSize="25sp" />
-
-    <RatingBar
-        android:id="@+id/ratingBar1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp" />
-
-    <ProgressBar
-        android:id="@+id/progressBar1"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="275dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="20dp" />
-
-    <TextView
-        android:id="@+id/tvCorrect"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="30dp"
-        android:text="Correct Answers  3"
-        android:textColor="#ffffff"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/tvWrong"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="70dp"
-         android:layout_marginTop="20dp"
-        android:text="Wrong Answers  2"
-        android:textColor="#ffffff"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/scrollView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <Button
-            android:id="@+id/btnStartGame"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            
-            android:layout_marginTop="10dp"
-            android:background="@layout/buttongradientorange"
-            android:text="Start Game"
-            android:textColor="#ffffff"
-            android:textSize="20dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/btnDeleteProfile"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            
-            android:layout_marginTop="10dp"
-            android:background="@layout/buttongradientorange"
-            android:text="Delete Profile"
-            android:textColor="#ffffff"
-            android:textSize="20dp" />
-    </LinearLayout>
+            <QuickContactBadge
+                android:id="@+id/imgProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp" />
 
-</LinearLayout>
+            <TextView
+                android:id="@+id/tvProfileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="User Name"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="level:2"
+                android:textColor="#ffffff"
+                android:textSize="25sp" />
+
+            <RatingBar
+                android:id="@+id/ratingBar1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar1"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="275dp"
+                android:layout_height="20dp" 
+                android:layout_gravity="center"
+                />
+
+            <TextView
+                android:id="@+id/tvCorrect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Correct Answers  3"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff" 
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/tvWrong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Wrong Answers  2"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff" 
+                android:layout_gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <Button
+                    android:id="@+id/btnStartGame"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/buttongradientorange"
+                    android:text="Start Game"
+                    android:textColor="#ffffff"
+                    android:textSize="20dp"
+                     />
+
+                <Button
+                    android:id="@+id/btnDeleteProfile"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/buttongradientorange"
+                    android:text="Delete Profile"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

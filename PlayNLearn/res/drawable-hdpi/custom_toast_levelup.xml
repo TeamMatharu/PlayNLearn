@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent" 
+	android:id="@+id/custom_toast_layout_id"
+	android:orientation="horizontal" 
+	android:padding="10dp"
+	android:layout_height="wrap_content" 
+	android:background="#898888">
+	
+	<ImageView 
+	    android:layout_height="wrap_content"
+		android:layout_width="wrap_content" 
+		android:id="@+id/imageView1"
+		android:src="@drawable/level" 
+		android:layout_gravity="center_vertical">
+	    
+	</ImageView>
+	
+	<TextView 
+		    android:layout_height="wrap_content" 
+		    android:id="@+id/textView1"
+			android:layout_width="wrap_content" 
+			android:textColor="#ffffff" 
+			android:textStyle="bold"
+			android:textSize="35dp" 
+			android:text="Level Up!!!">
+		    
+		</TextView>
+	
+
+</LinearLayout>
