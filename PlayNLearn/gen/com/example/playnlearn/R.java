@@ -55,14 +55,14 @@ public final class R {
         public static final int btnchk=0x7f090022;
         public static final int btngchk=0x7f090016;
         public static final int btngquit=0x7f090017;
+        public static final int btninv=0x7f09001c;
         public static final int btnquit=0x7f090023;
-        public static final int button1=0x7f09001c;
         public static final int custom_toast_layout_id=0x7f090039;
         public static final int dpResult=0x7f090006;
         public static final int editText1=0x7f090003;
         public static final int editText2=0x7f090005;
-        public static final int etEmail=0x7f09001b;
         public static final int etInviteName=0x7f090019;
+        public static final int etMsg=0x7f09001b;
         public static final int imageView1=0x7f090024;
         public static final int imgProfile=0x7f090001;
         public static final int imgProfileImage=0x7f09002d;

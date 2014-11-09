@@ -12,8 +12,10 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -28,11 +30,24 @@ public class UserListActivity extends Activity {
 	User_DAO userdao;
 	User_Profile userprofile;
 	List<User_Profile> l;
+	Button btn;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_user_list);
+		btn=(Button)findViewById(R.id.btninv);
+		
+			btn.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent i=new Intent(UserListActivity.this,InviteFriendActivity.class);
+				startActivity(i);
+				
+			}
+		});
+
 		ArrayList<String> user = new ArrayList<String>();
 		ArrayList<String> other = new ArrayList<String>();
 		ArrayList<byte []> image=new ArrayList<byte []>();
@@ -70,7 +85,7 @@ public class UserListActivity extends Activity {
 				
 			}
 		} );
-
+		
 	}
 
 }

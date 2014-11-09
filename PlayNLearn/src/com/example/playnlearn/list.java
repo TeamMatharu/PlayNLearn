@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ public class list extends ArrayAdapter<String> {
 	ArrayList<byte []> img;
 	byte[] b;
 	private final Integer imageId;
+
 	
 
 	public list(Activity context, ArrayList<String> ar,ArrayList<String> br , Integer imageId ,ArrayList<byte []> img ) {

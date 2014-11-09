@@ -19,9 +19,9 @@
                     android:id="@+id/tvName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Invitee&apos;s Name: "
-                    android:textSize="15sp"
-                    android:textColor="#ffffff" />
+                    android:text="Invitee&apos;s Email: "
+                    android:textColor="#ffffff"
+                    android:textSize="15sp" />
 
                 <EditText
                     android:id="@+id/etInviteName"
@@ -43,12 +43,12 @@
                 android:id="@+id/tvEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Invitee&apos;s Email: "
-                android:textColor="#ffffff" 
-                android:textSize="15sp"/>
+                android:text="Your Message: "
+                android:textColor="#ffffff"
+                android:textSize="15sp" />
 
             <EditText
-                android:id="@+id/etEmail"
+                android:id="@+id/etMsg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -59,7 +59,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/btninv"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
