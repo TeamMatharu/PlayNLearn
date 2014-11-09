@@ -39,12 +39,13 @@ int lev=1;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_profilequestion);
 		User_DAO userdao =new User_DAO(getApplicationContext());
-			
+			userdao.open();
 			Bundle b=new Bundle();
 		 b = getIntent().getExtras();
 		Log.i("my2",""+b.getString("user") );
 		Toast.makeText(getApplicationContext(),""+b.getString("user") , Toast.LENGTH_SHORT).show();
-		//activityUser=userdao.getSingleUser(b.getString("user"));
+		
+		activityUser=userdao.getSingleUser(b.getString("user"));
 		rgans = (RadioGroup) findViewById(R.id.rgOptions);
 		tv=(TextView)findViewById(R.id.tvlvl);
 		tv1=(TextView) findViewById(R.id.tvProfileName);
@@ -52,7 +53,7 @@ int lev=1;
 		btnquit=(Button)findViewById(R.id.btnquit);
 		progprofile = (ProgressBar) findViewById(R.id.progressBar2);
 		rbar1=(RatingBar)findViewById(R.id.ratingBar1);
-
+		tv1.setText(activityUser.getUser_Name().toString());
 		str=tv.getText().toString();
 		tv.setText(str +lev);
 		addListnerOnButton();

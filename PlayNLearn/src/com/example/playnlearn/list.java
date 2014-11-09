@@ -3,13 +3,9 @@ package com.example.playnlearn;
 import java.util.ArrayList;
 
 import com.example.playnlearn.R;
-import com.example.playnlearn.R.id;
-import com.example.playnlearn.R.layout;
-
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
