@@ -71,7 +71,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="right"
                         android:layout_marginLeft="25dp"
-                        android:text="50/50"
+                        android:text=""
                         android:textColor="#ffffff"
                         android:textSize="20dp" />
                 </TableRow>

@@ -23,12 +23,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class ProfilequestionActivity extends Activity {
-int lev=1;
+int lev=1,que=0;
 	RadioGroup rgans;
 	Button btnsub,btnquit;
 	ProgressBar progprofile;
 	RatingBar rbar1;
-	TextView tv,tv1;
+	TextView tv,tv1,tv2;
 	String str,st;
 	float rtng;
 	CountDownTimer t;
@@ -49,12 +49,15 @@ int lev=1;
 		rgans = (RadioGroup) findViewById(R.id.rgOptions);
 		tv=(TextView)findViewById(R.id.tvlvl);
 		tv1=(TextView) findViewById(R.id.tvProfileName);
+		tv2=(TextView) findViewById(R.id.tvOnQuestion);
 		btnsub = (Button) findViewById(R.id.btnchk);
 		btnquit=(Button)findViewById(R.id.btnquit);
 		progprofile = (ProgressBar) findViewById(R.id.progressBar2);
 		rbar1=(RatingBar)findViewById(R.id.ratingBar1);
 		tv1.setText(b.getCharSequence("user"));
 		//tv1.setText(activityUser.getUser_Name().toString());
+		que+=1;
+		tv2.setText(String.valueOf(que)+"/-- ");;
 		str=tv.getText().toString();
 		tv.setText(str +lev);
 		addListnerOnButton();
@@ -92,7 +95,7 @@ int lev=1;
 
 			@Override
 			public void onClick(View v) {
-				
+			
 				String opt = "c";
 				String ans = "c";// Write your query to retrive right answer
 									// over here.
@@ -127,6 +130,7 @@ int lev=1;
 					toast.setDuration(Toast.LENGTH_SHORT);
 					toast.setView(layout);
 					toast.show();
+					que++;
 					
 					
 					
@@ -170,10 +174,11 @@ int lev=1;
 					toast.setDuration(Toast.LENGTH_SHORT);
 					toast.setView(layout);
 					toast.show();
-					
+					que++;
 					t.cancel();
 					timermethod();
 				}
+				tv2.setText(String.valueOf(que)+"/-- ");
 			}
 		});
 		btnquit.setOnClickListener(new OnClickListener() {
