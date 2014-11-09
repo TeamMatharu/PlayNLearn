@@ -24,11 +24,11 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
 	private static final String DATABASE_CREATE = "create table " + TABLE_User
 			+ "(" + User_ID + " integer primary key autoincrement, "
-			+ User_Name + " text not null, " + User_Progress
-			+ " text not null," + User_Image + " text not null," + User_Star
-			+ " text not null," + User_Level + " text not null," + User_Email
-			+ " text not null," + User_Title + " text not null," + COMMENT
-			+ " text not null);";
+			+ User_Name + " text , " + User_Progress
+			+ " text ," + User_Image + " blob not null ," + User_Star
+			+ " text ," + User_Level + " text ," + User_Email
+			+ " text ," + User_Title + " text ," + COMMENT
+			+ " text );";
 
 	public MySQLiteHelper(Context context, String name, CursorFactory factory,
 			int version) {

@@ -38,7 +38,7 @@ public class SelectionActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent i=new Intent(SelectionActivity.this,ProfilequestionActivity.class);
+				Intent i=new Intent(SelectionActivity.this,UserListActivity.class);
 				startActivity(i);
 			}
 		});

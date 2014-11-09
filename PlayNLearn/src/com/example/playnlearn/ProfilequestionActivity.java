@@ -1,11 +1,15 @@
 package com.example.playnlearn;
 
+import com.playnlearn.classes.User_DAO;
+import com.playnlearn.classes.User_Profile;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,21 +28,31 @@ int lev=1;
 	Button btnsub,btnquit;
 	ProgressBar progprofile;
 	RatingBar rbar1;
-	TextView tv;
+	TextView tv,tv1;
 	String str,st;
 	float rtng;
 	CountDownTimer t;
+	User_Profile activityUser;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_profilequestion);
+		User_DAO userdao =new User_DAO(getApplicationContext());
+			
+			Bundle b=new Bundle();
+		 b = getIntent().getExtras();
+		Log.i("my2",""+b.getString("user") );
+		Toast.makeText(getApplicationContext(),""+b.getString("user") , Toast.LENGTH_SHORT).show();
+		//activityUser=userdao.getSingleUser(b.getString("user"));
 		rgans = (RadioGroup) findViewById(R.id.rgOptions);
 		tv=(TextView)findViewById(R.id.tvlvl);
+		tv1=(TextView) findViewById(R.id.tvProfileName);
 		btnsub = (Button) findViewById(R.id.btnchk);
 		btnquit=(Button)findViewById(R.id.btnquit);
 		progprofile = (ProgressBar) findViewById(R.id.progressBar2);
 		rbar1=(RatingBar)findViewById(R.id.ratingBar1);
-		
+
 		str=tv.getText().toString();
 		tv.setText(str +lev);
 		addListnerOnButton();

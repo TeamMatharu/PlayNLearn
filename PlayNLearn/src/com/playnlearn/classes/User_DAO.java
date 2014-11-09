@@ -76,13 +76,33 @@ public class User_DAO {
 		cursor.close();
 		return UserList;
 	}
+	
+	public User_Profile getSingleUser(String name) {
+		
+		User_Profile user=new User_Profile();
+		//Log.i("name", name);
+		
+		Cursor cursor = database.rawQuery("select * from User_Profile where User_Name='jainam'", null);
+				
+			//	database.query(MySQLiteHelper.TABLE_User,allColumns,
+			//	MySQLiteHelper.User_Name+"="+name ,null , null, null, null);
+
+		cursor.moveToFirst();
+		while (!cursor.isAfterLast()) {
+			user = getUser(cursor);
+			cursor.moveToNext();
+		}
+		// make sure to close the cursor
+		cursor.close();
+		return user;
+	}
 
 	private User_Profile getUser(Cursor cursor) {
 		User_Profile user = new User_Profile();
 		user.setUser_ID(cursor.getInt(0));
 		user.setUser_Name(cursor.getString(1));
 		user.setUser_Progress(cursor.getString(2));
-		user.setUser_Image(cursor.getString(3));
+		user.setUser_Image(cursor.getBlob(3));
 		user.setUser_Star(cursor.getString(4));
 		user.setUser_Level(cursor.getString(5));
 		user.setUser_Email(cursor.getString(6));

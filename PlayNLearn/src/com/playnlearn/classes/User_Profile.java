@@ -4,7 +4,7 @@ public class User_Profile {
 	private int User_ID;
 	private String User_Name;
 	private String User_Progress;
-	private String User_Image;
+	private byte [] User_Image;
 	private String User_Star;
 	private String User_Level;
 	private String User_Email;
@@ -35,11 +35,11 @@ public class User_Profile {
 		User_Progress = user_Progress;
 	}
 
-	public String getUser_Image() {
+	public byte[] getUser_Image() {
 		return User_Image;
 	}
 
-	public void setUser_Image(String user_Image) {
+	public void setUser_Image(byte[] user_Image) {
 		User_Image = user_Image;
 	}
 

@@ -20,7 +20,7 @@ public class Progressbar2Activity extends Activity {
 		setContentView(R.layout.activity_progressbar2);
 		
 		prog=(ProgressBar) findViewById(R.id.progressBar1);
-		tv = (TextView) findViewById(R.id.textView1);
+		tv = (TextView) findViewById(R.id.List_username);
 		  // Start long running operation in a background thread
 		  new Thread(new Runnable() {
 		     @Override
