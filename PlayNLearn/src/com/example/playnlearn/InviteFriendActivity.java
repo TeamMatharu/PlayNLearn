@@ -39,6 +39,8 @@ public class InviteFriendActivity extends Activity {
 			public void onClick(View v) {
 				sendEmail();
 	        	 // after sending the email, clear the fields
+				/*Intent i=new Intent(InviteFriendActivity.this,UserListActivity.class);
+			    startActivity(i);*/
 	        	 
 				
 			}
@@ -61,8 +63,7 @@ public class InviteFriendActivity extends Activity {
 			         Toast.makeText(InviteFriendActivity.this, "No email client installed.",
 			        		 Toast.LENGTH_LONG).show();
 			      }
-			      Intent i=new Intent(InviteFriendActivity.this,UserListActivity.class);
-			      startActivity(i);
+			      
 			   }
 		
 		});

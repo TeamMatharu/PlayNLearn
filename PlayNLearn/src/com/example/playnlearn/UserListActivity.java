@@ -42,7 +42,7 @@ public class UserListActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				Intent i=new Intent(UserListActivity.this,InviteFriendActivity.class);
+				Intent i=new Intent(getApplicationContext(),InviteFriendActivity.class);
 				startActivity(i);
 				
 			}
