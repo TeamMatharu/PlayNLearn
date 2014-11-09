@@ -41,10 +41,11 @@ public class UserListActivity extends Activity {
 		l=userdao.getAllUser();
 		for(int i=0;i<l.size();i++){
 			userprofile=l.get(i);
-			
+			Log.i("Before",userprofile.getUser_Name() );
 			user.add(userprofile.getUser_Name());
 			other.add(userprofile.getUser_Title());
 			image.add(userprofile.getUser_Image());
+			Log.i("After",userprofile.getUser_Name() );
 		}	
 		Integer imageId = R.drawable.profile;
 		list adapter = new list(UserListActivity.this, user,other ,imageId,image);
@@ -60,8 +61,11 @@ public class UserListActivity extends Activity {
 				// TODO Auto-generated method stub
 				TextView textView = (TextView) parent.findViewById(R.id.List_username);
 				Intent i=new Intent(UserListActivity.this,ProfilequestionActivity.class);
+				
+				int itemPosition     = position;
+	            String  itemValue    = (String) list.getItemAtPosition(position);
 				Log.i("mymy",textView.getText().toString() );
-				i.putExtra("user", textView.getText().toString());
+				i.putExtra("user", itemValue);
 				startActivity(i);
 				
 			}

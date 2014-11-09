@@ -82,7 +82,7 @@ public class User_DAO {
 		User_Profile user=new User_Profile();
 		//Log.i("name", name);
 		
-		Cursor cursor = database.rawQuery("select * from User_Profile where User_Name='jainam'", null);
+		Cursor cursor = database.rawQuery("select * from User_Profile where User_Name='"+name+"'", null);
 				
 			//	database.query(MySQLiteHelper.TABLE_User,allColumns,
 			//	MySQLiteHelper.User_Name+"="+name ,null , null, null, null);

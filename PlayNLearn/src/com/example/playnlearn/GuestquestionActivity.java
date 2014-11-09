@@ -5,12 +5,16 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class GuestquestionActivity extends Activity {
 
@@ -67,11 +71,35 @@ public class GuestquestionActivity extends Activity {
 					{
 						i=i+2;
 						gpbar.setProgress(i);
+						
+						LayoutInflater inflater = GuestquestionActivity.this.getLayoutInflater();
+						View layout = inflater.inflate(R.drawable.custom_toast,
+								(ViewGroup) findViewById(R.id.custom_toast_layout_id));
+
+						// Create Custom Toast for right answer
+						
+						Toast toast = new Toast(getApplicationContext());
+						toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+						toast.setDuration(Toast.LENGTH_SHORT);
+						toast.setView(layout);
+						toast.show();
+						
 					}
 					tvonq.setText(String.valueOf(question)+"/50");
 				}
 				else
 				{
+					LayoutInflater inflater = GuestquestionActivity.this.getLayoutInflater();
+					View layout = inflater.inflate(R.drawable.custom_wrong,
+							(ViewGroup) findViewById(R.id.custom_toast_layout_id));
+					// Create Custom Toast for wrong answer
+					
+					Toast toast = new Toast(getApplicationContext());
+					toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+					toast.setDuration(Toast.LENGTH_SHORT);
+					toast.setView(layout);
+					toast.show();
+					
 					tvonq.setText(String.valueOf(question)+"/50");
 				}
 				
