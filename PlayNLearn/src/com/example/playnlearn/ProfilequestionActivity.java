@@ -57,7 +57,7 @@ int lev=1,que=0;
 		tv1.setText(b.getCharSequence("user"));
 		//tv1.setText(activityUser.getUser_Name().toString());
 		que+=1;
-		tv2.setText(String.valueOf(que)+"/-- ");;
+		tv2.setText(String.valueOf(que)+"/--");;
 		str=tv.getText().toString();
 		tv.setText(str +lev);
 		addListnerOnButton();
@@ -178,7 +178,7 @@ int lev=1,que=0;
 					t.cancel();
 					timermethod();
 				}
-				tv2.setText(String.valueOf(que)+"/-- ");
+				tv2.setText(String.valueOf(que)+"/--");
 			}
 		});
 		btnquit.setOnClickListener(new OnClickListener() {

@@ -1,10 +1,13 @@
 package com.example.playnlearn;
 
+import java.util.Timer;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +26,7 @@ public class GuestquestionActivity extends Activity {
 	Button btngsub,btngquit;
 	ProgressBar gpbar;
 	int question=0;
+	CountDownTimer t;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -32,7 +36,8 @@ public class GuestquestionActivity extends Activity {
 		tvonq=(TextView)findViewById(R.id.tvOnQuestion);
 		btngsub=(Button)findViewById(R.id.btngchk);
 		btngquit=(Button)findViewById(R.id.btngquit);
-		tvonq.setText("0");
+		tvonq.setText("0/50");
+		timermethod();
 		addListnerOnButton();
 	}
 	public void addListnerOnButton() {
@@ -85,6 +90,8 @@ public class GuestquestionActivity extends Activity {
 						toast.show();
 						
 					}
+					t.cancel();
+					timermethod();
 					tvonq.setText(String.valueOf(question)+"/50");
 				}
 				else
@@ -99,7 +106,8 @@ public class GuestquestionActivity extends Activity {
 					toast.setDuration(Toast.LENGTH_SHORT);
 					toast.setView(layout);
 					toast.show();
-					
+					t.cancel();
+					timermethod();
 					tvonq.setText(String.valueOf(question)+"/50");
 				}
 				
@@ -145,5 +153,28 @@ public class GuestquestionActivity extends Activity {
 		adbox.show();
 		
 	}
+	
+	public void timermethod() {
+		
+		t=new CountDownTimer(30000, 1000) { 
+				 TextView mTextField=(TextView) findViewById(R.id.mTextField);
+				 ProgressBar Pb=(ProgressBar) findViewById(R.id.progressBar1);
+				
+			     @Override
+				public void onTick(long millisUntilFinished) {
+			         mTextField.setText(""+ millisUntilFinished / 1000);
+			         
+			         if (mTextField.getText().toString().equals("10")){
+			        	 //mTextField.setBackgroundColor(getResources().getColor(R.color.Red));
+			        	 mTextField.setTextColor(getResources().getColor(R.color.Red));
+			         }
+			     }
+			     @Override
+				public void onFinish() {
+			         mTextField.setText("Time up");
+			     }
+			  }.start();
+
+		}
 	
 }

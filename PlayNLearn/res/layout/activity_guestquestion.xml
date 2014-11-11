@@ -57,8 +57,9 @@
                             android:layout_alignTop="@+id/progressBar1"
                             android:layout_centerHorizontal="true"
                             android:layout_marginTop="17dp"
-                            android:textColor="#00ff00"
-                            android:text="TextView" />
+                            android:text="TextView"
+                            android:textColor="#00ff00" />
+
                     </RelativeLayout>
 
                     <TextView
