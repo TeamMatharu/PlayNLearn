@@ -1,0 +1,209 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/buttongradientorange"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="" >
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <TextView
+                        android:id="@+id/tvProfileName"
+                        android:layout_width="125dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:text="Kartik Reddy"
+                        android:textColor="#ffffff"
+                        android:textSize="20dp" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+						android:layout_marginLeft="30dp" >
+
+                        <TextView
+                            android:id="@+id/mTextField"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/progressBar1"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="17dp"
+                        	android:textColor="#00ff00"
+                            android:text="TextView" />
+
+                        <ProgressBar
+                            android:id="@+id/progressBar1"
+                            style="?android:attr/progressBarStyleLarge"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tvOnQuestion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginLeft="15dp"
+                        android:text="/∞"
+                        android:textColor="#ffffff"
+                        android:textSize="20dp" />
+
+                </TableRow>
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TableRow
+                    android:id="@+id/tableRow2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal" >
+
+                        <RatingBar
+                            android:id="@+id/ratingBar1"
+                            style="@style/foodRatingBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:isIndicator="true"
+                            android:numStars="5"
+                            android:rating="0.0" />
+
+                        <TextView
+                            android:id="@+id/tvlvl"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginLeft="120dp"
+                            android:layout_weight="1"
+                            android:text="level: "
+                            android:textColor="#ffffff"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    
+                </TableRow>
+            </TableLayout>
+
+            <ProgressBar
+                android:id="@+id/progressBar2"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="275dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:id="@+id/tvQ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Question?"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <RadioGroup
+                android:id="@+id/rgOptions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp" >
+
+                <RadioButton
+                    android:id="@+id/rb1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:checked="true"
+                    android:text="RadioButton"
+                    android:textColor="#ffffff"
+                    android:textSize="20dp" />
+
+                <RadioButton
+                    android:id="@+id/rb2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="RadioButton"
+                    android:textColor="#ffffff"
+                    android:textSize="20dp" />
+
+                <RadioButton
+                    android:id="@+id/rb3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="RadioButton"
+                    android:textColor="#ffffff"
+                    android:textSize="20dp" />
+
+                <RadioButton
+                    android:id="@+id/rb4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="RadioButton"
+                    android:textColor="#ffffff"
+                    android:textSize="20dp" />
+            </RadioGroup>
+
+             <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" 
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:id="@+id/btnchk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Submit" 
+                    android:background="@drawable/buttongradient"
+                    android:textColor="#ffffff"/>
+
+                <Button
+                    android:id="@+id/btnquit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Quit" 
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/buttongradient"
+                    android:textColor="#ffffff"/>
+            </TableRow>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
