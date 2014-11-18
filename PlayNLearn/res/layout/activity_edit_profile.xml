@@ -18,12 +18,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <QuickContactBadge
+           
+            
+            <ImageButton
                 android:id="@+id/imgProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp" />
+                android:src="@drawable/profile" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -34,7 +36,7 @@
                     android:id="@+id/tvusrnm"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Profile Name :"
+                    android:text="Profile name :"
                     android:textSize="20sp" 
                     android:textColor="#ffffff" />
 
@@ -60,7 +62,7 @@
                     android:id="@+id/tvdob"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Date Of Birth :"
+                    android:text="Date of birth :"
                     android:textSize="20sp" 
                     android:layout_marginTop="15dp"
                     android:textColor="#ffffff" 

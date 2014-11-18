@@ -19,7 +19,7 @@
                     android:id="@+id/tvName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Invitee&apos;s Email: "
+                    android:text="Invitee&apos;s email: "
                     android:textColor="#ffffff"
                     android:textSize="15sp" />
 
@@ -43,7 +43,7 @@
                 android:id="@+id/tvEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Your Message: "
+                android:text="Your message: "
                 android:textColor="#ffffff"
                 android:textSize="15sp" />
 

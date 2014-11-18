@@ -6,7 +6,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.playnlearn.UserListActivity" >
+    tools:context="com.example.playnlearn.UserListActivity"
+    android:background="@drawable/buttongradient" >
 
     <ScrollView
         android:id="@+id/scrollView1"
@@ -26,7 +27,7 @@
 
             <Button
                 android:id="@+id/btninv"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/buttongradientorange"
                 android:text="Invite Friends"
