@@ -77,6 +77,17 @@ public class User_DAO {
 		return UserList;
 	}
 	
+	public long updUser(int id,int prog,float rating,int lvl)
+	{
+		User_Profile user=new User_Profile();
+		ContentValues values = new ContentValues();
+		values.put(MySQLiteHelper.User_Progress, String.valueOf(prog));
+		values.put(MySQLiteHelper.User_Star, String.valueOf(rating));
+		values.put(MySQLiteHelper.User_Level, String.valueOf(lvl));
+		long insertId = database.update(MySQLiteHelper.TABLE_User, values, MySQLiteHelper.User_ID+"=="+id, null);
+				
+	return insertId;
+	}
 	public User_Profile getSingleUser(String name) {
 		
 		User_Profile user=new User_Profile();
@@ -111,4 +122,5 @@ public class User_DAO {
 		return user;
 	}
 
+	
 }

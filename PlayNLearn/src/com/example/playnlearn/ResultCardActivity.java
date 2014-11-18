@@ -7,14 +7,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ResultCardActivity extends Activity {
     RatingBar resrat;
-    TextView tvpro,tvlvl;
+    TextView tvpro,tvlvl,tvprof;
     Intent i;
     int pro,lvl,strrtg;
     float rt;
     Bundle b;
+    String usrnm;
     //int p,l,s;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,8 @@ public class ResultCardActivity extends Activity {
 		
 		tvpro=(TextView)findViewById(R.id.tvScore);
 		tvlvl=(TextView)findViewById(R.id.tvlvl);
+		tvprof=(TextView)findViewById(R.id.tvProfileName);
+		tvprof.setText(get1.getString("usrnm"));
 		tvpro.setText("Your Current progress is : "+pro);
 		tvlvl.setText("You are on level : "+lvl);
 		//Toast.makeText(getApplicationContext(), String.valueOf(rt), Toast.LENGTH_SHORT).show();

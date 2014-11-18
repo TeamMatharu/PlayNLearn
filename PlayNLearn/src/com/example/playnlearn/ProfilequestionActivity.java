@@ -3,6 +3,7 @@ package com.example.playnlearn;
 import com.playnlearn.classes.User_DAO;
 import com.playnlearn.classes.User_Profile;
 
+import android.R.integer;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -23,7 +24,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class ProfilequestionActivity extends Activity {
-int lev=1,que=0;
+	int lev=1,que=0,id;
 	RadioGroup rgans;
 	Button btnsub,btnquit;
 	ProgressBar progprofile;
@@ -33,19 +34,21 @@ int lev=1,que=0;
 	float rtng;
 	CountDownTimer t;
 	User_Profile activityUser;
-
+	User_DAO userdao; 
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_profilequestion);
-		User_DAO userdao =new User_DAO(getApplicationContext());
-			userdao.open();
+		userdao =new User_DAO(getApplicationContext());
+		userdao.open();
 			Bundle b=new Bundle();
 		 b = getIntent().getExtras();
 		Log.i("my2",""+b.getString("user") );
 		Toast.makeText(getApplicationContext(),""+b.getString("user") , Toast.LENGTH_SHORT).show();
 		
 		activityUser=userdao.getSingleUser(b.getString("user"));
+		id=activityUser.getUser_ID();
 		rgans = (RadioGroup) findViewById(R.id.rgOptions);
 		tv=(TextView)findViewById(R.id.tvlvl);
 		tv1=(TextView) findViewById(R.id.tvProfileName);
@@ -55,8 +58,11 @@ int lev=1,que=0;
 		progprofile = (ProgressBar) findViewById(R.id.progressBar2);
 		rbar1=(RatingBar)findViewById(R.id.ratingBar1);
 		tv1.setText(b.getCharSequence("user"));
-		//tv1.setText(activityUser.getUser_Name().toString());
+		
+		progprofile.setProgress(Integer.valueOf(activityUser.getUser_Progress()));
+		rbar1.setRating(Float.valueOf(activityUser.getUser_Star()));
 		que+=1;
+		lev=Integer.valueOf(activityUser.getUser_Level());
 		tv2.setText(String.valueOf(que)+"/∞");;
 		str=tv.getText().toString();
 		tv.setText(str +lev);
@@ -197,15 +203,14 @@ int lev=1,que=0;
 				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
-					// TODO Auto-generated method stub
+					
 					int pro,lvl,strrtg;
-					//String st;
+					long i= userdao.updUser(id, progprofile.getProgress(), rbar1.getRating(), lev);
 					Intent ino=new Intent(ProfilequestionActivity.this,ResultCardActivity.class);
 					pro=progprofile.getProgress();
 					ino.putExtra("pbar",pro);
-					strrtg=(int) rbar1.getRating();
-					st=String.valueOf(rbar1.getRating());
-					
+					rtng=rbar1.getRating();
+					ino.putExtra("usrnm", tv1.getText());
 					ino.putExtra("star",rtng);
 					ino.putExtra("lvl", lev);
 					
