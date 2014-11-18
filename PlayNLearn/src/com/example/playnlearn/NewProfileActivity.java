@@ -24,6 +24,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class NewProfileActivity extends Activity {
@@ -33,7 +34,8 @@ public class NewProfileActivity extends Activity {
 	//ImageView iv;
 	DatePicker dp;
 	Button btn_submit;
-	EditText et1,et2;
+	EditText et1,et2,et3;
+	TextView tvdob;
 	Bitmap userimage;
 	Random r=new Random();
 	ImageView iv;
@@ -50,6 +52,22 @@ public class NewProfileActivity extends Activity {
 		btn_submit=(Button) findViewById(R.id.btnSave);
 		et1=(EditText) findViewById(R.id.editText1);
 		et2=(EditText) findViewById(R.id.editText2);
+		et3=(EditText) findViewById(R.id.editText3);
+		
+		tvdob=(TextView) findViewById(R.id.tvdob);
+		dp.setVisibility(View.GONE);
+		
+		et3.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+		      @Override
+		      public void onFocusChange(View v, boolean hasFocus) {
+		    	  dp.setVisibility(View.VISIBLE);
+		    	  et3.setVisibility(View.GONE);
+		      }
+		    });
+		
+		
+		
+		
 		user_Image.setOnClickListener(new OnClickListener() {
 			
 			@Override
