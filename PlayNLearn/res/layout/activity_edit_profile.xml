@@ -41,13 +41,13 @@
                     android:textColor="#ffffff" />
 
                 <EditText
-                    android:id="@+id/editText1"
+                    android:id="@+id/etname"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
                     android:textSize="20sp"
-                    android:text="KartikReddy" 
+                    android:text="" 
 					android:textColor="#ffffff">
                     <requestFocus />
                 </EditText>
@@ -59,35 +59,50 @@
                 android:orientation="horizontal" >
 
                 <TextView
-                    android:id="@+id/tvdob"
+                    android:id="@+id/tvosts"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Date of birth :"
-                    android:textSize="20sp" 
                     android:layout_marginTop="15dp"
-                    android:textColor="#ffffff" 
-                     />
+                    android:text="Current Status :"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
 
                 <EditText
-                    android:id="@+id/editText2"
+                    android:id="@+id/etosts"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:textSize="20sp"
-                    android:layout_marginTop="15dp"
-                    android:inputType="date"
-                    android:textColor="#ffffff" />
-
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" 
+                    android:editable="false"/>
             </LinearLayout>
 
-            <DatePicker
-                android:id="@+id/dpResult"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:calendarViewShown="false"
-                android:visibility="invisible" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/tvnsts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="New Status :"
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/etnsts"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    
+                    android:textColor="#ffffff"
+                    android:textSize="20sp" />
+            </LinearLayout>
 
             <Button
                 android:id="@+id/btnSave"

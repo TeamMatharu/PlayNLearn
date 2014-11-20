@@ -13,8 +13,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -65,6 +67,7 @@ public class UserListActivity extends Activity {
 		Integer imageId = R.drawable.profile;
 		list adapter = new list(UserListActivity.this, user,other ,imageId,image);
 		list = (ListView) findViewById(R.id.listView1);
+		list.setLongClickable(true);
 		list.setAdapter(adapter);
 		adapter.notifyDataSetChanged();
 		userdao.close();
@@ -85,6 +88,24 @@ public class UserListActivity extends Activity {
 				
 			}
 		} );
+		list.setOnItemLongClickListener(new OnItemLongClickListener() {
+
+            public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+                    int pos, long id) {
+                // TODO Auto-generated method stub
+            	TextView textView = (TextView)findViewById(R.id.List_username);
+				Intent i=new Intent(UserListActivity.this,UpdateUsrDetail.class);
+				
+				int itemPosition     = pos;
+	            String  itemValue    = (String) list.getItemAtPosition(pos);
+				Log.i("mymy",textView.getText().toString() );
+				i.putExtra("user", itemValue);
+				startActivity(i);
+                Log.v("long clicked","pos: " + pos);
+
+                return true;
+            }
+        });
 		
 	}
 

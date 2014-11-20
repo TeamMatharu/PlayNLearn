@@ -88,6 +88,15 @@ public class User_DAO {
 				
 	return insertId;
 	}
+	
+	public long updstatus(int id, String cmt)
+	{
+		User_Profile user=new User_Profile();
+		ContentValues values = new ContentValues();
+		values.put(MySQLiteHelper.User_Title, String.valueOf(cmt));
+		long insertId = database.update(MySQLiteHelper.TABLE_User, values, MySQLiteHelper.User_ID+"=="+id, null);
+		return insertId;
+	}
 	public User_Profile getSingleUser(String name) {
 		
 		User_Profile user=new User_Profile();
