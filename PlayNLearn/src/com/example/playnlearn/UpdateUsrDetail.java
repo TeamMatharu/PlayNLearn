@@ -4,6 +4,9 @@ import com.playnlearn.classes.User_DAO;
 import com.playnlearn.classes.User_Profile;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.preference.EditTextPreference;
 import android.util.Log;
@@ -46,20 +49,50 @@ public class UpdateUsrDetail extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				if(et2.getText().toString().equals(""))
-				{
-					Toast.makeText(getApplicationContext(), "Please Update New Status and then try again!", Toast.LENGTH_SHORT).show();
-				}
-				else
-				{
-					long j=userdao.updstatus(id, et2.getText().toString());
-					if(j>0)
-					{
-						Toast.makeText(getApplicationContext(), "Status Updated Successfully!", Toast.LENGTH_SHORT).show();
-					}
-				}
+				AlertDialog();
+				
 				
 			}
+
+			public void AlertDialog() {
+				AlertDialog.Builder adb=new AlertDialog.Builder(UpdateUsrDetail.this);
+				adb.setTitle("Confirmation!");
+				adb.setMessage("Are you Sure want to Update your status?");
+				adb.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						
+						
+						if(et2.getText().toString().equals(""))
+						{
+							Toast.makeText(getApplicationContext(), "Please Update New Status and then try again!", Toast.LENGTH_SHORT).show();
+						}
+						else
+						{
+							long j=userdao.updstatus(id, et2.getText().toString());
+							if(j>0)
+							{
+								Toast.makeText(getApplicationContext(), "Status Updated Successfully!", Toast.LENGTH_SHORT).show();
+							}
+						}
+						
+					}
+				});
+				adb.setNegativeButton("No", new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						
+						
+					}
+				});
+				AlertDialog adbox=adb.create();
+				adbox.show();
+				
+			}
+				
+			
 		});
 		
 	}

@@ -16,10 +16,6 @@
 
     <string name="title_activity_guestquestion">GuestquestionActivity</string>
     <string name="title_activity_user_list">UserListActivity</string>
-
     <string name="title_activity_update_usr_detail">UpdateUsrDetail</string>
-
-    <string name="title_activity_game_setting">GameSetting</string>
-
 
 </resources>

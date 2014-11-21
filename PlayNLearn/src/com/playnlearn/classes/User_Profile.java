@@ -4,7 +4,7 @@ public class User_Profile {
 	private int User_ID;
 	private String User_Name;
 	private String User_Progress;
-	private byte [] User_Image;
+	private byte[] User_Image;
 	private String User_Star;
 	private String User_Level;
 	private String User_Email;

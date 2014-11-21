@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -35,6 +36,7 @@ public class ProfilequestionActivity extends Activity {
 	CountDownTimer t;
 	User_Profile activityUser;
 	User_DAO userdao; 
+	MediaPlayer mp1,mp2;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +60,9 @@ public class ProfilequestionActivity extends Activity {
 		progprofile = (ProgressBar) findViewById(R.id.progressBar2);
 		rbar1=(RatingBar)findViewById(R.id.ratingBar1);
 		tv1.setText(b.getCharSequence("user"));
+		mp1=MediaPlayer.create(ProfilequestionActivity.this,R.raw.epicscore);
+		mp1.start();
+		mp1.isLooping();
 		
 		progprofile.setProgress(Integer.valueOf(activityUser.getUser_Progress()));
 		rbar1.setRating(Float.valueOf(activityUser.getUser_Star()));
@@ -213,7 +218,7 @@ public class ProfilequestionActivity extends Activity {
 					ino.putExtra("usrnm", tv1.getText());
 					ino.putExtra("star",rtng);
 					ino.putExtra("lvl", lev);
-					
+					mp1.stop();
 					startActivity(ino);
 					
 					
