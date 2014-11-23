@@ -48,15 +48,7 @@ public class list extends ArrayAdapter<String> {
 		 Bitmap bm = BitmapFactory.decodeByteArray(img.get(position), 0, img.get(position).length);
 		imageView.setImageBitmap(bm);
 		
-		/*if(b  == null){
-		imageView.setImageResource(imageId);
-		}else{
-			
-			//ImageView imgViewer = (ImageView) rowView.findViewById(R.id.imageView1);
-	        Bitmap bm = BitmapFactory.decodeByteArray(b, 0, b.length);
-	        
-	        imageView.setImageBitmap(bm);
-		}*/
+		
 		
 		return rowView;
 	}

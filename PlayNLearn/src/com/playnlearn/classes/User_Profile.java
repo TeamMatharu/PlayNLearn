@@ -10,6 +10,10 @@ public class User_Profile {
 	private String User_Email;
 	private String User_Title;
 	private String comment;
+	private String User_score;
+	private String User_qno;
+
+	
 
 	public int getUser_ID() {
 		return User_ID;
@@ -74,6 +78,21 @@ public class User_Profile {
 	public void setUser_Title(String user_Title) {
 		User_Title = user_Title;
 	}
+	public String getUser_score() {
+		return User_score;
+	}
+
+	public void setUser_score(String user_score) {
+		User_score = user_score;
+	}
+
+	public String getUser_qno() {
+		return User_qno;
+	}
+
+	public void setUser_qno(String user_qno) {
+		User_qno = user_qno;
+	}
 
 	public String getComment() {
 		return comment;
@@ -82,5 +101,6 @@ public class User_Profile {
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
+	
 
 }

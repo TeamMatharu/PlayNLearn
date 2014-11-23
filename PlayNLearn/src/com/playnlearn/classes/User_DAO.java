@@ -20,7 +20,8 @@ public class User_DAO {
 			MySQLiteHelper.User_Name, MySQLiteHelper.User_Progress,
 			MySQLiteHelper.User_Image, MySQLiteHelper.User_Star,
 			MySQLiteHelper.User_Level, MySQLiteHelper.User_Email,
-			MySQLiteHelper.User_Title, MySQLiteHelper.COMMENT };
+			MySQLiteHelper.User_Title, MySQLiteHelper.User_score,
+			MySQLiteHelper.User_qno ,MySQLiteHelper.COMMENT};
 
 	public User_DAO(Context c) {
 		dbHelper = new MySQLiteHelper(c);
@@ -44,7 +45,10 @@ public class User_DAO {
 		values.put(MySQLiteHelper.User_Level, user.getUser_Level());
 		values.put(MySQLiteHelper.User_Email, user.getUser_Email());
 		values.put(MySQLiteHelper.User_Title, user.getUser_Title());
+		values.put(MySQLiteHelper.User_score, user.getUser_score());
+		values.put(MySQLiteHelper.User_qno, user.getUser_qno());
 		values.put(MySQLiteHelper.COMMENT, user.getComment());
+		
 
 		long insertId = database
 				.insert(MySQLiteHelper.TABLE_User, null, values);
@@ -107,17 +111,22 @@ public class User_DAO {
 		user.setUser_Level(cursor.getString(5));
 		user.setUser_Email(cursor.getString(6));
 		user.setUser_Title(cursor.getString(7));
-		user.setComment(cursor.getString(8));
+		user.setUser_score(cursor.getString(8));
+		user.setUser_qno(cursor.getString(9));
+		user.setComment(cursor.getString(10));
+		
 		return user;
 	}
 
-	public long updUser(int id,int prog,float rating,int lvl)
+	public long updUser(int id,int prog,float rating,int lvl,int score,int que)
 	{
 		User_Profile user=new User_Profile();
 		ContentValues values = new ContentValues();
 		values.put(MySQLiteHelper.User_Progress, String.valueOf(prog));
 		values.put(MySQLiteHelper.User_Star, String.valueOf(rating));
 		values.put(MySQLiteHelper.User_Level, String.valueOf(lvl));
+		values.put(MySQLiteHelper.User_score, String.valueOf(score));
+		values.put(MySQLiteHelper.User_qno, String.valueOf(que));
 		long insertId = database.update(MySQLiteHelper.TABLE_User, values, MySQLiteHelper.User_ID+"=="+id, null);
 				
 	return insertId;

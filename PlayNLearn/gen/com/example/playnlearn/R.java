@@ -47,13 +47,13 @@ public final class R {
         public static final int wrong=0x7f020013;
     }
     public static final class id {
-        public static final int Game_settings=0x7f0a0045;
+        public static final int Game_settings=0x7f0a0046;
         public static final int List_username=0x7f0a002c;
-        public static final int RelativeLayout1=0x7f0a0041;
+        public static final int RelativeLayout1=0x7f0a0042;
         public static final int UserImage=0x7f0a0027;
-        public static final int action_settings=0x7f0a0044;
+        public static final int action_settings=0x7f0a0045;
         public static final int btnDeleteProfile=0x7f0a003b;
-        public static final int btnPlayAgain=0x7f0a0040;
+        public static final int btnPlayAgain=0x7f0a0041;
         public static final int btnSave=0x7f0a001a;
         public static final int btnStartGame=0x7f0a003a;
         public static final int btnchk=0x7f0a0011;
@@ -61,7 +61,7 @@ public final class R {
         public static final int btngquit=0x7f0a0021;
         public static final int btninv=0x7f0a0026;
         public static final int btnquit=0x7f0a0012;
-        public static final int custom_toast_layout_id=0x7f0a0043;
+        public static final int custom_toast_layout_id=0x7f0a0044;
         public static final int dpResult=0x7f0a002b;
         public static final int editText1=0x7f0a0028;
         public static final int editText2=0x7f0a002d;
@@ -77,7 +77,7 @@ public final class R {
         public static final int imgbtnGuest=0x7f0a0031;
         public static final int imgbtnprof=0x7f0a0032;
         public static final int listView1=0x7f0a0035;
-        public static final int list_other=0x7f0a0042;
+        public static final int list_other=0x7f0a0043;
         public static final int lvProfileList=0x7f0a003d;
         public static final int mTextField=0x7f0a0003;
         public static final int progressBar1=0x7f0a0004;
@@ -114,6 +114,7 @@ public final class R {
         public static final int tvlvl=0x7f0a0008;
         public static final int tvnsts=0x7f0a0018;
         public static final int tvosts=0x7f0a0016;
+        public static final int tvscr=0x7f0a0040;
         public static final int tvusrnm=0x7f0a0014;
         public static final int txtCreateAccount=0x7f0a0033;
         public static final int txtcrtusr=0x7f0a0034;

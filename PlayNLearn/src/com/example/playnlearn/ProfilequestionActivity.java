@@ -25,7 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class ProfilequestionActivity extends Activity {
-	int lev=1,que=0,id;
+	int lev=1,que,id,score;
 	RadioGroup rgans;
 	Button btnsub,btnquit;
 	ProgressBar progprofile;
@@ -60,6 +60,8 @@ public class ProfilequestionActivity extends Activity {
 		progprofile = (ProgressBar) findViewById(R.id.progressBar2);
 		rbar1=(RatingBar)findViewById(R.id.ratingBar1);
 		tv1.setText(b.getCharSequence("user"));
+		score=Integer.valueOf((activityUser.getUser_score()));
+		que=Integer.valueOf(activityUser.getUser_qno());
 		
 		
 		progprofile.setProgress(Integer.valueOf(activityUser.getUser_Progress()));
@@ -130,18 +132,13 @@ public class ProfilequestionActivity extends Activity {
 					
 					LayoutInflater inflater = ProfilequestionActivity.this.getLayoutInflater();
 					View layout = inflater.inflate(R.drawable.custom_toast,
-							(ViewGroup) findViewById(R.id.custom_toast_layout_id));
-
-					// Create Custom Toast for right answer
-					
+							(ViewGroup) findViewById(R.id.custom_toast_layout_id));					
 					Toast toast = new Toast(getApplicationContext());
 					toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
 					toast.setDuration(Toast.LENGTH_SHORT);
 					toast.setView(layout);
 					toast.show();
-					que++;
-					
-					
+					que++;score++;
 					
 					int i = progprofile.getProgress();
 					if (i <= 90) {
@@ -161,6 +158,7 @@ public class ProfilequestionActivity extends Activity {
 							rtng=0;
 							rbar1.setRating(rtng);
 							lev++;
+							score=score+10;
 							
 							
 						}
@@ -207,8 +205,8 @@ public class ProfilequestionActivity extends Activity {
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
 					
-					int pro,lvl,strrtg;
-					long i= userdao.updUser(id, progprofile.getProgress(), rbar1.getRating(), lev);
+					int pro;
+					long i= userdao.updUser(id, progprofile.getProgress(), rbar1.getRating(), lev,score,que);
 					Intent ino=new Intent(ProfilequestionActivity.this,ResultCardActivity.class);
 					pro=progprofile.getProgress();
 					ino.putExtra("pbar",pro);
@@ -216,6 +214,8 @@ public class ProfilequestionActivity extends Activity {
 					ino.putExtra("usrnm", tv1.getText());
 					ino.putExtra("star",rtng);
 					ino.putExtra("lvl", lev);
+					//Toast.makeText(getApplicationContext(), String.valueOf(score), Toast.LENGTH_SHORT).show();
+					ino.putExtra("score", score);
 					
 					startActivity(ino);
 					
@@ -257,8 +257,7 @@ public class ProfilequestionActivity extends Activity {
 				
 				Intent intent=new Intent(getApplicationContext(),SelectionActivity.class);
 				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				//intent.putExtra("EXIT", true);
-				//java.lang.System.exit(1);
+				
 				startActivity(intent);
 				
 				

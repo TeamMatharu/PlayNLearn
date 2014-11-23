@@ -17,7 +17,10 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 	public static final String User_Level = "User_Level";
 	public static final String User_Email = "User_Email";
 	public static final String User_Title = "User_Title";
+	public static final String User_score = "User_score";
+	public static final String User_qno = "User_qno";
 	public static final String COMMENT = "comment";
+	
 	
 	
 	public static final String TABLE_Question = "Question";
@@ -37,8 +40,8 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 			+ "(" + User_ID + " integer primary key autoincrement, "
 			+ User_Name + " text , " + User_Progress + " text ," + User_Image
 			+ " blob not null ," + User_Star + " text ," + User_Level
-			+ " text ," + User_Email + " text ," + User_Title + " text ,"
-			+ COMMENT + " text );";
+			+ " text ," + User_Email + " text ," + User_Title + " text ,"+ User_score + " text ,"
+			+ User_qno + " text," + COMMENT + " text );";
 	
 	private static final String DATABASE_CREATE2 = "create table " + TABLE_Question
 			+ "(" + Question_ID + " integer primary key autoincrement, "
