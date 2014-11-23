@@ -111,7 +111,7 @@ public class NewProfileActivity extends Activity {
 				user.setUser_Star("0");
 				user.setUser_Title("Beginner");
 				user.setUser_score("0");
-				user.setUser_qno("1");
+				user.setUser_qno("0");
 				
 				
 				User_DAO udao=new User_DAO(getApplicationContext());

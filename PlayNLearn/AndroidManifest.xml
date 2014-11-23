@@ -59,14 +59,14 @@
             android:label="@string/title_activity_guestquestion"
             android:screenOrientation="portrait" >
         </activity>
-        <activity
+           <activity
             android:name=".UserListActivity"
-            android:label="@string/title_activity_user_list"
+            android:label="@string/title_activity_userlist"
             android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".InviteFriendActivity"
-            android:label="@string/title_activity_user_list"
+            android:label="@string/title_activity_invitefriend"
             android:screenOrientation="portrait" >
         </activity>
         <activity
@@ -76,6 +76,16 @@
          <activity
             android:name=".UpdateUsrDetail"
             android:label="@string/title_activity_update_usr_detail" >
+        </activity>
+           <activity
+            android:name=".BonusquestionActivity"
+            android:label="@string/title_activity_bonus_question"
+            android:screenOrientation="portrait" >
+        </activity>
+         <activity
+            android:name=".ShareprofileActivity"
+            android:label="@string/title_activity_shareprofile"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 
