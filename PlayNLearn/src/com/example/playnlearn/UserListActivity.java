@@ -32,14 +32,14 @@ public class UserListActivity extends Activity {
 	User_DAO userdao;
 	User_Profile userprofile;
 	List<User_Profile> l;
-	Button btn;
+	Button btn,shr;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_user_list);
 		btn=(Button)findViewById(R.id.btninv);
-		
+		shr=(Button)findViewById(R.id.btnshr);
 			btn.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -49,6 +49,15 @@ public class UserListActivity extends Activity {
 				
 			}
 		});
+			shr.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					Intent i=new Intent(getApplicationContext(),ShareprofileActivity.class);
+					startActivity(i);
+					
+				}
+			} );
 
 		ArrayList<String> user = new ArrayList<String>();
 		ArrayList<String> other = new ArrayList<String>();

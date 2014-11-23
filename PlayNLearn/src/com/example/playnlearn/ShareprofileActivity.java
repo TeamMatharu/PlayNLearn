@@ -1,5 +1,11 @@
 package com.example.playnlearn;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.playnlearn.classes.User_DAO;
+import com.playnlearn.classes.User_Profile;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -14,14 +20,22 @@ public class ShareprofileActivity extends Activity {
 
 	Button btnshare;
 	EditText Id, Msg;
+	String body;
+	User_Profile activityUser;
+	User_DAO userdao; 
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_share);
+		final ArrayList<String> list = new ArrayList<String>();
 		 btnshare = (Button) findViewById(R.id.btnshr);
 		Id = (EditText) findViewById(R.id.etShareName);
 		Msg = (EditText) findViewById(R.id.etMsg2);
+		userdao =new User_DAO(getApplicationContext());
+		userdao.open();
+		Bundle b=new Bundle();
+		
 		setonclickListner();
 
 	}
@@ -31,12 +45,7 @@ public class ShareprofileActivity extends Activity {
          	@Override
 			public void onClick(View v) {
 				sendEmail();
-				// after sending the email, clear the fields
-				/*
-				 * Intent i=new
-				 * Intent(ShareprofileActivity.this,UserListActivity.class);
-				 * startActivity(i);
-				 */
+				
 
 			}
 
@@ -49,7 +58,7 @@ public class ShareprofileActivity extends Activity {
 				
 				email.putExtra(Intent.EXTRA_EMAIL, recipients);
 				email.putExtra(Intent.EXTRA_SUBJECT,
-						"Share From playNlearn");
+						"Share your progress");
 				email.putExtra(Intent.EXTRA_TEXT, Msg.getText().toString());
 			
 
