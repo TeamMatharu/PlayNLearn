@@ -22,7 +22,7 @@
             <ListView
                 android:id="@+id/listView1"
                 android:layout_width="match_parent"
-                android:layout_height="400dp" >
+                android:layout_height="344dp" >
             </ListView>
 
             <Button
@@ -32,6 +32,16 @@
                 android:background="@drawable/buttongradientorange"
                 android:text="Invite Friends"
                 android:textColor="#ffffff" />
+
+            <Button
+                android:id="@+id/btnshr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/buttongradientorange"
+                android:text="Share Friends"
+                android:textColor="#ffffff" />
+
         </LinearLayout>
 
     </ScrollView>
