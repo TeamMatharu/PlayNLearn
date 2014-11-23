@@ -6,21 +6,26 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
+import android.graphics.Paint;
 import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.ToggleButton;
 
 
 public class GameSetting extends Activity {
 	Switch TB_Sound;
 	SeekBar sb_Sound;
+	TextView tv;
 	private boolean mIsBound = false;
     MusicService mServ;
 	public static Boolean Soundon_off;
@@ -36,11 +41,22 @@ public class GameSetting extends Activity {
 			        getString(R.string.SharedPref), Context.MODE_PRIVATE);
 		TB_Sound=(Switch)findViewById(R.id.switch1);
 		sb_Sound=(SeekBar) findViewById(R.id.seekBar1);
+		tv=(TextView)findViewById(R.id.tvcontact);
+		tv.setPaintFlags(tv.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 		audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
 	    int maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
 	    int curVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
 	    sb_Sound.setMax(maxVolume);
 	    sb_Sound.setProgress(curVolume);
+	    tv.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent i=new Intent(GameSetting.this,ContactUs.class);
+				startActivity(i);
+				
+			}
+		});
 	    
         music.setClass(this, MusicService.class);
         if(sharedPref.getBoolean("on/off", true)==false){

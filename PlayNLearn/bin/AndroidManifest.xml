@@ -59,7 +59,7 @@
             android:label="@string/title_activity_guestquestion"
             android:screenOrientation="portrait" >
         </activity>
-           <activity
+        <activity
             android:name=".UserListActivity"
             android:label="@string/title_activity_userlist"
             android:screenOrientation="portrait" >
@@ -73,19 +73,23 @@
             android:name=".GameSetting"
             android:label="@string/title_activity_game_setting" >
         </activity>
-         <activity
+        <activity
             android:name=".UpdateUsrDetail"
             android:label="@string/title_activity_update_usr_detail" >
         </activity>
-           <activity
+        <activity
             android:name=".BonusquestionActivity"
             android:label="@string/title_activity_bonus_question"
             android:screenOrientation="portrait" >
         </activity>
-         <activity
+        <activity
             android:name=".ShareprofileActivity"
             android:label="@string/title_activity_shareprofile"
             android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ContactUs"
+            android:label="@string/title_activity_contact_us" >
         </activity>
     </application>
 
