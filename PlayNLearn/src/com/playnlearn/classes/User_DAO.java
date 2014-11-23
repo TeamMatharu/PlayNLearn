@@ -1,7 +1,5 @@
 package com.playnlearn.classes;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -76,36 +74,18 @@ public class User_DAO {
 		cursor.close();
 		return UserList;
 	}
-	
-	public long updUser(int id,int prog,float rating,int lvl)
-	{
-		User_Profile user=new User_Profile();
-		ContentValues values = new ContentValues();
-		values.put(MySQLiteHelper.User_Progress, String.valueOf(prog));
-		values.put(MySQLiteHelper.User_Star, String.valueOf(rating));
-		values.put(MySQLiteHelper.User_Level, String.valueOf(lvl));
-		long insertId = database.update(MySQLiteHelper.TABLE_User, values, MySQLiteHelper.User_ID+"=="+id, null);
-				
-	return insertId;
-	}
-	
-	public long updstatus(int id, String cmt)
-	{
-		User_Profile user=new User_Profile();
-		ContentValues values = new ContentValues();
-		values.put(MySQLiteHelper.User_Title, String.valueOf(cmt));
-		long insertId = database.update(MySQLiteHelper.TABLE_User, values, MySQLiteHelper.User_ID+"=="+id, null);
-		return insertId;
-	}
+
 	public User_Profile getSingleUser(String name) {
-		
-		User_Profile user=new User_Profile();
-		//Log.i("name", name);
-		
-		Cursor cursor = database.rawQuery("select * from User_Profile where User_Name='"+name+"'", null);
-				
-			//	database.query(MySQLiteHelper.TABLE_User,allColumns,
-			//	MySQLiteHelper.User_Name+"="+name ,null , null, null, null);
+
+		User_Profile user = new User_Profile();
+		// Log.i("name", name);
+
+		Cursor cursor = database.rawQuery(
+				"select * from User_Profile where User_Name='" + name + "'",
+				null);
+
+		// database.query(MySQLiteHelper.TABLE_User,allColumns,
+		// MySQLiteHelper.User_Name+"="+name ,null , null, null, null);
 
 		cursor.moveToFirst();
 		while (!cursor.isAfterLast()) {
@@ -131,5 +111,29 @@ public class User_DAO {
 		return user;
 	}
 
+	public long updUser(int id,int prog,float rating,int lvl)
+	{
+		User_Profile user=new User_Profile();
+		ContentValues values = new ContentValues();
+		values.put(MySQLiteHelper.User_Progress, String.valueOf(prog));
+		values.put(MySQLiteHelper.User_Star, String.valueOf(rating));
+		values.put(MySQLiteHelper.User_Level, String.valueOf(lvl));
+		long insertId = database.update(MySQLiteHelper.TABLE_User, values, MySQLiteHelper.User_ID+"=="+id, null);
+				
+	return insertId;
+	}
+	
+	public long updstatus(int id, String cmt)
+	{
+		User_Profile user=new User_Profile();
+		ContentValues values = new ContentValues();
+		values.put(MySQLiteHelper.User_Title, String.valueOf(cmt));
+		long insertId = database.update(MySQLiteHelper.TABLE_User, values, MySQLiteHelper.User_ID+"=="+id, null);
+		return insertId;
+	}
+	
+	
+	
+	
 	
 }

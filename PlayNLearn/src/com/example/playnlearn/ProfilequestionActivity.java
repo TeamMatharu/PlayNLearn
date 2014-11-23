@@ -60,9 +60,7 @@ public class ProfilequestionActivity extends Activity {
 		progprofile = (ProgressBar) findViewById(R.id.progressBar2);
 		rbar1=(RatingBar)findViewById(R.id.ratingBar1);
 		tv1.setText(b.getCharSequence("user"));
-		mp1=MediaPlayer.create(ProfilequestionActivity.this,R.raw.epicscore);
-		mp1.start();
-		mp1.isLooping();
+		
 		
 		progprofile.setProgress(Integer.valueOf(activityUser.getUser_Progress()));
 		rbar1.setRating(Float.valueOf(activityUser.getUser_Star()));
