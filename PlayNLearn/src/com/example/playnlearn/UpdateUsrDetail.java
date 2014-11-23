@@ -96,6 +96,40 @@ public class UpdateUsrDetail extends Activity {
 		});
 		
 	}
+	@Override
+	public void onBackPressed()
+	{
+         openAlertDialoug();
+         
+	}
+	private void openAlertDialoug() {
+		AlertDialog.Builder adb=new AlertDialog.Builder(UpdateUsrDetail.this);
+		adb.setTitle("Confirmation!");
+		adb.setMessage("Go Back?");
+		adb.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				
+				Intent intent=new Intent(getApplicationContext(),UserListActivity.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intent);
+				
+				
+			}
+		});
+		adb.setNegativeButton("No", new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				
+				
+			}
+		});
+		AlertDialog adbox=adb.create();
+		adbox.show();
+		
+	}
 
 	
 	

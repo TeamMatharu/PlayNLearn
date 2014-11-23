@@ -152,7 +152,7 @@ public final class R {
     }
     public static final class string {
         public static final int Setting=0x7f06000d;
-        public static final int SharedPref=0x7f06000e;
+        public static final int SharedPref=0x7f06000f;
         public static final int action_settings=0x7f060003;
         public static final int app_name=0x7f060000;
         public static final int crtusr=0x7f060005;
@@ -164,6 +164,7 @@ public final class R {
         public static final int title_activity_progressbar2=0x7f060004;
         public static final int title_activity_result_card=0x7f060007;
         public static final int title_activity_selection=0x7f060001;
+        public static final int title_activity_update_usr_detail=0x7f06000e;
         public static final int title_activity_user_list=0x7f06000b;
         public static final int title_result_card=0x7f060009;
     }

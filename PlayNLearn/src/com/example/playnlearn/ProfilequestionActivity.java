@@ -216,7 +216,7 @@ public class ProfilequestionActivity extends Activity {
 					ino.putExtra("usrnm", tv1.getText());
 					ino.putExtra("star",rtng);
 					ino.putExtra("lvl", lev);
-					mp1.stop();
+					
 					startActivity(ino);
 					
 					

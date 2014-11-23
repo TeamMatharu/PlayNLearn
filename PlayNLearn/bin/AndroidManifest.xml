@@ -73,6 +73,10 @@
             android:name=".GameSetting"
             android:label="@string/title_activity_game_setting" >
         </activity>
+         <activity
+            android:name=".UpdateUsrDetail"
+            android:label="@string/title_activity_update_usr_detail" >
+        </activity>
     </application>
 
 </manifest>
