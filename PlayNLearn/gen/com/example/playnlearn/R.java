@@ -119,9 +119,9 @@ public final class R {
         public static final int tvdev=0x7f0a0018;
         public static final int tvdev1=0x7f0a0019;
         public static final int tvdev2=0x7f0a001a;
-        public static final int tvdev3=0x7f0a001b;
-        public static final int tvdev4=0x7f0a001c;
-        public static final int tvdev5=0x7f0a001d;
+        public static final int tvdev3=0x7f0a001c;
+        public static final int tvdev4=0x7f0a001d;
+        public static final int tvdev5=0x7f0a001b;
         public static final int tvdob=0x7f0a0033;
         public static final int tvleader=0x7f0a0016;
         public static final int tvleader1=0x7f0a0017;

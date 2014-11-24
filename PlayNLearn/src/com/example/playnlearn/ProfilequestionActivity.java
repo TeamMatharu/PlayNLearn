@@ -160,7 +160,6 @@ public class ProfilequestionActivity extends Activity {
 							lev++;
 							score=score+10;
 							
-							
 						}
 						tv.setText(str +lev);
 					}
