@@ -1,8 +1,10 @@
 package com.example.playnlearn;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
@@ -104,15 +106,59 @@ public class SelectionActivity extends Activity {
 	 @Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
-		super.onBackPressed();
+		//super.onBackPressed();
 		
-	
-		Intent music = new Intent();
+		openAlertDialoug();
+		/*Intent music = new Intent();
         music.setClass(this, MusicService.class);
         stopService(music);
     	doBindService();
-    	onDestroy();
+    	onDestroy();*/
 	}
+	 
+	   	
+
+
+
+
+	private void openAlertDialoug() {
+		AlertDialog.Builder adb=new AlertDialog.Builder(SelectionActivity.this);
+		adb.setTitle("Confirmation!");
+		adb.setMessage("Are you Sure want to Quit this game?");
+		adb.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				
+				Intent music = new Intent();
+		        music.setClass(SelectionActivity.this, MusicService.class);
+		        stopService(music);
+		    	doBindService();
+		    	onDestroy();
+				SelectionActivity.this.finish();
+			}
+		});
+		adb.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+			
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				/*Intent ino=new Intent(getApplicationContext(),ProfilequestionActivity.class);
+				startActivity(ino);*/
+				
+				
+			}
+		});
+		AlertDialog adbox=adb.create();
+		adbox.show();
+		
+	
+
+   	
+		
+}
+
+
+
 
 
 
