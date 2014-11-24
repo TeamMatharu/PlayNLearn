@@ -21,7 +21,7 @@
                 android:id="@+id/tvName2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Share via e-mail: "
+                android:text="Emai Id: "
                 android:textColor="#ffffff"
                 android:textSize="15sp" />
 
@@ -39,7 +39,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
             <TextView
                 android:id="@+id/tvEmail2"
@@ -51,11 +52,10 @@
 
             <EditText
                 android:id="@+id/etMsg2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="146dp"
                 android:ems="10"
-                android:inputType="textEmailAddress"
+                android:inputType="textMultiLine"
                 android:textSize="15sp" />
             
         </LinearLayout>

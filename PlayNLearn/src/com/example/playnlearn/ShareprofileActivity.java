@@ -20,32 +20,40 @@ public class ShareprofileActivity extends Activity {
 
 	Button btnshare;
 	EditText Id, Msg;
-	String body;
+	String body="";
 	User_Profile activityUser;
-	User_DAO userdao; 
+	User_DAO userdao;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_share);
-		final ArrayList<String> list = new ArrayList<String>();
-		 btnshare = (Button) findViewById(R.id.btnshr);
+		final ArrayList<User_Profile> list;
+		body="PlaynRun User progress are as below...\n";
+		btnshare = (Button) findViewById(R.id.btnshr);
 		Id = (EditText) findViewById(R.id.etShareName);
 		Msg = (EditText) findViewById(R.id.etMsg2);
-		userdao =new User_DAO(getApplicationContext());
+		userdao = new User_DAO(getApplicationContext());
 		userdao.open();
-		Bundle b=new Bundle();
+		list = new ArrayList<User_Profile>(userdao.getAllUser());
 		
+		userdao.close();
+		for(int i=0;i<list.size();i++)
+		{
+			body=body+list.get(i).getUser_Name()+" : Level :"+list.get(i).getUser_Level()+
+				" Progress :"+	list.get(i).getUser_Progress()+"\n";
+		}
+		Bundle b = new Bundle();
+		Msg.setText(body);
 		setonclickListner();
 
 	}
 
 	public void setonclickListner() {
 		btnshare.setOnClickListener(new OnClickListener() {
-         	@Override
+			@Override
 			public void onClick(View v) {
 				sendEmail();
-				
 
 			}
 
@@ -55,12 +63,11 @@ public class ShareprofileActivity extends Activity {
 						.parse("mailto:"));
 				// prompts email clients only
 				email.setType("message/rfc822");
-				
+
 				email.putExtra(Intent.EXTRA_EMAIL, recipients);
-				email.putExtra(Intent.EXTRA_SUBJECT,
-						"Share your progress");
+				email.putExtra(Intent.EXTRA_SUBJECT, "Share your progress");
 				email.putExtra(Intent.EXTRA_TEXT, Msg.getText().toString());
-			
+				
 
 				try {
 					// the user can choose the email client
