@@ -19,6 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"
+        android:layout_alignRight="@+id/switch2"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="21dp"
         android:checked="true"
@@ -39,6 +40,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/textView2" />
+    
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvcontact"
+        android:layout_below="@+id/seekBar1"
+        android:layout_marginTop="16dp"
+        android:text="Vibration mode"
+        android:checked="true" />
 
     <TextView
         android:id="@+id/tvcontact"
@@ -46,10 +57,12 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/seekBar1"
         android:layout_below="@+id/seekBar1"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="55dp"
         android:text="Contact Us"
         android:textColor="#27aae1"
         android:textSize="15dp"
         android:textStyle="bold" />
+
+    
 
 </RelativeLayout>

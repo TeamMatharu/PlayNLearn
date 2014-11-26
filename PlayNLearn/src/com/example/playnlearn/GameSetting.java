@@ -19,16 +19,21 @@ import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.ToggleButton;
 
 
 public class GameSetting extends Activity {
 	Switch TB_Sound;
+	Switch TB_Vibration;
+	
 	SeekBar sb_Sound;
 	TextView tv;
 	private boolean mIsBound = false;
     MusicService mServ;
 	public static Boolean Soundon_off;
+	public static Boolean Vibrationon_off;
+	
 	private AudioManager audioManager = null; 
 	Context context = GameSetting.this;
 	SharedPreferences sharedPref ;
@@ -39,8 +44,15 @@ public class GameSetting extends Activity {
 		setContentView(R.layout.activity_game_setting);
 		 sharedPref = context.getSharedPreferences(
 			        getString(R.string.SharedPref), Context.MODE_PRIVATE);
+		 
+		 
 		TB_Sound=(Switch)findViewById(R.id.switch1);
+
+		 TB_Vibration=(Switch) findViewById(R.id.switch2);
+		
 		sb_Sound=(SeekBar) findViewById(R.id.seekBar1);
+		
+		
 		tv=(TextView)findViewById(R.id.tvcontact);
 		tv.setPaintFlags(tv.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 		audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
@@ -65,6 +77,7 @@ public class GameSetting extends Activity {
         }else{
         	TB_Sound.setChecked(true);
         }
+        
 		TB_Sound.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			
 			@Override
@@ -77,6 +90,7 @@ public class GameSetting extends Activity {
 					SharedPreferences.Editor editor = sharedPref.edit();
 					editor.putBoolean("on/off", Soundon_off);
 					editor.commit();
+					Toast.makeText(GameSetting.this, "Sound is turned on", Toast.LENGTH_SHORT).show();
 					
 		        } else {
 		        	
@@ -87,10 +101,37 @@ public class GameSetting extends Activity {
 		        	SharedPreferences.Editor editor = sharedPref.edit();
 					editor.putBoolean("on/off", Soundon_off);
 					editor.commit();
-					
+					Toast.makeText(GameSetting.this, "Sound is turned off", Toast.LENGTH_SHORT).show();
 		        }
 			}
 		});
+
+		TB_Vibration.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				// TODO Auto-generated method stub
+				
+				if(isChecked){
+					Vibrationon_off=true;
+					SharedPreferences.Editor editor = sharedPref.edit();
+					editor.putBoolean("Vibrationon/off", Vibrationon_off);
+					editor.commit();
+					Toast.makeText(GameSetting.this, "Vibration is turned on", Toast.LENGTH_SHORT).show();
+				}else{
+					Vibrationon_off=false;
+					SharedPreferences.Editor editor = sharedPref.edit();
+					editor.putBoolean("Vibrationon/off", Vibrationon_off);
+					editor.commit();
+					Toast.makeText(GameSetting.this, "Vibration is turned off", Toast.LENGTH_SHORT).show();
+				}
+				
+			}
+		});
+		
+		
+		
+		
 		
 		sb_Sound.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 			
