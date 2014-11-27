@@ -2,22 +2,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/buttongradient"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.playnlearn.UserListActivity"
-    android:background="@drawable/buttongradient" >
+    tools:context="com.example.playnlearn.UserListActivity" >
 
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
+        
+"
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical" >
+<TextView
+            android:id="@+id/tvEmptyList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No users found..Please create user first!!"
+            
+            android:textColor="#ffffff"
+            android:textSize="15sp" 
+            android:visibility="invisible" />
 
             <ListView
                 android:id="@+id/listView1"
@@ -41,9 +53,7 @@
                 android:background="@drawable/buttongradientorange"
                 android:text="Share Friends"
                 android:textColor="#ffffff" />
-
         </LinearLayout>
-
     </ScrollView>
 
 </RelativeLayout>

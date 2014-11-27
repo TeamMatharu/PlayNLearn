@@ -43,6 +43,8 @@ public class UserListActivity extends Activity {
 	ArrayList<String> user;
 	ArrayList<String> other;
 	ArrayList<byte[]> image;
+	
+	private TextView tvEmptyList;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +88,9 @@ public class UserListActivity extends Activity {
 			image.add(userprofile.getUser_Image());
 			Log.i("After", userprofile.getUser_Name());
 		}
+		
+		tvEmptyList = (TextView) findViewById(R.id.tvEmptyList);
+		
 		Integer imageId = R.drawable.profile;
 		adapter = new list(UserListActivity.this, user, other, imageId, image);
 		list = (ListView) findViewById(R.id.listView1);
@@ -93,6 +98,9 @@ public class UserListActivity extends Activity {
 		list.setAdapter(adapter);
 		adapter.notifyDataSetChanged();
 		userdao.close();
+		
+		ShowHideList();
+		
 		list.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
@@ -180,6 +188,8 @@ public class UserListActivity extends Activity {
 														list = (ListView) findViewById(R.id.listView1);
 														list.setLongClickable(true);
 														list.setAdapter(adapter);
+														
+														ShowHideList();
 													} else {
 														Toast.makeText(UserListActivity.this,
 																"Unable to delete user.",
@@ -223,5 +233,15 @@ public class UserListActivity extends Activity {
 
 		});
 
+	}
+
+	private void ShowHideList() {
+		if(user.size()<=0){
+			tvEmptyList.setVisibility(View.VISIBLE);
+			list.setVisibility(View.INVISIBLE);
+		}else{
+			tvEmptyList.setVisibility(View.INVISIBLE);
+			list.setVisibility(View.VISIBLE);
+		}
 	}
 }
