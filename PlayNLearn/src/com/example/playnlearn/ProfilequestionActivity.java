@@ -50,6 +50,8 @@ public class ProfilequestionActivity extends Activity {
 		Toast.makeText(getApplicationContext(),""+b.getString("user") , Toast.LENGTH_SHORT).show();
 		
 		activityUser=userdao.getSingleUser(b.getString("user"));
+				score=Integer.valueOf(activityUser.getUser_score());
+		que=Integer.valueOf(activityUser.getUser_qno());;
 		id=activityUser.getUser_ID();
 		rgans = (RadioGroup) findViewById(R.id.rgOptions);
 		tv=(TextView)findViewById(R.id.tvlvl);
@@ -60,8 +62,7 @@ public class ProfilequestionActivity extends Activity {
 		progprofile = (ProgressBar) findViewById(R.id.progressBar2);
 		rbar1=(RatingBar)findViewById(R.id.ratingBar1);
 		tv1.setText(b.getCharSequence("user"));
-		score=Integer.valueOf((activityUser.getUser_score()));
-		que=Integer.valueOf(activityUser.getUser_qno());
+		
 		
 		
 		progprofile.setProgress(Integer.valueOf(activityUser.getUser_Progress()));

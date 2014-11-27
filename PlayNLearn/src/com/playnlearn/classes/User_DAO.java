@@ -56,10 +56,10 @@ public class User_DAO {
 
 	}
 
-	public int deleteUser(int User_Id) {
-		Log.i("Deleted", "User deleted with id: " + User_Id);
-		int i=database.delete(MySQLiteHelper.TABLE_User, MySQLiteHelper.User_ID
-				+ " = " + User_Id, null);
+	public int deleteUser(long id) {
+		long a=id;
+		int i=database.delete(MySQLiteHelper.TABLE_User, MySQLiteHelper.User_ID+"=="+a, null);
+		Log.i("Deleted", "User deleted with id: " + id);
 		return i;
 	}
 
