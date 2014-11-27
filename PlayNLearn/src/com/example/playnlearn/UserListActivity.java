@@ -110,9 +110,7 @@ public class UserListActivity extends Activity {
 
 			}
 		});
-		
-		
-		
+
 		list.setOnItemLongClickListener(new OnItemLongClickListener() {
 
 			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
@@ -121,16 +119,16 @@ public class UserListActivity extends Activity {
 				i = new Intent(UserListActivity.this, UpdateUsrDetail.class);
 				userdao.open();
 				int itemPosition = pos;
-				
+
 				itemValue = (String) list.getItemAtPosition(pos);
 				Log.i("mymy", textView.getText().toString());
 				i.putExtra("user", itemValue);
-				userprofile=userdao.getSingleUser(itemValue);
+				userprofile = userdao.getSingleUser(itemValue);
 				id1 = userprofile.getUser_ID();
 				Log.v("long clicked", "pos: " + pos);
-				
+
 				openConfirmation();
-				
+
 				return true;
 			}
 
@@ -145,25 +143,66 @@ public class UserListActivity extends Activity {
 							@Override
 							public void onClick(DialogInterface dialog,
 									int which) {
-								userdao.open();
-								int j = userdao.deleteUser(id1);
 								
-								l = userdao.getAllUser();
-								for (int i = 0; i < l.size(); i++) {
-									userprofile = l.get(i);
-									Log.i("Before", userprofile.getUser_Name());
-									user.add(userprofile.getUser_Name());
-									other.add(userprofile.getUser_Title());
-									image.add(userprofile.getUser_Image());
-									Log.i("After", userprofile.getUser_Name());
-								}
-								Integer imageId = R.drawable.profile;
-								adapter = new list(UserListActivity.this, user, other, imageId, image);
-								list = (ListView) findViewById(R.id.listView1);
-								list.setLongClickable(true);
-								list.setAdapter(adapter);
-								adapter.notifyDataSetChanged();
+								  AlertDialog.Builder subDialog = new
+								  AlertDialog.Builder(UserListActivity.this);
+								  subDialog.setTitle(
+								  "Sub dialog").setMessage("Are you sure you want to Delete User?\nAll data will be lost!");
+								  subDialog.setPositiveButton("OK",
+											new DialogInterface.OnClickListener() {
 
+												@Override
+												public void onClick(DialogInterface dialog,
+														int which) {
+													
+													
+													userdao.open();
+													int j = userdao.deleteUser(id1);
+													if (j > 0) {
+														l = userdao.getAllUser();
+														
+														user.clear();
+														
+														for (int i = 0; i < l.size(); i++) {
+															userprofile = l.get(i);
+															Log.i("Before",
+																	userprofile.getUser_Name());
+															user.add(userprofile.getUser_Name());
+															other.add(userprofile.getUser_Title());
+															image.add(userprofile.getUser_Image());
+															Log.i("After",
+																	userprofile.getUser_Name());
+														}
+														Integer imageId = R.drawable.profile;
+
+														adapter = new list(UserListActivity.this,
+																user, other, imageId, image);
+														list = (ListView) findViewById(R.id.listView1);
+														list.setLongClickable(true);
+														list.setAdapter(adapter);
+													} else {
+														Toast.makeText(UserListActivity.this,
+																"Unable to delete user.",
+																Toast.LENGTH_SHORT).show();
+													}
+													
+
+												}
+											});
+								  subDialog.setNegativeButton("Cancel",
+											new DialogInterface.OnClickListener() {
+
+												@Override
+												public void onClick(DialogInterface dialog,
+														int which) {
+													
+
+												}
+											});
+								  subDialog.setCancelable(true);
+								  
+								  subDialog.show();
+								 
 							}
 						});
 
@@ -185,5 +224,4 @@ public class UserListActivity extends Activity {
 		});
 
 	}
-
 }
