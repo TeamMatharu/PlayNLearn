@@ -48,6 +48,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 			+ Question_Text + " text , " + option1 + " text ,"
 			+ option2 + " text ," + option3
 			+ " text ," + option4 + " text ," 
+			+ Answer + " text ,"
 			+ Question_Comment + " text );";
 
 	public MySQLiteHelper(Context context, String name, CursorFactory factory,
