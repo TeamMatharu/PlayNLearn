@@ -182,6 +182,7 @@ public class ProfilequestionActivity extends Activity {
 					toast.setView(layout);
 					toast.show();
 					que++;
+					tv2.setTextColor(getResources().getColor(R.color.Red));
 					t.cancel();
 					timermethod();
 				}
