@@ -81,7 +81,7 @@
 
                 </LinearLayout>
             </TableRow>
-
+                
             <TableRow
                 android:id="@+id/tableRow1"
                 android:layout_width="match_parent"
@@ -91,7 +91,7 @@
                     android:id="@+id/txtCreateAccount"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="50dp"
                     android:layout_marginTop="10dp"
                     android:text="Don&apos;t have an account?"
                     android:textSize="15dp"
@@ -117,7 +117,16 @@
                     />
 
             </TableRow>
-
+               
+                  <Button
+                      android:id="@+id/btninstruction"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:layout_weight="1"
+                      android:background="@drawable/buttongradientorange"
+                      android:text="Instruction"
+                      android:textColor="#ffffff" /> 
+                
         </LinearLayout>
     </ScrollView>
 

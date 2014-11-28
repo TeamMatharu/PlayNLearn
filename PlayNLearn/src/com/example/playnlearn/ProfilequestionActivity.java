@@ -1,9 +1,5 @@
 package com.example.playnlearn;
 
-import com.playnlearn.classes.User_DAO;
-import com.playnlearn.classes.User_Profile;
-
-import android.R.integer;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -16,7 +12,6 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RadioGroup;
@@ -24,8 +19,11 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.playnlearn.classes.User_DAO;
+import com.playnlearn.classes.User_Profile;
+
 public class ProfilequestionActivity extends Activity {
-	int lev=1,que,id,score;
+	int lev=1,que,id,score,lvlStatus=0;
 	RadioGroup rgans;
 	Button btnsub,btnquit;
 	ProgressBar progprofile;
@@ -130,16 +128,9 @@ public class ProfilequestionActivity extends Activity {
 
 				if (opt.equals(ans)) 
 				{
-					
-					LayoutInflater inflater = ProfilequestionActivity.this.getLayoutInflater();
-					View layout = inflater.inflate(R.drawable.custom_toast,
-							(ViewGroup) findViewById(R.id.custom_toast_layout_id));					
-					Toast toast = new Toast(getApplicationContext());
-					toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-					toast.setDuration(Toast.LENGTH_SHORT);
-					toast.setView(layout);
-					toast.show();
-					que++;score++;
+					que++;
+					tv2.setTextColor(0xff00ff00);
+					score++;
 					
 					int i = progprofile.getProgress();
 					if (i <= 90) {
@@ -159,6 +150,7 @@ public class ProfilequestionActivity extends Activity {
 							rtng=0;
 							rbar1.setRating(rtng);
 							lev++;
+							lvlStatus=1;
 							score=score+10;
 							
 						}
@@ -166,7 +158,25 @@ public class ProfilequestionActivity extends Activity {
 					}
 					t.cancel();
 					timermethod();
-					
+				    if(lvlStatus==0){
+					   LayoutInflater inflater = ProfilequestionActivity.this.getLayoutInflater();
+					   View layout = inflater.inflate(R.drawable.custom_toast,
+					   (ViewGroup) findViewById(R.id.custom_toast_layout_id));
+					    Toast toast = new Toast(getApplicationContext());
+					    toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+					    toast.setDuration(Toast.LENGTH_SHORT);
+					    toast.setView(layout);
+					    toast.show();}
+				     else if(lvlStatus==1){
+					    LayoutInflater inflater = ProfilequestionActivity.this.getLayoutInflater();
+					    View layout = inflater.inflate(R.drawable.custom_toast_levelup,
+					    (ViewGroup) findViewById(R.id.custom_toast_layout_id));
+					     Toast toast = new Toast(getApplicationContext());
+					     toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+						 toast.setDuration(Toast.LENGTH_SHORT);
+						 toast.setView(layout);
+						 toast.show();}
+						lvlStatus=0;	
 				}
 				else
 				{
@@ -189,9 +199,9 @@ public class ProfilequestionActivity extends Activity {
 				tv2.setText(String.valueOf(que)+"/∞");
 			}
 		});
-		btnquit.setOnClickListener(new OnClickListener() {
+		
+		btnquit.setOnClickListener(new View.OnClickListener() {
 			
-		@Override
 		public void onClick(View v) {
 			openAlertDialoug(v);
 			
@@ -237,6 +247,7 @@ public class ProfilequestionActivity extends Activity {
 			adbox.show();
 			
 		}
+
 	});
 	   	
 }

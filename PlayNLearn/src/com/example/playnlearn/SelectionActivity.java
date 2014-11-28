@@ -17,6 +17,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -90,6 +91,17 @@ public class SelectionActivity extends Activity {
 			}
 		});
 		
+		Button btnins = (Button)findViewById (R.id.btninstruction);
+		btnins.setOnClickListener(new OnClickListener() {
+			
+
+			@Override
+			public void onClick(View v) {
+
+				Intent i = new Intent(SelectionActivity.this, Instruction.class);
+				startActivity(i);
+			}
+		});
 	imv.setOnClickListener(new OnClickListener() {
 		
 		@Override
