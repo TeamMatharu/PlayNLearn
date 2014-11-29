@@ -35,7 +35,7 @@
             android:textStyle="bold"
             android:layout_gravity="center"
             android:layout_marginTop="2dp"
-            android:textSize="28sp" />
+            android:textSize="25sp" />
           
             <TextView
                 android:id="@+id/textView2"
@@ -44,85 +44,172 @@
                 android:text="   Welcome to PlayNLearn insrtuction page. Use your brain to get as far as you can in this game."
                 android:textColor="#000000"
                 android:layout_marginTop="2dp"
-                android:textSize="13sp" />
+                android:textSize="12sp" />
             
              <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="   In this app user should be able to play game as a guest/profile. If user wants to play the full version of our game than user have to create their profile first and start the game with your own profile. If the user select game as a guest than the user will not able to a play full game because as a guest we will give you only 50 questions."
+                android:text="  In this app user should be able to play game as a guest/profile. Full version of game only available for profile users."
                 android:textColor="#1C1C1C"
                 android:layout_marginTop="2dp"
-                android:textSize="13sp" />
+                android:textSize="12sp" />
             
               <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Instruction about Create profile, Update profile and Delete profile" 
+            android:text=" Create profile" 
             android:textColor="#8904B1"
             android:textStyle="bold"
             android:layout_gravity="center"
             android:layout_marginTop="2dp"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
           
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="    To create your own profile click on create one now hyperlink on home screen. When user hits “Profile” button on home screen  then user should see lists of all users profiles. Now if user wants any changes in profile or want to delete that profile than in profile list on click few seconds on created profile  user will see two options like update profile and delete profile."
+                android:text="&#8226; To create your profile click on create one now hyperlink on home screen"
                 android:textColor="#1C1C1C"
-                android:layout_marginTop="2dp"
-                android:textSize="13sp" />
+                android:textSize="12sp" />
             
              <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Information about Share friends, Invite friends and preferences" 
+            android:text="Update profile and Delete profile" 
             android:textColor="#8904B1"
             android:textStyle="bold"
             android:layout_gravity="center"
             android:layout_marginTop="2dp"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
           
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="   User can see two buttons like Share and invite under the profile list. User will be able to share their progress with other user via Email. User can invite other user through email  to download this app. We includes preferences like Sound settings, EULA, About Us and Contact Us."
+                android:text="&#8226; For more changes or delete profile use two options like update profile and delete profile."
                 android:textColor="#1C1C1C"
-                android:layout_marginTop="2dp"
-                android:textSize="13sp" />
-            
+                android:textSize="12sp" />
+          
              <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Instruction about Timer, Progress bar, Stars and Levels" 
+            android:text="Timer,Progress bar and Stars" 
             android:textColor="#8904B1"
             android:textStyle="bold"
             android:layout_gravity="center"
             android:layout_marginTop="2dp"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
           
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="   When game start  user will see question with 4 options, submit and quit button,  profile name, stars,  progress bar, timer, levels and question number on screen . We include timer in both Profile and Guest Screen. Each question should be given 30 seconds to answer, if not answered that question is marked as Wrong. When user answers one correct answer then progress bar should get an increment of 1 point. When for once the progress bar gets completed, then there should be an increment in Star to user profile. User should able to see update in stars on each time progress bar gets full by 10 correct questions. When user gets 5 stars and progress bar gets filled then there should be an increase in Level in user profile. When user gets a level up then there should be dialog box stating user’s level when user dismiss this dialog box only then user can see next level questions."
+                android:text="&#8226; We include timer in both Profile and Guest Screen."
+                android:textColor="#1C1C1C"
+                android:textSize="12sp" />
+            
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#8226; Each question should be given 30 seconds to answer."
+                android:textColor="#1C1C1C"
+                android:textSize="12sp" />
+            
+              <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#8226; 1 correct answer and progress bar should get an increment of 1 point." 
+                android:textColor="#1C1C1C"
+                android:textSize="12sp" />
+            
+               <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" &#8226; Once the progress bar gets completed, then there should be an increment in Stars." 
+                android:textColor="#1C1C1C"
+                android:textSize="12sp" />
+               
+                <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#8226; Update in stars on each time progress bar gets full by 10 correct questions."
+                android:textColor="#1C1C1C"
+                android:textSize="12sp" />
+                
+             <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Levels" 
+            android:textColor="#8904B1"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:textSize="14sp" />
+             
+              <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#8226; When user gets 5 stars and progress bar gets filled then next level start"
                 android:textColor="#1C1C1C"
                 android:layout_marginTop="2dp"
-                android:textSize="13sp" />
-            
+                android:textSize="12sp" />
+                 
+               <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share and Invite friends" 
+            android:textColor="#8904B1"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:textSize="14sp" />
+               
+                <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="&#8226; User will be able to share their progress and invite other users to download app via Email."
+                android:textColor="#1C1C1C"
+                android:textSize="12sp" />
+                
+                 <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Preferences" 
+            android:textColor="#8904B1"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:textSize="14sp" />
+                 
              <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/textView19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" &#8226; We includes preferences like Sound settings and Contact Us "
+                android:textColor="#1C1C1C"
+                android:textSize="12sp" />
+             
+             <TextView
+                android:id="@+id/textView20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="   A mistake can be a big time waste in the advanced levels. Hope everyone will enjoy our PlayNLearn app."
                 android:textColor="#000000"
                 android:layout_marginTop="2dp"
-                android:textSize="13sp" />
+                android:textSize="12sp" />
            
             <Button
                 android:id="@+id/btnok"
