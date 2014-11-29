@@ -125,6 +125,8 @@
                       android:layout_weight="1"
                       android:background="@drawable/buttongradientorange"
                       android:text="Instruction"
+                      android:textStyle="bold"
+                      android:layout_gravity="center"
                       android:textColor="#ffffff" /> 
                 
         </LinearLayout>
