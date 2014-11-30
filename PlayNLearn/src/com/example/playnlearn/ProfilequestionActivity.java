@@ -2,11 +2,14 @@ package com.example.playnlearn;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -35,11 +38,14 @@ public class ProfilequestionActivity extends Activity {
 	User_Profile activityUser;
 	User_DAO userdao; 
 	MediaPlayer mp1,mp2;
+	SharedPreferences sharedPref ;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_profilequestion);
+		 sharedPref = this.getSharedPreferences(
+			        getString(R.string.SharedPref), Context.MODE_PRIVATE);
 		userdao =new User_DAO(getApplicationContext());
 		userdao.open();
 			Bundle b=new Bundle();
@@ -185,6 +191,11 @@ public class ProfilequestionActivity extends Activity {
 					View layout = inflater.inflate(R.drawable.custom_wrong,
 							(ViewGroup) findViewById(R.id.custom_toast_layout_id));
 					// Create Custom Toast for wrong answer
+					Log.i("vibrate",""+sharedPref.getBoolean("Vibrationon/off",true));
+					if(sharedPref.getBoolean("Vibrationon/off", true)){
+						Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+						vibe.vibrate(200);
+					}
 					
 					Toast toast = new Toast(getApplicationContext());
 					toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);

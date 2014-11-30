@@ -71,12 +71,7 @@ public class GameSetting extends Activity {
 		});
 	    
         music.setClass(this, MusicService.class);
-        if(sharedPref.getBoolean("on/off", true)==false){
-        TB_Sound.setChecked(false);
-        Log.i("insideb a", "aaaaa");
-        }else{
-        	TB_Sound.setChecked(true);
-        }
+        checkPreviousState();
         
 		TB_Sound.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			
@@ -186,5 +181,18 @@ public class GameSetting extends Activity {
         }
     }
 	
-	
+	public void checkPreviousState(){
+		if(sharedPref.getBoolean("on/off", true)==false){
+	        TB_Sound.setChecked(false);
+	        Log.i("insideb a", "aaaaa");
+	        }else{
+	        	TB_Sound.setChecked(true);
+	        }
+	        if(sharedPref.getBoolean("Vibrationon/off", true)==false){
+	            TB_Vibration.setChecked(false);
+	            Log.i("insideb b", "bbbbb");
+	            }else{
+	            	TB_Vibration.setChecked(true);
+	          }
+	}
 }
