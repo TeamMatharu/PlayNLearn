@@ -1,5 +1,8 @@
 package com.playnlearn.classes;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -48,13 +51,13 @@ public class Question_DAO {
 	}
 	
 	
-	public Question getSingleQuestion(int Questionid) {
+	public Question getSingleQuestion(long Questionid) {
 
 		Question question = new Question();
 		// Log.i("name", name);
 
 		Cursor cursor = database.rawQuery(
-				"select * from Question where Question_ID='" + Questionid + "'",
+				"select * from Question where Question_ID=='" + Questionid + "'",
 				null);
 
 		// database.query(MySQLiteHelper.TABLE_User,allColumns,
@@ -82,5 +85,24 @@ public class Question_DAO {
 		question.setQuestion_Comment(cursor.getString(7));
 		return question;
 	}
+	
+	public List<Long> getQuestionID() {
+		List<Long> q = new ArrayList<Long>();
+		String queid[]=new String[]{MySQLiteHelper.Question_ID};
+		Cursor cursor = database.query(MySQLiteHelper.TABLE_Question,queid,
+				null, null, null, null, null);
+
+		cursor.moveToFirst();
+		while (!cursor.isAfterLast()) {
+			
+			int id = cursor.getInt(0);
+			q.add((long)id);
+			cursor.moveToNext();
+		}
+		// make sure to close the cursor
+		cursor.close();
+		return q;
+	}
+
 	
 }

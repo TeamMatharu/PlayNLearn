@@ -1,11 +1,18 @@
 package com.example.playnlearn;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import java.util.Timer;
+
+import com.playnlearn.classes.Question;
+import com.playnlearn.classes.Question_DAO;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.Gravity;
@@ -15,18 +22,24 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class GuestquestionActivity extends Activity {
 
-	TextView tvonq;
+	TextView tvonq,tvq;
 	RadioGroup rgst;
+	RadioButton o1,o2,o3,o4;
 	Button btngsub,btngquit;
 	ProgressBar gpbar;
+	String opt,ans;
 	int question=0;
 	CountDownTimer t;
+	Question_DAO qDao;
+	Question qclass;
+	List<Long> qno=new ArrayList<Long>();
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,9 +49,37 @@ public class GuestquestionActivity extends Activity {
 		tvonq=(TextView)findViewById(R.id.tvOnQuestion);
 		btngsub=(Button)findViewById(R.id.btngchk);
 		btngquit=(Button)findViewById(R.id.btngquit);
+		tvq=(TextView)findViewById(R.id.tvQ);
+		o1=(RadioButton)findViewById(R.id.rb1);
+		o2=(RadioButton)findViewById(R.id.rb2);
+		o3=(RadioButton)findViewById(R.id.rb3);
+		o4=(RadioButton)findViewById(R.id.rb4);
 		tvonq.setText("0/50");
+		
+		qDao=new Question_DAO(getApplicationContext());
+		qDao.open();
+		qno.addAll(qDao.getQuestionID());
+		qDao.close();
+		//generateNewQuestion();
 		timermethod();
 		addListnerOnButton();
+	}
+	public void generateNewQuestion() {
+		qDao.open();
+		Random rand=new Random();
+		long qid=rand.nextInt(qno.size());
+		qclass=qDao.getSingleQuestion(qid);
+		tvq.setText(qclass.getQuestion_Text());
+		o1.setText(qclass.getOption1());
+		o2.setText(qclass.getOption2());
+		o3.setText(qclass.getOption3());
+		o4.setText(qclass.getOption4());
+		ans=qclass.getAnswer();
+		qno.remove(qid);
+		qDao.close();
+		t.cancel();
+		timermethod();
+		
 	}
 	public void addListnerOnButton() {
 		btngsub.setOnClickListener(new OnClickListener() {
@@ -46,13 +87,9 @@ public class GuestquestionActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				question+=1;
-				/*Write coading for Guest should create profile after 50 question is 
-				 * completed.Provide if condition over here. (rachit)
 				
-				*/
-				String opt = "c";
-				String ans = "c";// Write your query to retrive right answer
-									// over here.
+				opt = "c";
+				ans = "c";
 				int rg = rgst.getCheckedRadioButtonId();
 				switch (rg) {
 				case R.id.rb1:
@@ -90,9 +127,7 @@ public class GuestquestionActivity extends Activity {
 						toast.show();
 						
 					}
-					t.cancel();
-					timermethod();
-					tvonq.setText(String.valueOf(question)+"/50");
+					
 				}
 				else
 				{
@@ -106,10 +141,12 @@ public class GuestquestionActivity extends Activity {
 					toast.setDuration(Toast.LENGTH_SHORT);
 					toast.setView(layout);
 					toast.show();
-					t.cancel();
-					timermethod();
-					tvonq.setText(String.valueOf(question)+"/50");
+					
 				}
+				t.cancel();
+				timermethod();
+				tvonq.setText(String.valueOf(question)+"/50");
+				//generateNewQuestion();
 				
 				
 			}
@@ -172,6 +209,10 @@ public class GuestquestionActivity extends Activity {
 			     @Override
 				public void onFinish() {
 			         mTextField.setText("Time up");
+			         t.cancel();
+						mTextField.setTextColor(Color.GREEN);
+						timermethod();
+			       //generateNewQuestion();
 			     }
 			  }.start();
 
