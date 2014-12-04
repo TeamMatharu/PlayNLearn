@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Random;
 
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.app.ActivityManager.RunningTaskInfo;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -52,11 +54,13 @@ public class ProfilequestionActivity extends Activity {
 	Question_DAO qDao;
 	Question qclass;
 	List<Long> qno=new ArrayList<Long>();
+	Toast toast ;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_profilequestion);
+		toastIntansiation();
 		sharedPref = this.getSharedPreferences(getString(R.string.SharedPref),
 				Context.MODE_PRIVATE);
 		userdao = new User_DAO(getApplicationContext());
@@ -70,7 +74,6 @@ public class ProfilequestionActivity extends Activity {
 		activityUser = userdao.getSingleUser(b.getString("user"));
 		score = Integer.valueOf(activityUser.getUser_score());
 		que = Integer.valueOf(activityUser.getUser_qno());
-		;
 		id = activityUser.getUser_ID();
 		rgans = (RadioGroup) findViewById(R.id.rgOptions);
 		tv = (TextView) findViewById(R.id.tvlvl);
@@ -181,6 +184,10 @@ public class ProfilequestionActivity extends Activity {
 						} else {
 							rtng = 0;
 							rbar1.setRating(rtng);
+							if (sharedPref.getBoolean("Vibrationon/off", true)) {
+								Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+								vibe.vibrate(Setting.VibrationIntensity1);
+							}
 							lev++;
 							lvlStatus = 1;
 							score = score + 10;
@@ -196,11 +203,11 @@ public class ProfilequestionActivity extends Activity {
 								.inflate(
 										R.drawable.custom_toast,
 										(ViewGroup) findViewById(R.id.custom_toast_layout_id));
-						Toast toast = new Toast(getApplicationContext());
-						toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-						toast.setDuration(Toast.LENGTH_SHORT);
+						
 						toast.setView(layout);
 						toast.show();
+						
+						
 					} else if (lvlStatus == 1) {
 						LayoutInflater inflater = ProfilequestionActivity.this
 								.getLayoutInflater();
@@ -208,9 +215,7 @@ public class ProfilequestionActivity extends Activity {
 								.inflate(
 										R.drawable.custom_toast_levelup,
 										(ViewGroup) findViewById(R.id.custom_toast_layout_id));
-						Toast toast = new Toast(getApplicationContext());
-						toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-						toast.setDuration(Toast.LENGTH_SHORT);
+						
 						toast.setView(layout);
 						toast.show();
 					}
@@ -231,9 +236,7 @@ public class ProfilequestionActivity extends Activity {
 						vibe.vibrate(Setting.VibrationIntensity1);
 					}
 
-					Toast toast = new Toast(getApplicationContext());
-					toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-					toast.setDuration(Toast.LENGTH_SHORT);
+					
 					toast.setView(layout);
 					toast.show();
 					que++;
@@ -368,4 +371,32 @@ public class ProfilequestionActivity extends Activity {
 		adbox.show();
 
 	}
+	
+	public boolean isRunning(Context ctx) {
+	
+		
+        ActivityManager activityManager = (ActivityManager) ctx.getSystemService(Context.ACTIVITY_SERVICE);
+        List<RunningTaskInfo> tasks = activityManager.getRunningTasks(Integer.MAX_VALUE);
+
+        for (RunningTaskInfo task : tasks) {
+            if (ctx.getPackageName().equalsIgnoreCase(task.baseActivity.getPackageName())) 
+                return true;                                  
+        }
+
+        return false;
+	}
+	
+	public void toastIntansiation() {
+		toast = new Toast(getApplicationContext());
+		toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+		toast.setDuration(Toast.LENGTH_SHORT);
+	}
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		toast.cancel();
+		super.onStop();
+	}
+	
+	
 }
