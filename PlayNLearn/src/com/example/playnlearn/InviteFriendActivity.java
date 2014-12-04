@@ -3,10 +3,15 @@
  */
 package com.example.playnlearn;
 
+import com.playnlearn.classes.Setting;
+
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -17,11 +22,14 @@ public class InviteFriendActivity extends Activity {
 
 	Button btninvite;
 	EditText id, msg;
+	SharedPreferences sharedPref ;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_invite_friend);
+		sharedPref = this.getSharedPreferences(getString(R.string.SharedPref),
+				Context.MODE_PRIVATE);
 		btninvite = (Button) findViewById(R.id.btninv);
 		id = (EditText) findViewById(R.id.etInviteName);
 		msg = (EditText) findViewById(R.id.etMsg);
@@ -71,6 +79,17 @@ public class InviteFriendActivity extends Activity {
 
 		});
 
+		
+		
 	}
 
+	@Override
+	public void onBackPressed() {
+		if (sharedPref.getBoolean("Vibrationon/off", true)) {
+			Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+			vibe.vibrate(Setting.VibrationIntensity1);
+		}
+		super.onBackPressed();
+	}
+	
 }

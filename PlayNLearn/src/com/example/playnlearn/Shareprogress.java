@@ -1,18 +1,26 @@
 package com.example.playnlearn;
 
+import com.playnlearn.classes.Setting;
+
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.Menu;
 import android.view.View;
 
 public class Shareprogress extends Activity {
 
 	   private ProgressDialog progress;
+	   SharedPreferences sharedPref ;
 	   @Override
 	   protected void onCreate(Bundle savedInstanceState) {
 	      super.onCreate(savedInstanceState);
 	      setContentView(R.layout.activity_user_list);
+	      sharedPref = this.getSharedPreferences(getString(R.string.SharedPref),
+					Context.MODE_PRIVATE);
 	      progress = new ProgressDialog(this);
 	   }
 
@@ -47,6 +55,16 @@ public class Shareprogress extends Activity {
 	   t.start();
 
 	   }
+	   
+	   @Override
+	public void onBackPressed() {
+		   
+		   if (sharedPref.getBoolean("Vibrationon/off", true)) {
+				Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+				vibe.vibrate(Setting.VibrationIntensity1);
+			}
+		   super.onBackPressed();
+	}
 	   @Override
 	   public boolean onCreateOptionsMenu(Menu menu) {
 	      // Inflate the menu; this adds items to the action bar if it is present.

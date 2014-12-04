@@ -1,9 +1,14 @@
 package com.example.playnlearn;
 
+import com.playnlearn.classes.Setting;
+
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Vibrator;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,10 +27,13 @@ public class BonusquestionActivity extends Activity {
 	ProgressBar gpbar2;
 	int question=0;
 	CountDownTimer t;
+	SharedPreferences sharedPref;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_guestquestion);
+		sharedPref = this.getSharedPreferences(getString(R.string.SharedPref),
+				Context.MODE_PRIVATE);
 		gpbar2=(ProgressBar)findViewById(R.id.progressBar2);
 		rgoption=(RadioGroup)findViewById(R.id.rgOptions);
 		tvQ=(TextView)findViewById(R.id.tvOnQuestion);
@@ -92,7 +100,10 @@ public class BonusquestionActivity extends Activity {
 					View layout = inflater.inflate(R.drawable.custom_wrong,
 							(ViewGroup) findViewById(R.id.custom_toast_layout_id));
 					// Create Custom Toast for wrong answer
-					
+					if (sharedPref.getBoolean("Vibrationon/off", true)) {
+						Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+						vibe.vibrate(Setting.VibrationIntensity1);
+					}
 					Toast toast = new Toast(getApplicationContext());
 					toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
 					toast.setDuration(Toast.LENGTH_SHORT);
@@ -132,8 +143,16 @@ public class BonusquestionActivity extends Activity {
 	public Resources getResources() {
 		return null;
 	}
-	
+	@Override
+	public void onBackPressed() {
+		if (sharedPref.getBoolean("Vibrationon/off", true)) {
+			Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+			vibe.vibrate(200);
+		}
 
+	}
+
+	
 }
 	
 

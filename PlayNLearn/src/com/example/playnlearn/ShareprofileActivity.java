@@ -3,13 +3,17 @@ package com.example.playnlearn;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.playnlearn.classes.Setting;
 import com.playnlearn.classes.User_DAO;
 import com.playnlearn.classes.User_Profile;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -23,11 +27,14 @@ public class ShareprofileActivity extends Activity {
 	String body="";
 	User_Profile activityUser;
 	User_DAO userdao;
+	SharedPreferences sharedPref ;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_share);
+		sharedPref = this.getSharedPreferences(getString(R.string.SharedPref),
+				Context.MODE_PRIVATE);
 		final ArrayList<User_Profile> list;
 		body="PlaynRun User progress are as below...\n";
 		btnshare = (Button) findViewById(R.id.btnshr);
@@ -86,4 +93,18 @@ public class ShareprofileActivity extends Activity {
 
 	}
 
+	
+	@Override
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		
+		if (sharedPref.getBoolean("Vibrationon/off", true)) {
+			Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+			vibe.vibrate(Setting.VibrationIntensity1);
+		}
+		super.onBackPressed();
+	}
+	
+	
+	
 }

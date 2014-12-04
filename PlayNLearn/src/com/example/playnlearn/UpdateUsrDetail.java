@@ -1,13 +1,17 @@
 package com.example.playnlearn;
 
+import com.playnlearn.classes.Setting;
 import com.playnlearn.classes.User_DAO;
 import com.playnlearn.classes.User_Profile;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.preference.EditTextPreference;
 import android.util.Log;
 import android.view.Menu;
@@ -24,10 +28,13 @@ public class UpdateUsrDetail extends Activity {
 	Button btnsave;
 	EditText et1, et2, etname;
 	int id;
+	SharedPreferences sharedPref ;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_edit_profile);
+		sharedPref = this.getSharedPreferences(getString(R.string.SharedPref),
+				Context.MODE_PRIVATE);
 		
 		userdao =new User_DAO(getApplicationContext());
 		userdao.open();
@@ -99,8 +106,14 @@ public class UpdateUsrDetail extends Activity {
 	@Override
 	public void onBackPressed()
 	{
+		
+		if (sharedPref.getBoolean("Vibrationon/off", true)) {
+			Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+			vibe.vibrate(Setting.VibrationIntensity1);
+		}
+
          openAlertDialoug();
-         
+         super.onBackPressed(); 
 	}
 	private void openAlertDialoug() {
 		AlertDialog.Builder adb=new AlertDialog.Builder(UpdateUsrDetail.this);
@@ -110,6 +123,7 @@ public class UpdateUsrDetail extends Activity {
 			
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
+				
 				
 				Intent intent=new Intent(getApplicationContext(),UserListActivity.class);
 				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

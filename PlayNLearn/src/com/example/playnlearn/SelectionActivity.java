@@ -1,5 +1,7 @@
 package com.example.playnlearn;
 
+import com.playnlearn.classes.Setting;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ComponentName;
@@ -11,6 +13,7 @@ import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -29,13 +32,15 @@ public class SelectionActivity extends Activity {
 
 	    MusicService mServ;
 	 ImageView imv;
-
+	 SharedPreferences sharedPref;
+	 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_selection);
+		
 		Context context = getApplicationContext();
-		SharedPreferences sharedPref = context.getSharedPreferences(
+		 sharedPref = context.getSharedPreferences(
 		        getString(R.string.SharedPref), Context.MODE_PRIVATE);
 		
 		Boolean b;
@@ -119,13 +124,19 @@ public class SelectionActivity extends Activity {
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 		//super.onBackPressed();
-		
+		 super.onBackPressed();
+		 if (sharedPref.getBoolean("Vibrationon/off", true)) {
+				Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+				vibe.vibrate(Setting.VibrationIntensity1);
+			}
+
 		openAlertDialoug();
 		/*Intent music = new Intent();
         music.setClass(this, MusicService.class);
         stopService(music);
     	doBindService();
     	onDestroy();*/
+		super.onBackPressed();
 	}
 	 
 	   	

@@ -3,16 +3,20 @@ package com.example.playnlearn;
 import java.io.ByteArrayOutputStream;
 import java.util.Random;
 
+import com.playnlearn.classes.Setting;
 import com.playnlearn.classes.User_DAO;
 import com.playnlearn.classes.User_Profile;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.provider.MediaStore.MediaColumns;
 import android.util.Log;
 import android.view.Menu;
@@ -28,6 +32,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class NewProfileActivity extends Activity {
+	SharedPreferences sharedPref ;
 	ImageButton user_Image;
 	private static int RESULT_LOAD_IMAGE = 1;
 	User_Profile user=new User_Profile();
@@ -44,7 +49,8 @@ public class NewProfileActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_new_profile);
-		
+		sharedPref = this.getSharedPreferences(getString(R.string.SharedPref),
+				Context.MODE_PRIVATE);
 		user_Image=(ImageButton) findViewById(R.id.UserImage);
 		
 		 iv=(ImageView) findViewById(R.id.imageView1);
@@ -184,5 +190,18 @@ public class NewProfileActivity extends Activity {
 		
 	}
 
+    public void instantiateView(){
+    	
+    }
+
+@Override
+public void onBackPressed() {
+	
+	if (sharedPref.getBoolean("Vibrationon/off", true)) {
+		Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+		vibe.vibrate(Setting.VibrationIntensity1);
+	}
+	super.onBackPressed();
+}
 
 }

@@ -25,8 +25,7 @@ import android.widget.ToggleButton;
 
 public class GameSetting extends Activity {
 	Switch TB_Sound;
-	Switch TB_Vibration;
-	
+	Switch TB_Vibration; 
 	SeekBar sb_Sound;
 	TextView tv;
 	private boolean mIsBound = false;

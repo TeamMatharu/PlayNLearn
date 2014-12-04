@@ -7,14 +7,18 @@ import java.util.Timer;
 
 import com.playnlearn.classes.Question;
 import com.playnlearn.classes.Question_DAO;
+import com.playnlearn.classes.Setting;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.os.Vibrator;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,22 +44,13 @@ public class GuestquestionActivity extends Activity {
 	Question_DAO qDao;
 	Question qclass;
 	List<Long> qno=new ArrayList<Long>();
+	SharedPreferences sharedPref;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_guestquestion);
-		gpbar=(ProgressBar)findViewById(R.id.progressBar2);
-		rgst=(RadioGroup)findViewById(R.id.rgOptions);
-		tvonq=(TextView)findViewById(R.id.tvOnQuestion);
-		btngsub=(Button)findViewById(R.id.btngchk);
-		btngquit=(Button)findViewById(R.id.btngquit);
-		tvq=(TextView)findViewById(R.id.tvQ);
-		o1=(RadioButton)findViewById(R.id.rb1);
-		o2=(RadioButton)findViewById(R.id.rb2);
-		o3=(RadioButton)findViewById(R.id.rb3);
-		o4=(RadioButton)findViewById(R.id.rb4);
-		tvonq.setText("0/50");
-		
+		instantiateView();
 		qDao=new Question_DAO(getApplicationContext());
 		qDao.open();
 		qno.addAll(qDao.getQuestionID());
@@ -157,6 +152,11 @@ public class GuestquestionActivity extends Activity {
 	public void onBackPressed()
 	{
 		
+			if (sharedPref.getBoolean("Vibrationon/off", true)) {
+				Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+				vibe.vibrate(Setting.VibrationIntensity1);
+			}
+
          openAlertDialoug();
         
 	}
@@ -218,4 +218,19 @@ public class GuestquestionActivity extends Activity {
 
 		}
 	
+	public void instantiateView(){
+		sharedPref = this.getSharedPreferences(getString(R.string.SharedPref),
+				Context.MODE_PRIVATE);
+		gpbar=(ProgressBar)findViewById(R.id.progressBar2);
+		rgst=(RadioGroup)findViewById(R.id.rgOptions);
+		tvonq=(TextView)findViewById(R.id.tvOnQuestion);
+		btngsub=(Button)findViewById(R.id.btngchk);
+		btngquit=(Button)findViewById(R.id.btngquit);
+		tvq=(TextView)findViewById(R.id.tvQ);
+		o1=(RadioButton)findViewById(R.id.rb1);
+		o2=(RadioButton)findViewById(R.id.rb2);
+		o3=(RadioButton)findViewById(R.id.rb3);
+		o4=(RadioButton)findViewById(R.id.rb4);
+		tvonq.setText("0/50");
+	}
 }

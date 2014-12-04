@@ -30,6 +30,7 @@ import android.widget.Toast;
 
 import com.playnlearn.classes.Question;
 import com.playnlearn.classes.Question_DAO;
+import com.playnlearn.classes.Setting;
 import com.playnlearn.classes.User_DAO;
 import com.playnlearn.classes.User_Profile;
 
@@ -227,7 +228,7 @@ public class ProfilequestionActivity extends Activity {
 							"" + sharedPref.getBoolean("Vibrationon/off", true));
 					if (sharedPref.getBoolean("Vibrationon/off", true)) {
 						Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-						vibe.vibrate(200);
+						vibe.vibrate(Setting.VibrationIntensity1);
 					}
 
 					Toast toast = new Toast(getApplicationContext());
@@ -251,6 +252,10 @@ public class ProfilequestionActivity extends Activity {
 		btnquit.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
+				if (sharedPref.getBoolean("Vibrationon/off", true)) {
+					Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+					vibe.vibrate(Setting.VibrationIntensity1);
+				}
 				openAlertDialoug(v);
 
 			}
@@ -326,7 +331,10 @@ public class ProfilequestionActivity extends Activity {
 	}
 	@Override
 	public void onBackPressed() {
-
+		if (sharedPref.getBoolean("Vibrationon/off", true)) {
+			Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+			vibe.vibrate(200);
+		}
 		openAlertDialoug();
 
 	}

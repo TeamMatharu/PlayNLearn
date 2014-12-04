@@ -3,15 +3,19 @@ package com.example.playnlearn;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.playnlearn.classes.Setting;
 import com.playnlearn.classes.User_DAO;
 import com.playnlearn.classes.User_Profile;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -26,7 +30,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class UserListActivity extends Activity {
-
+	SharedPreferences sharedPref ;
 	ListView list;
 	TextView tv1, tv2;
 	Bitmap b;
@@ -50,7 +54,8 @@ public class UserListActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_user_list);
-
+		sharedPref = this.getSharedPreferences(getString(R.string.SharedPref),
+				Context.MODE_PRIVATE);
 		btn = (Button) findViewById(R.id.btninv);
 		shr = (Button) findViewById(R.id.btnshr);
 		btn.setOnClickListener(new OnClickListener() {
@@ -244,4 +249,18 @@ public class UserListActivity extends Activity {
 			list.setVisibility(View.VISIBLE);
 		}
 	}
+	
+	
+	@Override
+	public void onBackPressed() {
+		if (sharedPref.getBoolean("Vibrationon/off", true)) {
+			Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+			vibe.vibrate(Setting.VibrationIntensity1);
+		}
+		
+		super.onBackPressed();
+	}
+	
+	
+	
 }
