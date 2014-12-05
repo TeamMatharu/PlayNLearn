@@ -11,9 +11,9 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-    <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
 
     <application
         android:allowBackup="true"
@@ -67,7 +67,7 @@
             android:label="@string/title_activity_userlist"
             android:screenOrientation="portrait" >
         </activity>
-         <activity
+        <activity
             android:name=".Instruction"
             android:label="@string/title_activity_instruction"
             android:screenOrientation="portrait" >
@@ -99,7 +99,15 @@
             android:name=".ContactUs"
             android:label="@string/title_activity_contact_us" >
         </activity>
-        <meta-data android:value="@string/facebook_app_id" android:name="com.facebook.sdk.ApplicationId"/>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name=".ProfileProgressbar"
+            android:label="@string/title_activity_profile_progressbar" >
+        </activity>
     </application>
 
 </manifest>

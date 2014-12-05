@@ -27,5 +27,6 @@
     <string name="title_activity_contact_us">ContactUs</string>
     <string name="title_activity_instruction">InstructionPage</string>
     <string name="facebook_app_id">1507199642899369</string>
+    <string name="title_activity_profile_progressbar">ProfileProgressbar</string>
 
 </resources>

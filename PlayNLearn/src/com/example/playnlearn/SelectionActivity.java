@@ -122,21 +122,16 @@ public class SelectionActivity extends Activity {
 	
 	 @Override
 	public void onBackPressed() {
-		// TODO Auto-generated method stub
-		//super.onBackPressed();
-		 super.onBackPressed();
+		
+		 //super.onBackPressed();
 		 if (sharedPref.getBoolean("Vibrationon/off", true)) {
 				Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 				vibe.vibrate(Setting.VibrationIntensity1);
 			}
 
 		openAlertDialoug();
-		/*Intent music = new Intent();
-        music.setClass(this, MusicService.class);
-        stopService(music);
-    	doBindService();
-    	onDestroy();*/
-		super.onBackPressed();
+		
+		//super.onBackPressed();
 	}
 	 
 	   	

@@ -165,28 +165,30 @@ public final class R {
         public static final int activity_instruction=0x7f030005;
         public static final int activity_invite_friend=0x7f030006;
         public static final int activity_new_profile=0x7f030007;
-        public static final int activity_profilequestion=0x7f030008;
-        public static final int activity_progressbar2=0x7f030009;
-        public static final int activity_selection=0x7f03000a;
-        public static final int activity_share=0x7f03000b;
-        public static final int activity_user_list=0x7f03000c;
-        public static final int listlayout=0x7f03000d;
-        public static final int profiledetails=0x7f03000e;
-        public static final int profilelist=0x7f03000f;
-        public static final int resultpage=0x7f030010;
-        public static final int row=0x7f030011;
+        public static final int activity_profile_progressbar=0x7f030008;
+        public static final int activity_profilequestion=0x7f030009;
+        public static final int activity_progressbar2=0x7f03000a;
+        public static final int activity_selection=0x7f03000b;
+        public static final int activity_share=0x7f03000c;
+        public static final int activity_user_list=0x7f03000d;
+        public static final int listlayout=0x7f03000e;
+        public static final int profiledetails=0x7f03000f;
+        public static final int profilelist=0x7f030010;
+        public static final int resultpage=0x7f030011;
+        public static final int row=0x7f030012;
     }
     public static final class menu {
         public static final int contact_us=0x7f090000;
         public static final int game_setting=0x7f090001;
         public static final int guestquestion=0x7f090002;
         public static final int new_profile=0x7f090003;
-        public static final int profilequestion=0x7f090004;
-        public static final int progressbar2=0x7f090005;
-        public static final int result_card=0x7f090006;
-        public static final int selection=0x7f090007;
-        public static final int update_usr_detail=0x7f090008;
-        public static final int user_list=0x7f090009;
+        public static final int profile_progressbar=0x7f090004;
+        public static final int profilequestion=0x7f090005;
+        public static final int progressbar2=0x7f090006;
+        public static final int result_card=0x7f090007;
+        public static final int selection=0x7f090008;
+        public static final int update_usr_detail=0x7f090009;
+        public static final int user_list=0x7f09000a;
     }
     public static final class raw {
         public static final int melody=0x7f040000;
@@ -209,6 +211,7 @@ public final class R {
         public static final int title_activity_invitefriend=0x7f06000d;
         public static final int title_activity_main=0x7f060008;
         public static final int title_activity_new_profile=0x7f060006;
+        public static final int title_activity_profile_progressbar=0x7f060017;
         public static final int title_activity_progressbar2=0x7f060004;
         public static final int title_activity_result_card=0x7f060007;
         public static final int title_activity_selection=0x7f060001;

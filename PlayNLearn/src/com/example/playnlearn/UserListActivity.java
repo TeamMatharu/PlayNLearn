@@ -115,7 +115,7 @@ public class UserListActivity extends Activity {
 				TextView textView = (TextView) parent
 						.findViewById(R.id.List_username);
 				Intent itm = new Intent(UserListActivity.this,
-						ProfilequestionActivity.class);
+						ProfileProgressbar.class);
 				itemValue = (String) list.getItemAtPosition(position);
 				Log.i("mymy", textView.getText().toString());
 				itm.putExtra("user", itemValue);
