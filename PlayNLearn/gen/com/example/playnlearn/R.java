@@ -57,8 +57,8 @@ public final class R {
         public static final int btnSave=0x7f0a0025;
         public static final int btnStartGame=0x7f0a005f;
         public static final int btnchk=0x7f0a0011;
-        public static final int btngchk=0x7f0a002b;
-        public static final int btngquit=0x7f0a002c;
+        public static final int btngchk=0x7f0a002c;
+        public static final int btngquit=0x7f0a002d;
         public static final int btninstruction=0x7f0a0053;
         public static final int btninv=0x7f0a0045;
         public static final int btnok=0x7f0a0040;
@@ -94,7 +94,7 @@ public final class R {
         public static final int rb4=0x7f0a000f;
         public static final int rgOptions=0x7f0a000b;
         public static final int scrollView1=0x7f0a0000;
-        public static final int scrollView2=0x7f0a002d;
+        public static final int scrollView2=0x7f0a002e;
         public static final int seekBar1=0x7f0a0028;
         public static final int switch1=0x7f0a0026;
         public static final int switch2=0x7f0a0027;
@@ -115,7 +115,7 @@ public final class R {
         public static final int textView19=0x7f0a003e;
         public static final int textView2=0x7f0a0015;
         public static final int textView20=0x7f0a003f;
-        public static final int textView3=0x7f0a002e;
+        public static final int textView3=0x7f0a002a;
         public static final int textView4=0x7f0a002f;
         public static final int textView5=0x7f0a0030;
         public static final int textView6=0x7f0a0031;
@@ -129,7 +129,7 @@ public final class R {
         public static final int tvEmail2=0x7f0a0056;
         public static final int tvEmptyList=0x7f0a0059;
         public static final int tvGameName=0x7f0a004e;
-        public static final int tvGuest=0x7f0a002a;
+        public static final int tvGuest=0x7f0a002b;
         public static final int tvName=0x7f0a0041;
         public static final int tvName2=0x7f0a0054;
         public static final int tvOnQuestion=0x7f0a0005;

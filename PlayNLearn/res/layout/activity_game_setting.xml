@@ -6,7 +6,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.playnlearn.GameSetting" >
+    tools:context="com.example.playnlearn.GameSetting"
+    android:background="@drawable/grdient" >
 
     <TextView
         android:id="@+id/textView1"
@@ -63,6 +64,25 @@
         android:textSize="15dp"
         android:textStyle="bold" />
 
-    
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvcontact"
+        android:layout_below="@+id/tvcontact"
+        android:layout_marginTop="27dp"
+        android:text="Rate Us" />
+
+    <RatingBar
+        android:id="@+id/ratingBar1"
+        style="@style/foodRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="22dp"
+        
+        android:numStars="5"
+        android:rating="3.5" />
 
 </RelativeLayout>

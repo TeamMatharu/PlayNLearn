@@ -143,7 +143,36 @@ public class GuestquestionActivity extends Activity {
 				tvonq.setText(String.valueOf(question)+"/50");
 				//generateNewQuestion();
 				
-				
+				if(question>=50)
+				{
+					AlertDialog.Builder adb=new AlertDialog.Builder(GuestquestionActivity.this);
+					adb.setTitle("Alert!");
+					adb.setMessage("You have Reach the limit to the question for Guest!\nPlease Create Profile now to enjoy Unlimited fun.\nWould you like to connect now?");
+					adb.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+						
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							
+							Intent intent=new Intent(getApplicationContext(),NewProfileActivity.class);
+							startActivity(intent);
+							
+							
+						}
+					});
+					adb.setNegativeButton("No", new DialogInterface.OnClickListener() {
+						
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							
+							Intent intent=new Intent(getApplicationContext(),SelectionActivity.class);
+							intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+							startActivity(intent);
+						}
+					});
+					AlertDialog adbox=adb.create();
+					adbox.show();
+					
+				}
 			}
 		});
 		

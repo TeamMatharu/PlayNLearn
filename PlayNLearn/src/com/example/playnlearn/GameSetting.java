@@ -11,10 +11,13 @@ import android.media.AudioManager;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.RatingBar;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.Switch;
@@ -28,6 +31,7 @@ public class GameSetting extends Activity {
 	Switch TB_Vibration; 
 	SeekBar sb_Sound;
 	TextView tv;
+	RatingBar rb;
 	private boolean mIsBound = false;
     MusicService mServ;
 	public static Boolean Soundon_off;
@@ -44,7 +48,7 @@ public class GameSetting extends Activity {
 		 sharedPref = context.getSharedPreferences(
 			        getString(R.string.SharedPref), Context.MODE_PRIVATE);
 		 
-		 
+		 rb=(RatingBar)findViewById(R.id.ratingBar1);
 		TB_Sound=(Switch)findViewById(R.id.switch1);
 
 		 TB_Vibration=(Switch) findViewById(R.id.switch2);
@@ -68,7 +72,49 @@ public class GameSetting extends Activity {
 				
 			}
 		});
-	    
+	    rb.setOnTouchListener(new OnTouchListener() {
+			
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				
+				if (event.getAction() == MotionEvent.ACTION_UP) {
+                    float touchPositionX = event.getX();
+                    float width = rb.getWidth();
+                    float starsf = (touchPositionX / width) * 5.0f;
+                    int stars = (int)starsf + 1;
+                    rb.setRating(stars);
+                    if(rb.getRating()>3.5)
+                    {
+                    Toast.makeText(GameSetting.this, String.valueOf("Thank you for Liking Us!!!"), Toast.LENGTH_SHORT).show();                   
+                    v.setPressed(false);
+                    }
+                    else
+                    {
+                    	Toast.makeText(GameSetting.this, String.valueOf("Please provide your Feedback to improve over App!"), Toast.LENGTH_SHORT).show();                   
+                        v.setPressed(false);
+                    }
+               }
+               if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                   v.setPressed(true);
+               }
+
+               if (event.getAction() == MotionEvent.ACTION_CANCEL) {
+                   v.setPressed(false);
+               }
+
+				
+			/*	if(rb.getRating()>3.5)
+				{
+					Toast.makeText(getApplicationContext(), "Thank you!!!", 500).show();
+				}
+				else
+				{
+					Toast.makeText(getApplicationContext(), "We will Improve this App please provide us your Feedback.", 500).show();
+				}
+				return false;*/
+               return true;
+			}
+		});
         music.setClass(this, MusicService.class);
         checkPreviousState();
         
