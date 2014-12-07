@@ -1,5 +1,14 @@
 package com.example.playnlearn;
 
+import java.io.IOException;
+import java.io.InputStream;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
+
+import com.playnlearn.classes.Question;
+import com.playnlearn.classes.Question_DAO;
 import com.playnlearn.classes.Setting;
 
 import android.app.Activity;
@@ -15,6 +24,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -27,6 +37,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class SelectionActivity extends Activity {
+	//parsing part
+	Question Que;
+	private int q_id=0;
+	String text;
+	
+	
 	int backButtonCount =0;
 		private boolean mIsBound = false;
 
@@ -38,6 +54,8 @@ public class SelectionActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_selection);
+		//Run Parsing
+		runParsing();
 		
 		Context context = getApplicationContext();
 		 sharedPref = context.getSharedPreferences(
@@ -268,4 +286,100 @@ public class SelectionActivity extends Activity {
 	    
 	    
 		}
+		
+		
+		 public void parse() {  
+	         try {  
+	        	 InputStream is  = getResources().openRawResource(R.raw.quiz);
+	        	 Question_DAO Qdao =new Question_DAO(SelectionActivity.this);
+	          XmlPullParserFactory factory = XmlPullParserFactory.newInstance();  
+	          factory.setNamespaceAware(true);  
+	          XmlPullParser  parser = factory.newPullParser();  
+	 
+	          parser.setInput(is, null);  
+	 
+	          int eventType = parser.getEventType();  
+	          while (eventType != XmlPullParser.END_DOCUMENT) {  
+	              String tagname = parser.getName();  
+	              switch (eventType) {  
+	              case XmlPullParser.START_DOCUMENT:
+	            	  Qdao.open();
+	            	  break;
+	              case XmlPullParser.START_TAG:  
+	                  if (tagname.equalsIgnoreCase("question")) {  
+	                      // create a new instance of employee  
+	                	 
+	              	  	
+	                	  Que=new Question();  
+	                	  Que.setQuestion_ID(q_id);
+	                  } 
+	                  break;  
+	 
+	              case XmlPullParser.TEXT:  
+	                  text = parser.getText();  
+	                  break;  
+	 
+	              case XmlPullParser.END_TAG:  
+	                  if (tagname.equalsIgnoreCase("question")) {  
+	                      // add employee object to list  
+	                	  	q_id++;
+	                        Qdao.AddQuestion(Que);
+	                        
+	                  }else if (tagname.equalsIgnoreCase("questionText")) {  
+	                      Que.setQuestion_Text(text);  
+	                  }  else if (tagname.equalsIgnoreCase("option1")) {  
+	                      Que.setOption1(text);
+	                  } else if (tagname.equalsIgnoreCase("option2")) {  
+	                	  Que.setOption2(text);
+	                  }  else if (tagname.equalsIgnoreCase("option3")) {  
+	                	  Que.setOption3(text);
+	                  }  else if (tagname.equalsIgnoreCase("option4")) {  
+	                	  Que.setOption4(text);
+	                  }  else if (tagname.equalsIgnoreCase("questioncomment")) {  
+	                      Que.setQuestion_Comment("Comment");
+	                  }  else if (tagname.equalsIgnoreCase("answer")) {  
+	                      Que.setAnswer(text);  
+	                      Que.setQuestion_Comment("Comment");
+	                  }   
+	                  break;  
+	 
+	              default:  
+	                  break;  
+	              }  
+	              eventType = parser.next();  
+	          }  
+	 
+	      } catch (XmlPullParserException e) {e.printStackTrace();}   
+	      catch (IOException e) {e.printStackTrace();}  
+	 
+	     
+	    
+	}  
+
+
+
+		public void runParsing(){
+			Thread thread = new Thread()
+			{
+			    @Override
+			    public void run() {
+			        while(true) {
+			        	if (sharedPref.getBoolean("is_first_time", true)) {
+			    		    //the app is being launched for first time, do something        
+			    		    Log.d("TAG", "First time");
+
+			    		    parse();
+			    		    // record the fact that the app has been started at least once
+			    		    sharedPref.edit().putBoolean("is_first_time", false).commit(); 
+			    		}else{
+			    			Log.i("App Run Status","This is not First Time That Application is running");
+			    		}
+					    
+					}
+			    }
+			};
+
+			thread.start();
+		}
+
 }

@@ -193,6 +193,7 @@ public final class R {
     public static final class raw {
         public static final int melody=0x7f040000;
         public static final int my=0x7f040001;
+        public static final int quiz=0x7f040002;
     }
     public static final class string {
         public static final int Setting=0x7f060011;

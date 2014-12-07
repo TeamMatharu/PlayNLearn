@@ -1,0 +1,665 @@
+<?xml version="1.0"?>
+<quiz>
+
+<question>
+<questionText>The telescope is used for viewing</questionText>
+<option1>distant objects</option1>
+<option2>near objects</option2>
+<option3>small objects</option3>
+<option4>living cells</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>The unit of current is</questionText>
+<option1>volt</option1>
+<option2>watt</option2>
+<option3>ohm</option3>
+<option4>ampere</option4>
+<answer>option4</answer>
+</question>
+
+<question>
+<questionText>How many time zones does canada have?</questionText>
+<option1>3</option1>
+<option2>4</option2>
+<option3>5</option3>
+<option4>6</option4>
+<answer>option4</answer>
+</question>
+
+<question>
+<questionText>'OS'computer abbreviation usually means ?</questionText>
+<option1>Open Software</option1>
+<option2>Operating System</option2>
+<option3>Order of Significance</option3>
+<option4>Optical Sensor</option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>The Canadian parliament is in which city ?</questionText>
+<option1>Ottawa</option1>
+<option2>Toronto</option2>
+<option3>Hamilton</option3>
+<option4>Vancouver</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>A word opposite in meaning to another</questionText>
+<option1>Antonym</option1>
+<option2>Biography</option2>
+<option3>Irreparable</option3>
+<option4>Catalogue </option4>
+<answer>option1</answer>
+</question>
+   
+<question>
+<questionText>What is the probability of selecting a prime number from 1,2,3,... 10 ?</questionText>
+<option1>15</option1>
+<option2>20</option2>
+<option3>25</option3>
+<option4>30</option4>
+<answer>option3</answer>
+</question>
+
+<question>
+<questionText>Grand Central Terminal, Park Avenue, New York is the world's</questionText>
+<option1>largest railway station</option1>
+<option2>highest railway station</option2>
+<option3>longest railway station</option3>
+<option4>None of the above</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>Entomology is the science that studies</questionText>
+<option1>Insects</option1>
+<option2>The formation of rocks</option2>
+<option3>Behavior of human beings</option3>
+<option4>The origin and history of technical and scientific terms</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>Which two months in a year have the same calendar?</questionText>
+<option1>June, October</option1>
+<option2>April,July</option2>
+<option3>April, November</option3>
+<option4>October ,December</option4>
+<answer>option3</answer>
+</question>
+
+<question>
+<questionText>For the Olympics and World Tournaments, the dimensions of basketball court are</questionText>
+<option1>26 m x 14 m</option1>
+<option2>27 m x 16 m</option2>
+<option3>28 m x 16 m</option3>
+<option4>28 m x 15 m</option4>
+<answer>option4</answer>
+</question>
+
+
+<question>
+<questionText>Eritrea, which became the 182nd member of the UN in 1993, is in the continent of</questionText>
+<option1>Asia</option1>
+<option2>Africa</option2>
+<option3>Australia</option3>
+<option4>Europe</option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>'.MOV' extension refers usually to what kind of file?</questionText>
+<option1>Image file</option1>
+<option2>MS Office document</option2>
+<option3>Animation/movie file</option3>
+<option4>Audio file</option4>
+<answer>option3</answer>
+</question>
+
+
+<question>
+<questionText>Epsom (England) is the place associated with</questionText>
+<option1>Polo</option1>
+<option2>Snooker</option2>
+<option3>Horse racing</option3>
+<option4>Shooting</option4>
+<answer>option3</answer>
+</question>
+
+<question>
+<questionText>Which of the following is used in pencils?</questionText>
+<option1>Graphite</option1>
+<option2>Charcoal</option2>
+<option3>Silicon</option3>
+<option4>Phosphorous</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>Which of the following is a non metal that remains liquid at room temperature?</questionText>
+<option1>Phosphorous</option1>
+<option2>Chlorine</option2>
+<option3>Bromine</option3>
+<option4>Helium</option4>
+<answer>option3</answer>
+</question>
+
+<question>
+<questionText>The countries that had maintained research stations in Antarctica under Antarctic Trade are</questionText>
+<option1>USA</option1>
+<option2>FRANCE</option2>
+<option3>NEWZELAND</option3>
+<option4>ALL OF THE ABOVE</option4>
+<answer>option4</answer>
+</question>
+
+<question>
+<questionText>Which of the gas is not known as green house gas?</questionText>
+<option1>Hydrogen</option1>
+<option2>Carbon dioxide</option2>
+<option3>Methane</option3>
+<option4>Nitrous oxide</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>The hardest substance available on earth is</questionText>
+<option1>Gold</option1>
+<option2>Platinum</option2>
+<option3>Iron</option3>
+<option4>Diamond</option4>
+<answer>option4</answer>
+</question>
+
+<question>
+<questionText>One fathom is equal to</questionText>
+<option1>6 feet</option1>
+<option2>100 cm</option2>
+<option3>60 feet</option3>
+<option4>6 meters</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>One kilometre is equal to how many miles?</questionText>
+<option1>0.84</option1>
+<option2>0.4</option2>
+<option3>1.5</option3>
+<option4>0.62</option4>
+<answer>option4</answer>
+</question>
+
+<question>
+<questionText>How many colours the sunlight spectrum has?</questionText>
+<option1>4</option1>
+<option2>5</option2>
+<option3>6</option3>
+<option4>7</option4>
+<answer>option4</answer>
+</question>
+
+<question>
+<questionText>The largest gulf in the world is</questionText>
+<option1>Gulf of Mexico</option1>
+<option2>Persian Gulf</option2>
+<option3>Gulf of Carpentaria</option3>
+<option4>Gulf of Mannar</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>What Galileo invented?</questionText>
+<option1>Thermometer</option1>
+<option2>Microscope</option2>
+<option3>Pendulum clock</option3>
+<option4>Barometer</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>Who invented Fountain Pen?</questionText>
+<option1>Kirkpatrick Macmillan</option1>
+<option2>Sir Frank Whittle</option2>
+<option3>Lewis E. Waterman</option3>
+<option4>John J. Loud</option4>
+<answer>option3</answer>
+</question>
+
+<question>
+<questionText>Which of the following is not associated with the United Nations Organization?</questionText>
+<option1>International Labor Organization</option1>
+<option2>World Health Organization</option2>
+<option3>Association of Southeast Asian Nations</option3>
+<option4>All of the above</option4>
+<answer>option3</answer>
+</question>
+
+<question>
+<questionText>The office of the UN General Assembly is in</questionText>
+<option1>Toronto</option1>
+<option2>New York</option2>
+<option3>Paris</option3>
+<option4>Zurich</option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>Besides UK, USA, Germany and Japan the G-7 countries includes</questionText>
+<option1>Canada, France and Italy</option1>
+<option2>Canada, Italy and Netherlands</option2>
+<option3>Canada, France and Russia</option3>
+<option4>France, Netherlands and Russia</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>Minimum number of unequal vectors which can give zero resultant are</questionText>
+<option1>Flash</option1>
+<option2>Fury</option2>
+<option3>Flange</option3>
+<option4>FRAM</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>Hockey was introduced in the Asian Games in</questionText>
+<option1>1958 in Tokyo</option1>
+<option2>1962 in Jakarta</option2>
+<option3>1966 in Bangkok</option3>
+<option4>1970 in Bangkok</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>Who developed Yahoo?</questionText>
+<option1>Dennis Ritchie  Ken Thompson</option1>
+<option2>David Filo  Jerry Yang</option2>
+<option3>Vint Cerf  Robert Kahn</option3>
+<option4>Steve Case Jeff Bezos</option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>India has largest deposits of ____ in the world.</questionText>
+<option1>gold</option1>
+<option2>copper</option2>
+<option3>mica</option3>
+<option4>None of the above</option4>
+<answer>option3</answer>
+</question>
+
+<question>
+<questionText>India's first satellite is named after</questionText>
+<option1>Aryabhatta</option1>
+<option2>Bhaskara I</option2>
+<option3>Bhaskara II</option3>
+<option4>Albert Einstein</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>In a normal human body, the total number of red blood cells is</questionText>
+<option1>15 trillion</option1>
+<option2>20 trillion</option2>
+<option3>25 trillion</option3>
+<option4>30 trillion</option4>
+<answer>option4</answer>
+</question>
+
+<question>
+<questionText>In the United States the television broadcast standard is?</questionText>
+<option1>PAL</option1>
+<option2>NTSC</option2>
+<option3>RGB</option3>
+<option4>SECAM</option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>__is the biggest planet in the Solar System</questionText>
+<option1>Jupiter</option1>
+<option2>Saturn</option2>
+<option3>Pluto</option3>
+<option4>Neptune</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>How many teeth does a normal adult dog have?</questionText>
+<option1>42</option1>
+<option2>44</option2>
+<option3>32</option3>
+<option4>38</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>How many times has Brazil won the World Cup Football Championship?</questionText>
+<option1>3</option1>
+<option2>4</option2>
+<option3>5</option3>
+<option4>6</option4>
+<answer>option3</answer>
+</question>
+
+<question>
+<questionText>Where is the headquarters of Intel located?</questionText>
+<option1>Redmond, Washington</option1>
+<option2>Tucson, Arizona</option2>
+<option3>Richmond, Virginia</option3>
+<option4>Santa Clara, California</option4>
+<answer>option4</answer>
+</question>
+
+<question>
+<questionText>'.BAK' extension refers usually to what kind of file?</questionText>
+<option1>Backup file</option1>
+<option2>Audio file</option2>
+<option3>Animation file</option3>
+<option4>MS office document</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>Blue is what number on the resistor color code?</questionText>
+<option1>5</option1>
+<option2>6</option2>
+<option3>7</option3>
+<option4>8</option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>How many bits is a byte?</questionText>
+<option1>4</option1>
+<option2>8</option2>
+<option3>16</option3>
+<option4>32</option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>What's a web browser?</questionText>
+<option1>A software program that allows you to access sites on the World Wide Web</option1>
+<option2>A computer that stores WWW files</option2>
+<option3>A person who likes to look at websites</option3>
+<option4>A kind of spider</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>How many players are there on each side in the game of Basketball?</questionText>
+<option1>4</option1>
+<option2>5</option2>
+<option3>6</option3>
+<option4>7</option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>In cricket, the two sets of wickets are</questionText>
+<option1>18 yards apart</option1>
+<option2>20 yards apart</option2>
+<option3>22 yards apart</option3>
+<option4>24 yards apart</option4>
+<answer>option3</answer>
+</question>
+
+<question>
+<questionText>Joule is the unit of</questionText>
+<option1>temperature</option1>
+<option2>heat</option2>
+<option3>pressure</option3>
+<option4>energy</option4>
+<answer>option4</answer>
+</question>
+
+<question>
+<questionText>Another word for the CPU is_</questionText>
+<option1>Decode</option1>
+<option2>Microprocessor</option2>
+<option3>Execute</option3>
+<option4>Micro chip</option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>Oscar Awards were instituted in</questionText>
+<option1>1961</option1>
+<option2>1921</option2>
+<option3>1949</option3>
+<option4>1929</option4>
+<answer>option4</answer>
+</question>
+
+<question>
+<questionText>Which province is Canada's major producer of oil and gas?</questionText>
+<option1>Quebec</option1>
+<option2>Ontario</option2>
+<option3>Yukon</option3>
+<option4>Alberta</option4>
+<answer>option4</answer>
+</question>
+
+<question>
+<questionText>Plants receive their nutrients mainly from</questionText>
+<option1>chlorophyll</option1>
+<option2>light</option2>
+<option3>atmosphere</option3>
+<option4>soil</option4>
+<answer>option4</answer>
+</question>
+
+<question>
+<questionText>Plants synthesis protein from</questionText>
+<option1>amino acids</option1>
+<option2>fatty acids</option2>
+<option3>starch</option3>
+<option4>sugar</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>Most highly intelligent mammals are</questionText>
+<option1>whales</option1>
+<option2>dolphins</option2>
+<option3>elephants</option3>
+<option4>kangaroos</option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>What is the Websites code for the country United Kingdom?</questionText>
+<option1>GB</option1>
+<option2>UK</option2>
+<option3>EN</option3>
+<option4>EG</option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>Add Next Number:4, 6, 12, 14, 28, 30,__</questionText>
+<option1>60</option1>
+<option2>62</option2>
+<option3>32</option3>
+<option4>58</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>The purest form of naturally occurring water is</questionText>
+<option1>rain water</option1>
+<option2>river water</option2>
+<option3>pond water</option3>
+<option4>well water</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>Which of the following UN agencies has its headquarters at Paris?</questionText>
+<option1>UNESCO</option1>
+<option2>FAO</option2>
+<option3>IMO</option3>
+<option4>ILO</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>The chief constituent of gobar gas is</questionText>
+<option1>ethane</option1>
+<option2>methane</option2>
+<option3>hydrogen</option3>
+<option4>carbon dioxide</option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>Java was originally invented by</questionText>
+<option1>Oracle</option1>
+<option2>Microsoft</option2>
+<option3>Novell</option3>
+<option4>Sun</option4>
+<answer>option4</answer>
+</question>
+
+<question>
+<questionText>What is meant by a dedicated computer?</questionText>
+<option1>which is used by one person only</option1>
+<option2>which is assigned to one and only one task</option2>
+<option3>which does one kind of software</option3>
+<option4>which is meant for application software only</option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>Where are the headquarters of INTERPOL?</questionText>
+<option1>Geneva</option1>
+<option2>New York</option2>
+<option3>Venice</option3>
+<option4>Lyon</option4>
+<answer>option4</answer>
+</question>
+
+<question>
+<questionText>A teacher chooses a student at random from a class of 30 boyss. What is the probability that the student chosen is a boy?</questionText>
+<option1>0</option1>
+<option2>2</option2>
+<option3>30</option3>
+<option4>1</option4>
+<answer>option4</answer>
+</question>
+
+<question>
+<questionText>E-mail is a fundamental component of </questionText>
+<option1>Groupware</option1>
+<option2>Software</option2>
+<option3>Hardware</option3>
+<option4>None of the above</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>The default port address for HTTP is</questionText>
+<option1>50</option1>
+<option2>60</option2>
+<option3>70</option3>
+<option4>80</option4>
+<answer>option4</answer>
+</question>    
+   
+<question>
+<questionText>NASA's first mission capable of finding Earth size and smaller planets
+around other stars is</questionText>
+<option1>Kepler</option1>
+<option2>Wessler</option2>
+<option3>Hubble</option3>
+<option4>cassini</option4>
+<answer>option1</answer>
+</question>
+  
+<question>
+<questionText>What is the New Repo Rate?</questionText>
+<option1>8%</option1>
+<option2>9%</option2>
+<option3>10%</option3>
+<option4>11%</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>A thing that cannot be seen with human eyes</questionText>
+<option1>Biography</option1>
+<option2>Invisible</option2>
+<option3>visible</option3>
+<option4>Catalogue </option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>3 balls are drawn randomly from a bag contains 3 black, 5 red and 4 blue balls. What is the probability that the balls drawn contain balls of different colors?</questionText>
+<option1>211</option1>
+<option2>311</option2>
+<option3>411</option3>
+<option4>511</option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>In which decade with the first transatlantic radio broadcast occur?</questionText>
+<option1>1880s</option1>
+<option2>1850s</option2>
+<option3>1900s</option3>
+<option4>1800s</option4>
+<answer>option3</answer>
+</question>
+
+<question>
+<questionText>5 coins are tossed together. What is the probability of getting exactly 2 heads?</questionText>
+<option1>516</option1>
+<option2>515</option2>
+<option3>415</option3>
+<option4>416</option4>
+<answer>option1</answer>
+</question>
+	
+
+<question>
+<questionText>When did Commander Robert Peary discovered North Pole?</questionText>
+<option1>1907</option1>
+<option2>1908</option2>
+<option3>1909</option3>
+<option4>1910</option4>
+<answer>option3</answer>
+</question>
+
+<question>
+<questionText>The term of office of the UN Secretary-General is</questionText>
+<option1>3</option1>
+<option2>4</option2>
+<option3>5</option3>
+<option4>6</option4>
+<answer>option3</answer>
+</question>
+
+<question>
+<questionText>The number of already named bones in the human skeleton is</questionText>
+<option1>204</option1>
+<option2>206</option2>
+<option3>208</option3>
+<option4>210</option4>
+<answer>option2</answer>
+</question>
+<question>
+
+<questionText>The velocity of light was first measured by</questionText>
+<option1>Einstein</option1>
+<option2>Romer</option2>
+<option3>Newton</option3>
+<option4>Galileo</option4>
+<answer>option2</answer>
+</question>
+
+</quiz>
