@@ -364,6 +364,9 @@ public class SelectionActivity extends Activity {
 			    @Override
 			    public void run() {
 			        while(true) {
+			        	sharedPref = SelectionActivity.this.getSharedPreferences(
+			    		        getString(R.string.SharedPref), Context.MODE_PRIVATE);
+			    		
 			        	if (sharedPref.getBoolean("is_first_time", true)) {
 			    		    //the app is being launched for first time, do something        
 			    		    Log.d("TAG", "First time");

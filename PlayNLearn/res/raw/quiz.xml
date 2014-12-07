@@ -662,4 +662,583 @@ around other stars is</questionText>
 <answer>option2</answer>
 </question>
 
+<Question>
+<QuestionText>The great Victoria Desert is located in</QuestionText>
+<option1>Canada</option1>
+<option2>West Africa</option2>
+<option3>Australia</option3>
+<option4>North America</option4>
+<answer>option3</answer>
+</Question>
+
+<Question>
+<QuestionText>The light of distant stars is affected by</QuestionText>
+<option1>the earth\'s atmosphere</option1>
+<option2>interstellar dust</option2>
+<option3>both (a) and (b)</option3>
+<option4>None of the above</option4>
+<answer>option3</answer>
+</Question>
+
+<Question>
+<QuestionText>Which of the following is tropical grassland?</QuestionText>
+<option1>Taiga</option1>
+<option2>Savannah</option2>
+<option3>Pampas</option3>
+<option4>Prairies</option4>
+<answer>option2</answer>
+</Question>
+
+<Question>
+<QuestionText>The iron and steel industries of which of the following countries are almost fully dependent on imported raw materials?</QuestionText>
+<option1>Britain</option1>
+<option2>Japan</option2>
+<option3>Poland</option3>
+<option4>Germany</option4>
+<answer>option2</answer>
+</Question>
+
+<Question>
+<QuestionText>The temperature increases rapidly after</QuestionText>
+<option1>ionosphere</option1>
+<option2>exosphere</option2>
+<option3>stratosphere</option3>
+<option4>troposphere</option4>
+<answer>option1</answer>
+</Question>
+
+<Question>
+<QuestionText>The humidity of the air depends upon</QuestionText>
+<option1>temperature</option1>
+<option2>location</option2>
+<option3>weather</option3>
+<option4>All of the above</option4>
+<answer>option4</answer>
+</Question>
+
+<Question>
+<QuestionText>The highest average salinity amongst the following seas is reported from</QuestionText>
+<option1>Dead Sea</option1>
+<option2>Red Sea</option2>
+<option3>Black Sea</option3>
+<option4>Mediterranean Sea</option4>
+<answer>option1</answer>
+</Question>
+
+<Question>
+<QuestionText>The island state of Australia is</QuestionText>
+<option1>Victoria</option1>
+<option2>Queensland</option2>
+<option3>Tasmania</option3>
+<option4>New South Wales</option4>
+<answer>option3</answer>
+</Question>
+
+<Question>
+<QuestionText>The Ice age ended about ____ years ago.</QuestionText>
+<option1>140</option1>
+<option2>1,400</option2>
+<option3>14,000</option3>
+<option4>140,000</option4>
+<answer>option3</answer>
+</Question>
+
+<Question>
+<QuestionText>The highest sand dunes are found is</QuestionText>
+<option1>the Sahara desert</option1>
+<option2>the Atacama desert</option2>
+<option3>the Kalahari desert</option3>
+<option4>the Gobi desert</option4>
+<answer>option1</answer>
+</Question>
+
+<Question>
+<QuestionText>The largest continent in the world is</QuestionText>
+<option1>Africa</option1>
+<option2>Asia</option2>
+<option3>Australia</option3>
+<option4>Antarctica</option4>
+<answer>option2</answer>
+</Question>
+
+<Question>
+<QuestionText>The largest fresh water lake of Africa, area wise is</QuestionText>
+<option1>lake Victoria</option1>
+<option2>lake Tanganyika</option2>
+<option3>lake Malawi</option3>
+<option4>lake Rudot</option4>
+<answer>option1</answer>
+</Question>
+
+<Question>
+<QuestionText>The important mountains of Europe include</QuestionText>
+<option1>Andes, Alps, Pyrenees</option1>
+<option2>Alps, Carpathians, Pyrenees, Apennines</option2>
+<option3>Alps, Himalayas, Rock mountains</option3>
+<option4>None of the above</option4>
+<answer>option2</answer>
+</Question>
+
+<Question>
+<QuestionText>The largest city in Latin America is</QuestionText>
+<option1>Mexico city</option1>
+<option2>Caracas</option2>
+<option3>Rio-de-Janeiro</option3>
+<option4>Buenos Aires</option4>
+<answer>option1</answer>
+</Question>
+
+<Question>
+<QuestionText>The largest gulf in the world is</QuestionText>
+<option1>Gulf of Mexico</option1>
+<option2>Persian Gulf</option2>
+<option3>Gulf of Carpentaria</option3>
+<option4>Gulf of Mannar</option4>
+<answer>option1</answer>
+</Question>
+
+<Question>
+<QuestionText>The landmass of which of the following continents is the least?</QuestionText>
+<option1>Africa</option1>
+<option2>Asia</option2>
+<option3>Australia</option3>
+<option4>Europe</option4>
+<answer>option3</answer>
+</Question>
+
+<Question>
+<QuestionText>Who invented the BALLPOINT PEN?</QuestionText>
+<option1>Biro Brothers</option1>
+<option2>Waterman Brothers</option2>
+<option3>Bicc Brothers</option3>
+<option4>Write Brothers</option4>
+<answer>option1</answer>
+</Question>
+
+<Question>
+<QuestionText>What Galileo invented?</QuestionText>
+<option1>Barometer</option1>
+<option2>Pendulum clock</option2>
+<option3>Microscope</option3>
+<option4>Thermometer</option4>
+<answer>option4</answer>
+</Question>
+
+<Question>
+<QuestionText>What Benjamin Franklin invented?</QuestionText>
+<option1>Bifocal spectacles</option1>
+<option2>Radio</option2>
+<option3>Barometer</option3>
+<option4>Hygrometer</option4>
+<answer>option1</answer>
+</Question>
+
+<Question>
+<QuestionText>Who is the English physicist responsible for the 'Big Bang Theory'?</QuestionText>
+<option1>Albert Einstein</option1>
+<option2>Michael Skube</option2>
+<option3>George Gamow</option3>
+<option4>Roger Penrose</option4>
+<answer>option3</answer>
+</Question>
+
+<Question>
+<QuestionText>Which of the following is not associated with the UNO?</QuestionText>
+<option1>ILO</option1>
+<option2>WHO</option2>
+<option3>ASEAN</option3>
+<option4>All of the above</option4>
+<answer>option3</answer>
+</Question>
+
+<Question>
+<QuestionText>The office of the UN General Assembly is in</QuestionText>
+<option1>Vienna</option1>
+<option2>New York</option2>
+<option3>Paris</option3>
+<option4>Zurich</option4>
+<answer>option2</answer>
+</Question>
+
+<Question>
+<QuestionText>Which one of the following is not related to disarmament?</QuestionText>
+<option1>SALT</option1>
+<option2>NPT</option2>
+<option3>CTBT</option3>
+<option4>NATO</option4>
+<answer>option4</answer>
+</Question>
+
+<Question>
+<QuestionText>The five permanent members of UN security council are</QuestionText>
+<option1>Japan, West Germany, USSR, UK and USA</option1>
+<option2>Canada, China, France, USSR and USA</option2>
+<option3>Germany, China, USSR, UK and USA</option3>
+<option4>China, France, USSR, UK and USA</option4>
+<answer>option4</answer>
+</Question>
+
+<Question>
+<QuestionText>Who is the father of Geometry?</QuestionText>
+<option1>Aristotle</option1>
+<option2>Euclid</option2>
+<option3>Pythagoras</option3>
+<option4>Kepler</option4>
+<answer>option2</answer>
+</Question>
+
+<Question>
+<QuestionText>Charles Correa has distinguished himself in which of the following fields?</QuestionText>
+<option1>Painting</option1>
+<option2>Ballet</option2>
+<option3>Architecture</option3>
+<option4>Western Music</option4>
+<answer>option3</answer>
+</Question>
+
+<Question>
+<QuestionText>Hari Prasad Chaurasia is a renowned player of</QuestionText>
+<option1>Sitar</option1>
+<option2>Flute</option2>
+<option3>Sarod</option3>
+<option4>Tabla</option4>
+<answer>option2</answer>
+</Question>
+
+<question>
+<questionText>Which of these numbers is only divisible by 1 and itself?</questionText>
+<option1>12</option1>
+<option2>13</option2>
+<option3>14</option3>
+<option4>15</option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>The surface of which of these planets is not solid?</questionText>
+<option1>Jupiter</option1>
+<option2>mercury</option2>
+<option3>mars</option3>
+<option4>Venus</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>Which of these is a unit of measurement named after an English scientist?</questionText>
+<option1>Joule</option1>
+<option2>tasteless</option2>
+<option3>Radian</option3>
+<option4>Mole</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>Which of these is not a computer file format for music storage?</questionText>
+<option1>mp3</option1>
+<option2>JPEG</option2>
+<option3>MAV</option3>
+<option4>AAC</option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>Which of the following shapes would one get by rotating a compass 360 degrees?</questionText>
+<option1>rectangle</option1>
+<option2>triangle</option2>
+<option3>square</option3>
+<option4>circle</option4>
+<answer>option4</answer>
+</question>
+
+<question>
+<questionText>The electron was first identified by</questionText>
+<option1>J.J.Thompson</option1>
+<option2>J.Kepler</option2>
+<option3>D.Rutherford</option3>
+<option4>J.Chadwick</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>The chemical name of Vitamin B is</questionText>
+<option1>Thiamine</option1>
+<option2>Aascorbic acid</option2>
+<option3>Riboflavin</option3>
+<option4>Nicotinamide</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>When did Second world war end?</questionText>
+<option1>1945</option1>
+<option2>1946</option2>
+<option3>1944</option3>
+<option4>1939</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>What is the taste of pure water?</questionText>
+<option1>sweet</option1>
+<option2>tasteless</option2>
+<option3>bitter</option3>
+<option4>salty</option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>In what year did Canada become an independent country?</questionText>
+<option1>1967</option1>
+<option2>1947</option2>
+<option3>1857</option3>
+<option4>1867</option4>
+<answer>option4</answer>
+</question>
+
+<question>
+<questionText>If three sides of a square are 60cm each, how many centimeters will the fourth side be?</questionText>
+<option1>40</option1>
+<option2>30</option2>
+<option3>60</option3>
+<option4>50</option4>
+<answer>option3</answer>
+</question>
+
+<question>
+<questionText>Which of these units of currency is also the name of a unit of weight?</questionText>
+<option1>Europe</option1>
+<option2>Dollar</option2>
+<option3>Pound</option3>
+<option4>Rupee</option4>
+<answer>option3</answer>
+</question>
+
+<question>
+<questionText>Which county is named after a Latin word for a metal?</questionText>
+<option1>Poland</option1>
+<option2>Argentina</option2>
+<option3>France</option3>
+<option4>Latvia</option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>In what year did India become an independent country?</questionText>
+<option1>1967</option1>
+<option2>1947</option2>
+<option3>1857</option3>
+<option4>1867</option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>What is celebrated on the 26th of December?</questionText>
+<option1>Canada Day</option1>
+<option2>Boxing Day</option2>
+<option3>Victoria Day</option3>
+<option4>Christmas Day</option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>Which of the following was invented by Alexander Graham Bell?</questionText>
+<option1>BlackBerry</option1>
+<option2>Internet</option2>
+<option3>Telephone</option3>
+<option4>Fax Machine</option4>
+<answer>option3</answer>
+</question>
+
+<question>
+<questionText>What are LCD, LED, plasma with reference to television?</questionText>
+<option1>set top boxes</option1>
+<option2>remotes</option2>
+<option3>Display screens</option3>
+<option4>lens</option4>
+<answer>option3</answer>
+</question>
+
+<question>
+<questionText>What is the escape velocity required for a rocket to leave earth?</questionText>
+<option1>11.2km/sec</option1>
+<option2>15.9km/sec</option2>
+<option3>9.2km/sec</option3>
+<option4>10.2km/sec</option4>
+<answer>option1</answer>
+</question>
+
+
+<question>
+<questionText>When someone sends you an email in which folder of your email account will it usually land?</questionText>
+<option1>trash</option1>
+<option2>draft</option2>
+<option3>sent mail</option3>
+<option4>inbox</option4>
+<answer>option4</answer>
+</question>
+
+<question>
+<questionText>Of what is a kilobyte a unit?</questionText>
+<option1>computer memory or data</option1>
+<option2>speed of bullet trains</option2>
+<option3>speed of light</option3>
+<option4>intensity of earthquakes</option4>
+<answer>option1</answer>
+</question>	 
+
+<question>
+<questionText>In which direction does the needle of a compass point?</questionText>
+<option1>east</option1>
+<option2>south</option2>
+<option3>north</option3>
+<option4>west</option4>
+<answer>option3</answer>
+</question>
+
+<question>
+<questionText>In a flowering plant, which of these carries the reproductive organs?</questionText>
+<option1>root</option1>
+<option2>bark</option2>
+<option3>flower</option3>
+<option4>leaf</option4>
+<answer>option3</answer>
+</question>
+
+<question>
+<questionText>Which unit of length derives its name from the Latin word for one twelfth part?</questionText>
+<option1>feet</option1>
+<option2>inch</option2>
+<option3>yard</option3>
+<option4>watt</option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>Which is the tallest building in the world?</questionText>
+<option1>C N Tower</option1>
+<option2>Burj Khalifa</option2>
+<option3>Burj Al Arab</option3>
+<option4>Taipei 101</option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>Which of these features are you most likely to find in electronic equipments?</questionText>
+<option1>Walk mode</option1>
+<option2>Stand mode</option2>
+<option3>Laugh mode</option3>
+<option4>Sleep mode</option4>
+<answer>option4</answer>
+</question>	 	 
+
+<question>
+<questionText>Which of these fruits is not rich in vitamin C?</questionText>
+<option1>apple</option1>
+<option2>orange</option2>
+<option3>lemon</option3>
+<option4>kiwi</option4>
+<answer>option1</answer>
+</question>
+
+
+
+<question>
+<questionText>Which was the first element to be artifically produced?</questionText>
+<option1>Technetium</option1>
+<option2>Promethium</option2>
+<option3>Francium</option3>
+<option4>Einsteinium</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>Which part of the eye is stored in eye banks for transplant?</questionText>
+<option1>Retina</option1>
+<option2>Cornea</option2>
+<option3>Pupil</option3>
+<option4>Iris</option4>
+<answer>option2</answer>
+</question>
+
+<question>
+<questionText>Which planet has the longest day among all planets in the solar system?</questionText>
+<option1>Jupiter</option1>
+<option2>Neptune</option2>
+<option3>Saturn</option3>
+<option4>Venus</option4>
+<answer>option4</answer>
+</question> 
+
+<question>
+<questionText>What number is halfway between 11 and 19?</questionText>
+<option1>13</option1>
+<option2>14</option2>
+<option3>15</option3>
+<option4>16</option4>
+<answer>option3</answer>
+</question>
+
+<question>
+<questionText>Which of these is shorter than 1 inch??</questionText>
+<option1>2 centimeter</option1>
+<option2>3 centimeter</option2>
+<option3>4 centimeter</option3>
+<option4>5 centimeter</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>Which of the following is a form of a dance as well as a tangy sauce?</questionText>
+<option1>Salsa</option1>
+<option2>Hip-Hop</option2>
+<option3>Samba</option3>
+<option4>Disco</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>The SI unit for which of these is named after James Watt, a scottish inventor and engineer?</questionText>
+<option1>Power</option1>
+<option2>Temperature</option2>
+<option3>Electric Current</option3>
+<option4>Force</option4>
+<answer>option1</answer>
+</question>
+
+<question>
+<questionText>Which of these is an alloy?</questionText>
+<option1>Zinc</option1>
+<option2>Aluminum</option2>
+<option3>Sodium</option3>
+<option4>Steel</option4>
+<answer>option4</answer>
+</question>
+
+<question>
+<questionText>The full-fledged Commonwealth Games were first organized in</questionText>
+<option1>1936 Cardiff in UK</option1>
+<option2>1934 London in UK</option2>
+<option3>1930 Hamilton in Canada</option3>
+<option4>1932 Sydney in Australia</option4>
+<answer>option3</answer>
+</question>
+
+<question>
+<questionText>The element of an electric stove made</questionText>
+<option1>magnalium</option1>
+<option2>copper</option2>
+<option3>invar</option3>
+<option4>nicrome</option4>
+<answer>option4</answer>
+</question>
+
+<question>
+<questionText>The branch of science that studies cells is called</questionText>
+<option1>cytology</option1>
+<option2>homoplasty</option2>
+<option3>hormonology</option3>
+<option4>entomology</option4>
+<answer>option1</answer>
+</question>	
+
 </quiz>

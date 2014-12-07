@@ -57,7 +57,7 @@ public class ResultCardActivity extends Activity {
 	@Override
 	public void onBackPressed()
 	{
-		super.onBackPressed();
+		//super.onBackPressed();
 		if (sharedPref.getBoolean("Vibrationon/off", true)) {
 			Vibrator vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 			vibe.vibrate(Setting.VibrationIntensity1);
@@ -67,7 +67,7 @@ public class ResultCardActivity extends Activity {
          intent.putExtra("EXIT", true);*/
          openAlertDialoug();
          //startActivity(intent);
-         super.onBackPressed();
+         
 	}
 	private void openAlertDialoug() {
 		AlertDialog.Builder adb=new AlertDialog.Builder(ResultCardActivity.this);
@@ -82,10 +82,8 @@ public class ResultCardActivity extends Activity {
 				intent.addCategory(Intent.CATEGORY_HOME);
 				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				startActivity(intent);*/
-				Intent intent=new Intent(getApplicationContext(),SelectionActivity.class);
+				Intent intent=new Intent(ResultCardActivity.this,SelectionActivity.class);
 				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-				//intent.putExtra("EXIT", true);
-				//java.lang.System.exit(1);
 				startActivity(intent);
 				
 				

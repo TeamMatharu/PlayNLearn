@@ -55,25 +55,50 @@ public class GuestquestionActivity extends Activity {
 		qDao.open();
 		qno.addAll(qDao.getQuestionID());
 		qDao.close();
-		//generateNewQuestion();
+		
 		timermethod();
+		generateNewQuestion();
 		addListnerOnButton();
 	}
 	public void generateNewQuestion() {
-		qDao.open();
-		Random rand=new Random();
-		long qid=rand.nextInt(qno.size());
-		qclass=qDao.getSingleQuestion(qid);
-		tvq.setText(qclass.getQuestion_Text());
-		o1.setText(qclass.getOption1());
-		o2.setText(qclass.getOption2());
-		o3.setText(qclass.getOption3());
-		o4.setText(qclass.getOption4());
-		ans=qclass.getAnswer();
-		qno.remove(qid);
-		qDao.close();
-		t.cancel();
-		timermethod();
+		try{
+			qDao.open();
+			Random rand=new Random();
+			long qid=rand.nextInt(qno.size());
+			qclass=qDao.getSingleQuestion(qid);
+			tvq.setText(qclass.getQuestion_Text());
+			o1.setText(qclass.getOption1());
+			o2.setText(qclass.getOption2());
+			o3.setText(qclass.getOption3());
+			o4.setText(qclass.getOption4());
+			ans=qclass.getAnswer();
+			if(ans.equalsIgnoreCase("option1"))
+			{
+				ans="a";
+			}else if(ans.equalsIgnoreCase("option2"))
+			{
+				ans="b";
+			}
+			else if(ans.equalsIgnoreCase("option3"))
+			{
+				ans="c";
+			}
+			else if(ans.equalsIgnoreCase("option4"))
+			{
+				ans="d";
+			}
+			qno.remove(qid);
+			if(qno.isEmpty())
+			{
+				qno.addAll(qDao.getQuestionID());
+			}
+			qDao.close();
+			t.cancel();
+			timermethod();
+			}catch(Exception ee)
+			{
+				Toast.makeText(getApplicationContext(), ee.toString(), Toast.LENGTH_SHORT).show();
+			}
 		
 	}
 	public void addListnerOnButton() {
@@ -84,7 +109,7 @@ public class GuestquestionActivity extends Activity {
 				question+=1;
 				
 				opt = "c";
-				ans = "c";
+				//ans = "c";
 				int rg = rgst.getCheckedRadioButtonId();
 				switch (rg) {
 				case R.id.rb1:
@@ -141,7 +166,7 @@ public class GuestquestionActivity extends Activity {
 				t.cancel();
 				timermethod();
 				tvonq.setText(String.valueOf(question)+"/50");
-				//generateNewQuestion();
+				generateNewQuestion();
 				
 				if(question>=50)
 				{
@@ -175,7 +200,40 @@ public class GuestquestionActivity extends Activity {
 				}
 			}
 		});
-		
+		btngquit.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				AlertDialog.Builder adb = new AlertDialog.Builder(
+						GuestquestionActivity.this);
+				adb.setTitle("Confirmation!");
+				adb.setMessage("Are you Sure want to quit the game??\nYou will Loss your Scores?");
+				adb.setPositiveButton("Exit", new DialogInterface.OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+
+						Intent intent = new Intent(getApplicationContext(),
+								SelectionActivity.class);
+						intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+						startActivity(intent);
+
+					}
+				});
+				adb.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+
+					}
+				});
+				AlertDialog adbox = adb.create();
+				adbox.show();
+
+			}
+		});
 	}
 	@Override
 	public void onBackPressed()
@@ -241,7 +299,7 @@ public class GuestquestionActivity extends Activity {
 			         t.cancel();
 						mTextField.setTextColor(Color.GREEN);
 						timermethod();
-			       //generateNewQuestion();
+			       generateNewQuestion();
 			     }
 			  }.start();
 

@@ -105,6 +105,7 @@ public class ProfilequestionActivity extends Activity {
 		tv.setText(str + lev);
 		addListnerOnButton();
 		timermethod();
+		generateNewQuestion();
 
 	}
 
@@ -133,7 +134,7 @@ public class ProfilequestionActivity extends Activity {
 				t.cancel();
 				mTextField.setTextColor(Color.GREEN);
 				timermethod();
-//				generateNewQuestion();
+				generateNewQuestion();
 			}
 		}.start();
 
@@ -146,8 +147,7 @@ public class ProfilequestionActivity extends Activity {
 			public void onClick(View v) {
 
 				opt = "c";
-				ans = "c";// Write your query to retrive right answer
-									// over here.
+				
 				int rg = rgans.getCheckedRadioButtonId();
 				switch (rg) {
 				case R.id.rb1:
@@ -243,7 +243,7 @@ public class ProfilequestionActivity extends Activity {
 					tv2.setTextColor(getResources().getColor(R.color.Red));
 					
 				}
-			//	generateNewQuestion();
+				generateNewQuestion();
 				t.cancel();
 				timermethod();
 				tv2.setText(String.valueOf(que) + "/∞");
@@ -317,7 +317,8 @@ public class ProfilequestionActivity extends Activity {
 
 	}
 	public void generateNewQuestion() {
-		/*qDao.open();
+		try{
+		qDao.open();
 		Random rand=new Random();
 		long qid=rand.nextInt(qno.size());
 		qclass=qDao.getSingleQuestion(qid);
@@ -327,10 +328,33 @@ public class ProfilequestionActivity extends Activity {
 		o3.setText(qclass.getOption3());
 		o4.setText(qclass.getOption4());
 		ans=qclass.getAnswer();
+		if(ans.equalsIgnoreCase("option1"))
+		{
+			ans="a";
+		}else if(ans.equalsIgnoreCase("option2"))
+		{
+			ans="b";
+		}
+		else if(ans.equalsIgnoreCase("option3"))
+		{
+			ans="c";
+		}
+		else if(ans.equalsIgnoreCase("option4"))
+		{
+			ans="d";
+		}
 		qno.remove(qid);
-		qDao.close();*/
+		if(qno.isEmpty())
+		{
+			qno.addAll(qDao.getQuestionID());
+		}
+		qDao.close();
 		t.cancel();
 		timermethod();
+		}catch(Exception ee)
+		{
+			Toast.makeText(getApplicationContext(), ee.toString(), Toast.LENGTH_SHORT).show();
+		}
 	}
 	@Override
 	public void onBackPressed() {
