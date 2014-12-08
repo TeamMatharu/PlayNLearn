@@ -1,6 +1,8 @@
 package com.example.playnlearn;
 
 import com.playnlearn.classes.Setting;
+import com.playnlearn.classes.User_DAO;
+import com.playnlearn.classes.User_Profile;
 
 import android.R.integer;
 import android.app.Activity;
@@ -9,8 +11,13 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.QuickContactBadge;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -19,6 +26,7 @@ import android.widget.Toast;
 public class ResultCardActivity extends Activity {
     RatingBar resrat;
     TextView tvpro,tvlvl,tvprof,tvscore;
+    Button btnpa;
     Intent i;
     int pro,lvl,strrtg,scr;
     float rt;
@@ -26,6 +34,8 @@ public class ResultCardActivity extends Activity {
     String usrnm;
     QuickContactBadge q;
     SharedPreferences sharedPref;
+    User_Profile activityUser;
+	User_DAO userdao;
     //int p,l,s;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +43,15 @@ public class ResultCardActivity extends Activity {
 		setContentView(R.layout.resultpage);
 		sharedPref = this.getSharedPreferences(getString(R.string.SharedPref),
 				Context.MODE_PRIVATE);
+		userdao = new User_DAO(getApplicationContext());
+		userdao.open();
 		Bundle get1=getIntent().getExtras();
+		btnpa=(Button)findViewById(R.id.btnPlayAgain);
+		
+		activityUser=userdao.getSingleUser(get1.getString("usrnm"));
+		Bitmap bmp=BitmapFactory.decodeByteArray(activityUser.getUser_Image(), 0, activityUser.getUser_Image().length);
 		q=(QuickContactBadge)findViewById(R.id.imgProfile);
+		q.setImageBitmap(bmp);
 		resrat=(RatingBar)findViewById(R.id.ratingBar1);
 		pro=get1.getInt("pbar");
 		lvl=get1.getInt("lvl");
@@ -52,6 +69,16 @@ public class ResultCardActivity extends Activity {
 		tvscore.setText("Your Current Score is : "+scr);
 		//Toast.makeText(getApplicationContext(), String.valueOf(rt), Toast.LENGTH_SHORT).show();
 		resrat.setRating(Float.valueOf(rt));
+		btnpa.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent i=new Intent(ResultCardActivity.this,ProfilequestionActivity.class);
+				i.putExtra("user", tvprof.getText().toString());
+				startActivity(i);
+				
+			}
+		});
 		
 	}
 	@Override
